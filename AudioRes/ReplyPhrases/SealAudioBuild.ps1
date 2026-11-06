@@ -13,15 +13,17 @@ if ([BitConverter]::ToUInt32($raw,0) -ne 23 -or $raw.Length+16 -gt 65536) {
     throw 'Expected 23 clips within the internal audio region.'
 }
 $inputs = @($profilePath,$sourcePath,(Join-Path $PSScriptRoot 'WavSrc\AirconReplies.uid'))
+$encodingInputs = @((Join-Path $PSScriptRoot 'WavSrc\AirconReplies.uid'))
 foreach ($entry in $source.entries) {
     $path = Join-Path $PSScriptRoot ('WavSrc\'+$entry.file)
     if ((Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash -ne $entry.sha256) {
         throw ('Source WAV changed: '+$entry.file)
     }
     $inputs += $path
+    $encodingInputs += $path
 }
 $romTime = (Get-Item -LiteralPath $romPath).LastWriteTimeUtc
-foreach ($path in $inputs) {
+foreach ($path in $encodingInputs) {
     if ((Get-Item -LiteralPath $path).LastWriteTimeUtc -gt $romTime) {
         throw ('Source is newer than the encoded ROM: '+$path)
     }

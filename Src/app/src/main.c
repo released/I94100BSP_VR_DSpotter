@@ -28,6 +28,7 @@
 /** add code start **/
 static volatile AIRCON_LED_FEEDBACK decode_led;
 
+/* LED state is also advanced by the timer; update it in one critical section. */
 static void SetDecodeStage(uint32_t control_stage)
 {
     uint32_t interrupt_mask;
@@ -38,6 +39,10 @@ static void SetDecodeStage(uint32_t control_stage)
     __set_PRIMASK(interrupt_mask);
 }
 
+/*
+ * Feedback runs after recognition has released both SDK handles. The same
+ * MapID selects a shared Mandarin reply for either recognition language.
+ */
 static void AcknowledgeDecode(int32_t map_id)
 {
     uint32_t interrupt_mask;
@@ -151,6 +156,46 @@ void TMR1_IRQHandler(void)
 }
 
 /** add code start **/
+static void PrintRecognitionDetails(const AIRCON_MODELS *models,
+                                   uint32_t stage, int32_t outcome,
+                                   const AIRCON_RECOGNITION *recognition)
+{
+#if AIRCON_RESULT_DIAGNOSTICS
+    uint32_t i;
+    const AIRCON_RESULT_DETAIL *detail;
+
+    DBG_PRT("[VR_DECISION] stage=%lu outcome=%ld frames=%lu settle_frames=%lu filtered=%lu score_resolved=%lu\n",
+        (unsigned long)stage, (long)outcome,
+        (unsigned long)recognition->frames, (unsigned long)AIRCON_SETTLE_FRAMES,
+        (unsigned long)recognition->filtered_count,
+        (unsigned long)recognition->score_resolved);
+    for (i = 0U; i < models->language_count; ++i) {
+        detail = &recognition->candidates[i];
+        DBG_PRT("[VR_CANDIDATE] language=%s matched=%u map_id=%ld index=%ld frame=%lu filtered=%lu",
+            AirconCommands_Languages(1U << (models->languages[i].language - 1U)),
+            detail->matched_frame != 0U ? 1U : 0U, (long)detail->map_id,
+            (long)detail->word_index, (unsigned long)detail->matched_frame,
+            (unsigned long)detail->filtered);
+        DBG_PRT(" confi=%ld sg=%ld fil=%ld score_ret=%ld",
+            (long)detail->confidence, (long)detail->sg_diff,
+            (long)detail->fil, (long)detail->score_return);
+        DBG_PRT(" dura=%ld end_sil=%ld latency=%ld epd_ret=%ld\n",
+            (long)detail->word_duration, (long)detail->end_silence,
+            (long)detail->network_latency, (long)detail->epd_return);
+    }
+#else
+    (void)models;
+    (void)stage;
+    (void)outcome;
+    (void)recognition;
+#endif
+}
+
+/*
+ * Application integration point: command describes the action and optional
+ * temperature/timer value; wake_id identifies its room/living/global zone.
+ * Implement the actual UART/GPIO/control protocol here as required.
+ */
 static void PrintAirconCommand(int32_t map_id, uint32_t languages, int32_t wake_id)
 {
 	AIRCON_COMMAND command;
@@ -167,6 +212,11 @@ static void PrintAirconCommand(int32_t map_id, uint32_t languages, int32_t wake_
 }
 /** add code end **/
 
+/*
+ * Runtime ownership: main owns wake/control transitions and audio playback;
+ * interrupt handlers provide PCM acquisition, DMA service and LED timing.
+ * See README.md for the module and state flow charts.
+ */
 int main(void)
 {
 	AIRCON_MODELS models;
@@ -193,6 +243,7 @@ int main(void)
 	GPIO_SetMode(PB,BIT0,GPIO_MODE_OUTPUT);
 	
 	
+	/* Validate both Flash regions before starting microphone recognition. */
 	nRet = AirconModels_Load((const uint8_t *)DATAFLASH_ADDR, DATAFLASH_BYTES, &models);
 	if (nRet != 0) {
 		DBG_PRT("[MODEL_ERROR] code=%ld address=0x%08lx; program AirconDataFlash.bin at 0x00015000\n",
@@ -210,6 +261,14 @@ int main(void)
 	g_sApp.Mic_NuOne.sNuOneApp.u32TotalAudioNum = audio.audio_count;
 	DBG_PRT("[VR_SDK] %s\n", DSpotter_Ver());
 	DBG_PRT("[APP] release=V005 feedback=full_reply_led led=PB0 audio=internal\n");
+	DBG_PRT("[VR_DIAG] result_details=%u settle_frames=%lu\n",
+		(unsigned int)AIRCON_RESULT_DIAGNOSTICS, (unsigned long)AIRCON_SETTLE_FRAMES);
+	DBG_PRT("[VR_SCORE] control_filter=%u min_confi=%ld min_sg=%ld arbitration=%u winner_min=%ld confi_gap=%ld sg_gap=%ld\n",
+		(unsigned int)AIRCON_CONTROL_SCORE_FILTER,
+		(long)AIRCON_CONTROL_MIN_CONFIDENCE, (long)AIRCON_CONTROL_MIN_SG_DIFF,
+		(unsigned int)AIRCON_CONFLICT_SCORE_ARBITRATION,
+		(long)AIRCON_CONFLICT_MIN_CONFIDENCE,
+		(long)AIRCON_CONFLICT_CONFIDENCE_GAP, (long)AIRCON_CONFLICT_SG_GAP);
 	DBG_PRT("[AUDIO_READY] address=0x%08lx rom_bytes=%lu clips=%lu bps=1.0\n",
 		(unsigned long)AIRCON_AUDIO_ADDRESS, (unsigned long)audio.rom_bytes,
 		(unsigned long)audio.audio_count);
@@ -243,12 +302,14 @@ int main(void)
 
 	while(1)
 	{
+		/* Playback and recognition alternate to avoid recognizing our reply. */
 		if(g_sApp.Mic_NuOne.sNuOneApp.bPCMPlaying==0)
 		{
 			MIC_Start();
 
 			nRet = AirconVR_Recognize(&models, stage,
 				stage == AIRCON_STAGE_WAKE ? 0U : AIRCON_CONTROL_TIMEOUT_FRAMES, &recognition);
+			PrintRecognitionDetails(&models, stage, nRet, &recognition);
 			if ((memory_reported & (1U << stage)) == 0U || nRet < 0) {
 				DBG_PRT("[VR_MEMORY] stage=%lu total=%lu available=%lu",
 					(unsigned long)stage, (unsigned long)recognition.memory_total,
@@ -261,6 +322,7 @@ int main(void)
 				DBG_PRT("\n");
 				memory_reported |= 1U << stage;
 			}
+			/* Recoverable stream/conflict errors rearm wake; other errors stop. */
 			if (nRet < 0) {
 				DBG_PRT("[VR_ERROR] code=%ld frames=%lu drops=%lu\n", (long)nRet,
 					(unsigned long)recognition.frames, (unsigned long)recognition.audio_drops);
@@ -271,6 +333,7 @@ int main(void)
 				SetDecodeStage(0U);
 				continue;
 			}
+			/* A control timeout also clears the previously selected zone. */
 			if (nRet == 0) {
 				DBG_PRT("[VR_TIMEOUT]\n");
 				stage = AIRCON_STAGE_WAKE;
@@ -278,6 +341,7 @@ int main(void)
 				SetDecodeStage(0U);
 				continue;
 			}
+			/* A successful control retains the wake zone for the next command. */
 			if (stage == AIRCON_STAGE_WAKE) {
 				wake_id = nRet;
 				stage = AIRCON_STAGE_CONTROL;
@@ -288,6 +352,7 @@ int main(void)
 			} else {
 				PrintAirconCommand(nRet, recognition.language_mask, wake_id);
 			}
+			/* The next control window begins after this whole reply finishes. */
 			AcknowledgeDecode(nRet);
 		}
 		else if(g_sApp.Mic_NuOne.sNuOneApp.bPCMPlaying)					//Playing message handling

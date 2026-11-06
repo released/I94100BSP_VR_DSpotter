@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "groups": {
+    "ChineseTWN/Group_1_Wake": {
+      "content_sha256": "b97042c4f7bcc3593dd0e510f6a63bf97d55688414a45746807953a3a204b9ef",
+      "model_sha256": "f8a0644a2e4017329d6abbf06217d240fc37f344887b6a6c2f0c6f9f7d1cb76e"
+    },
+    "ChineseTWN/Group_2_Power": {
+      "content_sha256": "89d55f3efa7add7f742f80cb85875072f08c4f2e7d8b1449c5bd6bc5e3201eed",
+      "model_sha256": "3f5b0bbaa77bca84073159f11fa6fb2b47f07491c7b170eadf523313bdf4af1f"
+    },
+    "ChineseTWN/Group_3_Mode": {
+      "content_sha256": "a956ef35802f84edd89fb9c5cb581104c049fbdfab3419b22e19fed2e383f640",
+      "model_sha256": "f2f54febed0b3f75d139f8b59910942fe30cfa4cbbb52bd738dc20d08a0a436f"
+    },
+    "ChineseTWN/Group_4_Temperature": {
+      "content_sha256": "9757835fc27ef7ab364d1a7e9f9ee1c5401c276dc10208473211f18404f48954",
+      "model_sha256": "be083687b5c444a6920bcf27d5136f69a654825c1fa1154055ba95ec42335a4a"
+    },
+    "ChineseTWN/Group_5_Fan": {
+      "content_sha256": "a1e6c8a943c5bfdb6d1667a491255a87d0019efc5e03e6c5d9b9d609bbd186d6",
+      "model_sha256": "4adcac7b29614e3ab272b5d5644303484cceb45bbfe9ce462b2cd8cc8f0e14db"
+    },
+    "ChineseTWN/Group_6_Swing": {
+      "content_sha256": "efb950179db9987d721a52f61bfa331ba25dd975a96ef205dfdb98eea1faa072",
+      "model_sha256": "41863c34b6c11427b31dd6f175494a1b66ad5f46b22c6fd0ebd72f43c556339a"
+    },
+    "ChineseTWN/Group_7_Health": {
+      "content_sha256": "5896d134c0b1275c91fa5fcb340da96bd3ca86aa0e8dfd334e7749c47c7f5043",
+      "model_sha256": "b719a01cec3aebbc43087c82e0ed10ebb66c5a1f05a36b5d4af670b01a609bdd"
+    },
+    "ChineseTWN/Group_8_Volume": {
+      "content_sha256": "8834495c16b1897d0024da5219557837734d709aeab6741c67c78c7a194fb4ea",
+      "model_sha256": "729ee3be0e6422cc3f73b209a9dc28a63843607d022d8cd0b4f2a88b72cf1b42"
+    },
+    "ChineseTWN/Group_9_Timer": {
+      "content_sha256": "df0c53163a3fafecda6d46669cf7b720635fb011840092a4f6eb2a9608fd23cb",
+      "model_sha256": "6fe568827e5a996a6fc78cb084d28e3267a863912f69950a3ed04fae4e9f73e9"
+    },
+    "Taiwanese/Group_1_Wake": {
+      "content_sha256": "4ffbc88003ad45304ad1b91963aeb3b61e1077bb56589b703a25b23c3a3f5d24",
+      "model_sha256": "956093674f044e2ba5c7aeb2543c7ff60d0f5da49b0458624781f4a065874784"
+    },
+    "Taiwanese/Group_2_Power": {
+      "content_sha256": "56dc2ffa27c25924ee284f3e441cd570a5452d048c4c13e7095e251e600ec3b9",
+      "model_sha256": "3d0895bde99b5a2b2b0a40a61656d992b9a8a5bb9890f69546982f9dd9056df4"
+    },
+    "Taiwanese/Group_3_Mode": {
+      "content_sha256": "f92e7c990089791eb86cd4dbc3eba9c5376a292a757b4b008c60f8151eefa2b4",
+      "model_sha256": "ca141ae794a894ac5b72c145a0b8c56ad2b4494940fb2940d61dce179e8275ea"
+    },
+    "Taiwanese/Group_4_Temperature": {
+      "content_sha256": "6825b30d4c7dfe766565f522f4c246baaaec0a97da82da5fef87f8fc128113b7",
+      "model_sha256": "304d4b9741156ad99e3f2a8f427ffa926f68f2b991e0d4295923a833fe5b4d94"
+    },
+    "Taiwanese/Group_5_Fan": {
+      "content_sha256": "16bf7d4ac7eeec03f19371d6649dc6dc0c5e7f6d51f3946a59bfffa0d27ec6fc",
+      "model_sha256": "fca0c843ee3935ef68ce7d319ca2634206f8be51b1fa52e7f7b40f6a9150744e"
+    },
+    "Taiwanese/Group_6_Swing": {
+      "content_sha256": "dccda212b7b620206d8b4df6a3f6b2dc1c677fff387f9434426f7314f840958d",
+      "model_sha256": "66629bbacc4b40ad8ae3f643b013ac951c59d3fcc1403f382b89e5f331d75ee2"
+    },
+    "Taiwanese/Group_7_Health": {
+      "content_sha256": "c4b819e87a688c5683e667ed1f0b4bd08f7383ca9167dba49a2044be178752a3",
+      "model_sha256": "3f487717ab7151e501285d703f13244bc5866281a3ccf27b41a8f7508666ec78"
+    },
+    "Taiwanese/Group_8_Volume": {
+      "content_sha256": "6f31674c315e7ada4f4e48e9b45a6abb98426155726e67946b8d663c2a599ce2",
+      "model_sha256": "08209d387b0612bb1938123d66650f0dcba01e2590402a689eb0daac04d44959"
+    },
+    "Taiwanese/Group_9_Timer": {
+      "content_sha256": "1cfd051d1163b54dadfec398e6711324e8cc44813b946def6d03cd3aa63a3a22",
+      "model_sha256": "832871616367e1b1b22e754dbce20b0bdb6825530d91bcd9063f4f603bdcf74e"
+    }
+  }
+}

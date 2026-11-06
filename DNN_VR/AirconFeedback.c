@@ -1,5 +1,6 @@
 #include "AirconFeedback.h"
 
+/* PB0 is active low: wake idle is off, control idle is on. */
 uint32_t AirconFeedback_SetStage(volatile AIRCON_LED_FEEDBACK *state,
                                 uint32_t control_stage)
 {
@@ -10,6 +11,7 @@ uint32_t AirconFeedback_SetStage(volatile AIRCON_LED_FEEDBACK *state,
     return state->pin_level;
 }
 
+/* Four 100 ms phases make acceptance visible from either idle LED level. */
 uint32_t AirconFeedback_Start(volatile AIRCON_LED_FEEDBACK *state)
 {
     state->pin_level = state->idle_level ^ 1U;
@@ -18,6 +20,7 @@ uint32_t AirconFeedback_Start(volatile AIRCON_LED_FEEDBACK *state)
     return state->pin_level;
 }
 
+/* Called by the 1 ms timer; no delays or audio work run inside this update. */
 uint32_t AirconFeedback_Tick1ms(volatile AIRCON_LED_FEEDBACK *state)
 {
     if (state->ticks_remaining == 0U)

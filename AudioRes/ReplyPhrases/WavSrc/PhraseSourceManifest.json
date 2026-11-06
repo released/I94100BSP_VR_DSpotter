@@ -1,318 +1,339 @@
 ﻿{
-    "schema_version":  1,
-    "release":  "V005",
-    "sample_rate":  16000,
-    "bits_per_sample":  16,
-    "channels":  1,
-    "voice":  "Microsoft Hanhan Desktop",
-    "rate":  0,
-    "nuone_bits_per_sample":  1,
-    "prefix_gap_ms":  120,
-    "source_profile":  "AudioRes/ReplyPhrases/ReplyProfile.json",
-    "source_profile_sha256":  "7ea82dd37672d876502947c53ad06f94829ab9ca9473543e767ed2081cc2690f",
-    "entries":  [
-                    {
-                        "index":  0,
-                        "file":  "wake_ok.wav",
-                        "role":  "wake",
-                        "command":  null,
-                        "map_ids":  [
-                                        1001,
-                                        1002,
-                                        1003
-                                    ],
-                        "spoken_text":  null,
-                        "bytes":  15850,
-                        "sha256":  "3466c26e524f2460c191920a1b7c8fddd0a6cad53b906a4a33c8365aa5476e84"
-                    },
-                    {
-                        "index":  1,
-                        "file":  "reply_prefix.wav",
-                        "role":  "prefix",
-                        "command":  null,
-                        "map_ids":  [
-
-                                    ],
-                        "spoken_text":  "好的，",
-                        "bytes":  15404,
-                        "sha256":  "2457ac941bd4803c85b6df4eaa418a345e80cb4ee0c4aafa543d30850e20295a"
-                    },
-                    {
-                        "index":  2,
-                        "file":  "reply_power_on.wav",
-                        "role":  "body",
-                        "command":  "POWER_ON",
-                        "map_ids":  [
-                                        1
-                                    ],
-                        "spoken_text":  "為您開機",
-                        "bytes":  32684,
-                        "sha256":  "e3e543a527f4ef4c01787a6bd0a412ed478a7803b9a1cd2335107b7092ee4e90"
-                    },
-                    {
-                        "index":  3,
-                        "file":  "reply_power_off.wav",
-                        "role":  "body",
-                        "command":  "POWER_OFF",
-                        "map_ids":  [
-                                        2
-                                    ],
-                        "spoken_text":  "為您關機",
-                        "bytes":  32364,
-                        "sha256":  "a341ac1a84c86d8e5f206528ac458d3688613a7f824ef5b53bb6328f9c5de3a6"
-                    },
-                    {
-                        "index":  4,
-                        "file":  "reply_mode_cool.wav",
-                        "role":  "body",
-                        "command":  "MODE_COOL",
-                        "map_ids":  [
-                                        3
-                                    ],
-                        "spoken_text":  "切換冷氣模式",
-                        "bytes":  51564,
-                        "sha256":  "6b6f5535d7dc9e7ff1a3c2cb178a93eb8dbe9e5f2493859dc11c0ae37f8a3eff"
-                    },
-                    {
-                        "index":  5,
-                        "file":  "reply_mode_heat.wav",
-                        "role":  "body",
-                        "command":  "MODE_HEAT",
-                        "map_ids":  [
-                                        4
-                                    ],
-                        "spoken_text":  "切換暖氣模式",
-                        "bytes":  51244,
-                        "sha256":  "073d40161564c60958d934997965950dede05c3d1193f0ef72fc93b5cda6fe98"
-                    },
-                    {
-                        "index":  6,
-                        "file":  "reply_mode_dry.wav",
-                        "role":  "body",
-                        "command":  "MODE_DRY",
-                        "map_ids":  [
-                                        5
-                                    ],
-                        "spoken_text":  "切換除濕模式",
-                        "bytes":  52524,
-                        "sha256":  "1dd9b791ad5ef9bf6abeab880444bba38396b619fedac3ec5f552427343a5d75"
-                    },
-                    {
-                        "index":  7,
-                        "file":  "reply_mode_auto.wav",
-                        "role":  "body",
-                        "command":  "MODE_AUTO",
-                        "map_ids":  [
-                                        6
-                                    ],
-                        "spoken_text":  "切換自動模式",
-                        "bytes":  50924,
-                        "sha256":  "64ef0828852507881426b633762a86dd1c38f9a6cd054a1916634cb3cbd881af"
-                    },
-                    {
-                        "index":  8,
-                        "file":  "reply_temp_up.wav",
-                        "role":  "body",
-                        "command":  "TEMP_UP",
-                        "map_ids":  [
-                                        7
-                                    ],
-                        "spoken_text":  "溫度已調高",
-                        "bytes":  40684,
-                        "sha256":  "a57a4543969ff0467a11206552df5f8d60f8b54627756ec24dd17053aa64379c"
-                    },
-                    {
-                        "index":  9,
-                        "file":  "reply_temp_down.wav",
-                        "role":  "body",
-                        "command":  "TEMP_DOWN",
-                        "map_ids":  [
-                                        8
-                                    ],
-                        "spoken_text":  "溫度已調低",
-                        "bytes":  37484,
-                        "sha256":  "aacba7f78cd5f455aab102a302b21480bd9002eed44cfe810a88af54510df000"
-                    },
-                    {
-                        "index":  10,
-                        "file":  "reply_fan_up.wav",
-                        "role":  "body",
-                        "command":  "FAN_UP",
-                        "map_ids":  [
-                                        9
-                                    ],
-                        "spoken_text":  "風量已調大",
-                        "bytes":  39084,
-                        "sha256":  "c41f432e9349d11a58df0c3be3fee5d83a85c623d44de8213ff302b489bc7fd5"
-                    },
-                    {
-                        "index":  11,
-                        "file":  "reply_fan_down.wav",
-                        "role":  "body",
-                        "command":  "FAN_DOWN",
-                        "map_ids":  [
-                                        10
-                                    ],
-                        "spoken_text":  "風量已調小",
-                        "bytes":  39724,
-                        "sha256":  "1751601c90cb7583122217b99fdb73bf9bc658dd081c30844805ac09528a36a6"
-                    },
-                    {
-                        "index":  12,
-                        "file":  "reply_fan_auto.wav",
-                        "role":  "body",
-                        "command":  "FAN_AUTO",
-                        "map_ids":  [
-                                        11
-                                    ],
-                        "spoken_text":  "風量已設為自動",
-                        "bytes":  53484,
-                        "sha256":  "833737e82aa37abeb805b8d74257f4afcf995fda070f211089a5cf7e1aebad51"
-                    },
-                    {
-                        "index":  13,
-                        "file":  "reply_swing_auto.wav",
-                        "role":  "body",
-                        "command":  "SWING_AUTO",
-                        "map_ids":  [
-                                        12
-                                    ],
-                        "spoken_text":  "風向設定為自動",
-                        "bytes":  54444,
-                        "sha256":  "b65e154bdcfe28590257ffe6d9fac138ba0a1564b2754839e01a1be67c56ebcd"
-                    },
-                    {
-                        "index":  14,
-                        "file":  "reply_swing_hold.wav",
-                        "role":  "body",
-                        "command":  "SWING_HOLD",
-                        "map_ids":  [
-                                        13
-                                    ],
-                        "spoken_text":  "風向已固定",
-                        "bytes":  37804,
-                        "sha256":  "15cca8c7dccc88f57530a166e034fb8ae27d04140d425127bf03fa1444b63251"
-                    },
-                    {
-                        "index":  15,
-                        "file":  "reply_nanoe_on.wav",
-                        "role":  "body",
-                        "command":  "NANOE_ON",
-                        "map_ids":  [
-                                        14
-                                    ],
-                        "spoken_text":  "已開啟 奈諾伊",
-                        "bytes":  45804,
-                        "sha256":  "414c40d667d184a920fe588a76aa7bb4ce2940b1ada642c0b506386f2787619c"
-                    },
-                    {
-                        "index":  16,
-                        "file":  "reply_nanoe_off.wav",
-                        "role":  "body",
-                        "command":  "NANOE_OFF",
-                        "map_ids":  [
-                                        15
-                                    ],
-                        "spoken_text":  "已關閉 奈諾伊",
-                        "bytes":  44524,
-                        "sha256":  "ed91ec72ec821ea66e43abc25abf204d920a7725445bfc85759b3ff9a591b048"
-                    },
-                    {
-                        "index":  17,
-                        "file":  "reply_voice_vol_up.wav",
-                        "role":  "body",
-                        "command":  "VOICE_VOL_UP",
-                        "map_ids":  [
-                                        16
-                                    ],
-                        "spoken_text":  "音量已調大",
-                        "bytes":  38444,
-                        "sha256":  "a48e15e41b8ab41e8c18a8585201e25977e7c6b085082cedcabede274e50d369"
-                    },
-                    {
-                        "index":  18,
-                        "file":  "reply_voice_vol_down.wav",
-                        "role":  "body",
-                        "command":  "VOICE_VOL_DOWN",
-                        "map_ids":  [
-                                        17
-                                    ],
-                        "spoken_text":  "音量已調小",
-                        "bytes":  39404,
-                        "sha256":  "7a8546ff7921b468a5d3156c522a73048bbfdf3b33256851edadb13ff4e9dcc2"
-                    },
-                    {
-                        "index":  19,
-                        "file":  "reply_voice_mute.wav",
-                        "role":  "body",
-                        "command":  "VOICE_MUTE",
-                        "map_ids":  [
-                                        18
-                                    ],
-                        "spoken_text":  "已關閉語音",
-                        "bytes":  38764,
-                        "sha256":  "ba7106e109b928f1502f743c70007c9d260da3412759b04acdac4d612f2b1155"
-                    },
-                    {
-                        "index":  20,
-                        "file":  "reply_timer_cancel.wav",
-                        "role":  "body",
-                        "command":  "TIMER_CANCEL",
-                        "map_ids":  [
-                                        19
-                                    ],
-                        "spoken_text":  "定時已取消",
-                        "bytes":  42284,
-                        "sha256":  "24fee29e4e4bb6e52fdccf856878e5284a959b651a66dfa0df8c5800d71282cb"
-                    },
-                    {
-                        "index":  21,
-                        "file":  "reply_temp_set.wav",
-                        "role":  "body",
-                        "command":  "TEMP_SET",
-                        "map_ids":  [
-                                        116,
-                                        117,
-                                        118,
-                                        119,
-                                        120,
-                                        121,
-                                        122,
-                                        123,
-                                        124,
-                                        125,
-                                        126,
-                                        127,
-                                        128,
-                                        129,
-                                        130
-                                    ],
-                        "spoken_text":  "溫度已設定",
-                        "bytes":  38444,
-                        "sha256":  "4111bcdbc4443f25e93bf0cdd7e0cf8dba870503ce3d12569db29b587cc2e81e"
-                    },
-                    {
-                        "index":  22,
-                        "file":  "reply_timer_off.wav",
-                        "role":  "body",
-                        "command":  "TIMER_OFF",
-                        "map_ids":  [
-                                        201,
-                                        202,
-                                        203,
-                                        204,
-                                        205,
-                                        206,
-                                        207,
-                                        208,
-                                        209,
-                                        210,
-                                        211,
-                                        212
-                                    ],
-                        "spoken_text":  "定時已設定",
-                        "bytes":  38764,
-                        "sha256":  "67bdea67d49db0237131830b78e27a1ec75fea9158bc7f415d1c9577de7fb6ac"
-                    }
-                ]
+  "schema_version": 1,
+  "release": "V005",
+  "sample_rate": 16000,
+  "bits_per_sample": 16,
+  "channels": 1,
+  "voice": "Microsoft Hanhan Desktop",
+  "rate": 0,
+  "nuone_bits_per_sample": 1,
+  "prefix_gap_ms": 120,
+  "source_profile": "AudioRes/ReplyPhrases/ReplyProfile.json",
+  "source_profile_sha256": "cdf402819d70c4cde75881df2c608be44286c77bcf9b38c0f4d83a4b84bec844",
+  "entries": [
+    {
+      "index": 0,
+      "file": "wake_ok.wav",
+      "role": "wake",
+      "command": null,
+      "map_ids": [
+        1001,
+        1002,
+        1003
+      ],
+      "spoken_text": null,
+      "synthesis_ssml": null,
+      "bytes": 15850,
+      "sha256": "3466c26e524f2460c191920a1b7c8fddd0a6cad53b906a4a33c8365aa5476e84"
+    },
+    {
+      "index": 1,
+      "file": "reply_prefix.wav",
+      "role": "prefix",
+      "command": null,
+      "map_ids": [],
+      "spoken_text": "好的，",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e好的，\u003c/speak\u003e",
+      "bytes": 15404,
+      "sha256": "2457ac941bd4803c85b6df4eaa418a345e80cb4ee0c4aafa543d30850e20295a"
+    },
+    {
+      "index": 2,
+      "file": "reply_power_on.wav",
+      "role": "body",
+      "command": "POWER_ON",
+      "map_ids": [
+        1
+      ],
+      "spoken_text": "為您開機",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e為您開機\u003c/speak\u003e",
+      "bytes": 32684,
+      "sha256": "e3e543a527f4ef4c01787a6bd0a412ed478a7803b9a1cd2335107b7092ee4e90"
+    },
+    {
+      "index": 3,
+      "file": "reply_power_off.wav",
+      "role": "body",
+      "command": "POWER_OFF",
+      "map_ids": [
+        2
+      ],
+      "spoken_text": "為您關機",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e為您關機\u003c/speak\u003e",
+      "bytes": 32364,
+      "sha256": "a341ac1a84c86d8e5f206528ac458d3688613a7f824ef5b53bb6328f9c5de3a6"
+    },
+    {
+      "index": 4,
+      "file": "reply_mode_cool.wav",
+      "role": "body",
+      "command": "MODE_COOL",
+      "map_ids": [
+        3
+      ],
+      "spoken_text": "切換冷氣模式",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e切換冷氣模式\u003c/speak\u003e",
+      "bytes": 51564,
+      "sha256": "6b6f5535d7dc9e7ff1a3c2cb178a93eb8dbe9e5f2493859dc11c0ae37f8a3eff"
+    },
+    {
+      "index": 5,
+      "file": "reply_mode_heat.wav",
+      "role": "body",
+      "command": "MODE_HEAT",
+      "map_ids": [
+        4
+      ],
+      "spoken_text": "切換暖氣模式",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e切換暖氣模式\u003c/speak\u003e",
+      "bytes": 51244,
+      "sha256": "073d40161564c60958d934997965950dede05c3d1193f0ef72fc93b5cda6fe98"
+    },
+    {
+      "index": 6,
+      "file": "reply_mode_dry.wav",
+      "role": "body",
+      "command": "MODE_DRY",
+      "map_ids": [
+        5
+      ],
+      "spoken_text": "切換除濕模式",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e切換除濕模式\u003c/speak\u003e",
+      "bytes": 52524,
+      "sha256": "1dd9b791ad5ef9bf6abeab880444bba38396b619fedac3ec5f552427343a5d75"
+    },
+    {
+      "index": 7,
+      "file": "reply_mode_auto.wav",
+      "role": "body",
+      "command": "MODE_AUTO",
+      "map_ids": [
+        6
+      ],
+      "spoken_text": "切換自動模式",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e切換自動模式\u003c/speak\u003e",
+      "bytes": 50924,
+      "sha256": "64ef0828852507881426b633762a86dd1c38f9a6cd054a1916634cb3cbd881af"
+    },
+    {
+      "index": 8,
+      "file": "reply_temp_up.wav",
+      "role": "body",
+      "command": "TEMP_UP",
+      "map_ids": [
+        7
+      ],
+      "spoken_text": "溫度已調高",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e溫度已\u003csub alias=\"條\"\u003e調\u003c/sub\u003e高\u003c/speak\u003e",
+      "bytes": 40684,
+      "sha256": "7d62186dbc8e0f2ceb0fa842e93f7c4e556bfccf836881dcf1f25162b311881a"
+    },
+    {
+      "index": 9,
+      "file": "reply_temp_down.wav",
+      "role": "body",
+      "command": "TEMP_DOWN",
+      "map_ids": [
+        8
+      ],
+      "spoken_text": "溫度已調低",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e溫度已\u003csub alias=\"條\"\u003e調\u003c/sub\u003e低\u003c/speak\u003e",
+      "bytes": 38124,
+      "sha256": "7b70b75ce1d568042c25883c638be3a788636eb552e95a173579c29b2494809f"
+    },
+    {
+      "index": 10,
+      "file": "reply_fan_up.wav",
+      "role": "body",
+      "command": "FAN_UP",
+      "map_ids": [
+        9
+      ],
+      "spoken_text": "風量已調大",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e風量已\u003csub alias=\"條\"\u003e調\u003c/sub\u003e大\u003c/speak\u003e",
+      "bytes": 39084,
+      "sha256": "c41f432e9349d11a58df0c3be3fee5d83a85c623d44de8213ff302b489bc7fd5"
+    },
+    {
+      "index": 11,
+      "file": "reply_fan_down.wav",
+      "role": "body",
+      "command": "FAN_DOWN",
+      "map_ids": [
+        10
+      ],
+      "spoken_text": "風量已調小",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e風量已\u003csub alias=\"條\"\u003e調\u003c/sub\u003e小\u003c/speak\u003e",
+      "bytes": 39724,
+      "sha256": "1751601c90cb7583122217b99fdb73bf9bc658dd081c30844805ac09528a36a6"
+    },
+    {
+      "index": 12,
+      "file": "reply_fan_auto.wav",
+      "role": "body",
+      "command": "FAN_AUTO",
+      "map_ids": [
+        11
+      ],
+      "spoken_text": "風量已設為自動",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e風量已設為自動\u003c/speak\u003e",
+      "bytes": 53484,
+      "sha256": "833737e82aa37abeb805b8d74257f4afcf995fda070f211089a5cf7e1aebad51"
+    },
+    {
+      "index": 13,
+      "file": "reply_swing_auto.wav",
+      "role": "body",
+      "command": "SWING_AUTO",
+      "map_ids": [
+        12
+      ],
+      "spoken_text": "風向設定為自動",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e風向設定為自動\u003c/speak\u003e",
+      "bytes": 54444,
+      "sha256": "b65e154bdcfe28590257ffe6d9fac138ba0a1564b2754839e01a1be67c56ebcd"
+    },
+    {
+      "index": 14,
+      "file": "reply_swing_hold.wav",
+      "role": "body",
+      "command": "SWING_HOLD",
+      "map_ids": [
+        13
+      ],
+      "spoken_text": "風向已固定",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e風向已固定\u003c/speak\u003e",
+      "bytes": 37804,
+      "sha256": "15cca8c7dccc88f57530a166e034fb8ae27d04140d425127bf03fa1444b63251"
+    },
+    {
+      "index": 15,
+      "file": "reply_nanoe_on.wav",
+      "role": "body",
+      "command": "NANOE_ON",
+      "map_ids": [
+        14
+      ],
+      "spoken_text": "已開啟 奈諾伊",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e已開啟 奈諾伊\u003c/speak\u003e",
+      "bytes": 45804,
+      "sha256": "414c40d667d184a920fe588a76aa7bb4ce2940b1ada642c0b506386f2787619c"
+    },
+    {
+      "index": 16,
+      "file": "reply_nanoe_off.wav",
+      "role": "body",
+      "command": "NANOE_OFF",
+      "map_ids": [
+        15
+      ],
+      "spoken_text": "已關閉 奈諾伊",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e已關閉 奈諾伊\u003c/speak\u003e",
+      "bytes": 44524,
+      "sha256": "ed91ec72ec821ea66e43abc25abf204d920a7725445bfc85759b3ff9a591b048"
+    },
+    {
+      "index": 17,
+      "file": "reply_voice_vol_up.wav",
+      "role": "body",
+      "command": "VOICE_VOL_UP",
+      "map_ids": [
+        16
+      ],
+      "spoken_text": "音量已調大",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e音量已\u003csub alias=\"條\"\u003e調\u003c/sub\u003e大\u003c/speak\u003e",
+      "bytes": 38444,
+      "sha256": "a48e15e41b8ab41e8c18a8585201e25977e7c6b085082cedcabede274e50d369"
+    },
+    {
+      "index": 18,
+      "file": "reply_voice_vol_down.wav",
+      "role": "body",
+      "command": "VOICE_VOL_DOWN",
+      "map_ids": [
+        17
+      ],
+      "spoken_text": "音量已調小",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e音量已\u003csub alias=\"條\"\u003e調\u003c/sub\u003e小\u003c/speak\u003e",
+      "bytes": 39404,
+      "sha256": "7a8546ff7921b468a5d3156c522a73048bbfdf3b33256851edadb13ff4e9dcc2"
+    },
+    {
+      "index": 19,
+      "file": "reply_voice_mute.wav",
+      "role": "body",
+      "command": "VOICE_MUTE",
+      "map_ids": [
+        18
+      ],
+      "spoken_text": "已關閉語音",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e已關閉語音\u003c/speak\u003e",
+      "bytes": 38764,
+      "sha256": "ba7106e109b928f1502f743c70007c9d260da3412759b04acdac4d612f2b1155"
+    },
+    {
+      "index": 20,
+      "file": "reply_timer_cancel.wav",
+      "role": "body",
+      "command": "TIMER_CANCEL",
+      "map_ids": [
+        19
+      ],
+      "spoken_text": "定時已取消",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e定時已取消\u003c/speak\u003e",
+      "bytes": 42284,
+      "sha256": "24fee29e4e4bb6e52fdccf856878e5284a959b651a66dfa0df8c5800d71282cb"
+    },
+    {
+      "index": 21,
+      "file": "reply_temp_set.wav",
+      "role": "body",
+      "command": "TEMP_SET",
+      "map_ids": [
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "spoken_text": "溫度已設定",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e溫度已設定\u003c/speak\u003e",
+      "bytes": 38444,
+      "sha256": "4111bcdbc4443f25e93bf0cdd7e0cf8dba870503ce3d12569db29b587cc2e81e"
+    },
+    {
+      "index": 22,
+      "file": "reply_timer_off.wav",
+      "role": "body",
+      "command": "TIMER_OFF",
+      "map_ids": [
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212
+      ],
+      "spoken_text": "定時已設定",
+      "synthesis_ssml": "\u003cspeak version=\"1.0\" xmlns=\"http://www.w3.org/2001/10/synthesis\" xml:lang=\"zh-TW\"\u003e定時已設定\u003c/speak\u003e",
+      "bytes": 38764,
+      "sha256": "67bdea67d49db0237131830b78e27a1ec75fea9158bc7f415d1c9577de7fb6ac"
+    }
+  ]
 }

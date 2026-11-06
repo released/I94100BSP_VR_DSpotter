@@ -15,6 +15,7 @@ __align(4) UINT32 u32NuOneExTempBuf[(NUONEEX_DECODE_TEMP_BUF_SIZE + 3) / 4];
 INT16 i16OutBuf[NUONEEX_DECODE_SAMPLE_PER_FRAME];
 
 /** add code start **/
+/* Queue IDs are copied here so the caller's stack buffer may be released. */
 static uint32_t audio_rom_bytes;
 static uint8_t reply_indexes[AIRCON_REPLY_MAX_PARTS];
 static uint32_t reply_count;
@@ -31,11 +32,13 @@ S_AUDIO_CALLBACK const g_asAppCallBack[] = {
 };
 
 /** add code start **/
+/* Install the validated ROM length before the decoder can read Flash. */
 void PlayNuOneSetAudioSize(uint32_t bytes)
 {
     audio_rom_bytes = bytes;
 }
 
+/* Reject decoder reads outside the validated memory-mapped audio image. */
 uint32_t ReadDataCallback(void *buffer, uint32_t address, uint32_t count)
 {
     uint32_t offset;
@@ -57,6 +60,7 @@ uint32_t UserEvent_ProcessCallback(uint16_t event_index, uint16_t event_subindex
     return 0U;
 }
 
+/* I2S transmits a stereo word; duplicate the mono decoded sample to L/R. */
 void duplicate(uint8_t index)
 {
     uint16_t i;
@@ -69,6 +73,7 @@ void duplicate(uint8_t index)
 }
 
 /** add code start **/
+/* Reinitialize NuOne for a clip boundary; all supported clips are 16 kHz. */
 static BOOL BeginReplyPart(uint8_t index)
 {
     if (index >= g_sApp.Mic_NuOne.sNuOneApp.u32TotalAudioNum
@@ -81,6 +86,10 @@ static BOOL BeginReplyPart(uint8_t index)
     return u16SampleRate == 16000U;
 }
 
+/*
+ * Produce one frame for DMA: decoded speech, a prefix/body gap, or the
+ * zero-padded final frame. FALSE means that no further frame is available.
+ */
 static BOOL NextReplyFrame(void)
 {
     INT32 decoded;
@@ -117,6 +126,11 @@ static BOOL NextReplyFrame(void)
     }
 }
 
+/*
+ * Validate and copy the whole sequence, then prime both DMA halves before
+ * starting I2S. bPCMPlaying keeps main() out of recognition until the final
+ * buffered samples have drained; it covers both the prefix and body clips.
+ */
 BOOL PlayNuOneSequence(const uint8_t *indexes, uint32_t count)
 {
     uint32_t i;
@@ -155,6 +169,10 @@ BOOL PlayNuOnebyIdx(UINT8 index)
 }
 
 /** add code start **/
+/*
+ * The PDMA interrupt marks an empty half; foreground code refills that half.
+ * Drain the final buffer before stopping so the reply's last syllable plays.
+ */
 void PlayLoop(void)
 {
     uint8_t half;

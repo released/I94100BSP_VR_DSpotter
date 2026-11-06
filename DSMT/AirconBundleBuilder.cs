@@ -8,6 +8,8 @@ using System.Text;
 using System.Web.Script.Serialization;
 using System.Xml;
 
+// Windows/.NET backend used by BuildProject.ps1; no Python runtime is needed.
+// Flash limits must match AirconAudio.h, the linker and ICP addresses.
 internal static class AirconBundleBuilder
 {
     private const uint ModelAddress = 0x15000;
@@ -47,8 +49,8 @@ internal static class AirconBundleBuilder
             options = Parse(args);
             if (options.Help)
             {
-                Say("BuildLatestModel.cmd [--output CMDSet\\ReleaseV005] [--firmware path] [--no-pause]");
-                Say("Advanced: --root project-directory. No Python, PowerShell or Keil process is started.");
+                Say("DSMT\\AirconBundleBuilder.exe [--output CMDSet\\ReleaseV005] [--firmware path] [--no-pause]");
+                Say("User entry: BuildLatestModel.cmd. Native advanced option: --root project-directory.");
             }
             else
             {
@@ -114,6 +116,7 @@ internal static class AirconBundleBuilder
         return o;
     }
 
+    // Validate sources before assembling models, audio and the final image.
     private static void Build(Options o)
     {
         string manifestPath = Path.Combine(o.Root, "DSMT", "Input", "CommandManifest.json");
@@ -183,6 +186,7 @@ internal static class AirconBundleBuilder
     }
 
 
+    // Verify source hashes, clip indexes and NuOne 1.0 layout, then add ACR1/CRC.
     private static byte[] BuildAudio(string root, out Dictionary<string, object> info)
     {
         const string prefix = "AudioRes/ReplyPhrases/";
@@ -281,6 +285,7 @@ internal static class AirconBundleBuilder
         return (uint)data[(int)offset] | ((uint)data[(int)offset + 1] << 8);
     }
 
+    // Cross-check .dsmt, exported words and native pack bytes for one language.
     private static NativeModel LoadNative(string root, string language, string folder, string filename, object[] records)
     {
         string directory = Path.Combine(root, "DSMT", "Combine", "Working", folder);
@@ -394,6 +399,7 @@ internal static class AirconBundleBuilder
             "model_sha256", modelHashes, "human_pronunciation_review_complete", false) };
     }
 
+    // ACB1 contains a language directory and CRC-protected consecutive packs.
     private static byte[] Bundle(byte[] chinese, byte[] taiwanese)
     {
         byte[][] packs = new byte[][] { chinese, taiwanese };
@@ -415,6 +421,7 @@ internal static class AirconBundleBuilder
         }
     }
 
+    // Keep existing output recoverable and restore it if replacement fails.
     private static void Publish(Options o, Dictionary<string, byte[]> payloads, byte[] manifest)
     {
         Dictionary<string, byte[]> all = new Dictionary<string, byte[]>(payloads);
@@ -542,6 +549,7 @@ internal static class AirconBundleBuilder
         return bytes;
     }
 
+    // Prevent mid-build edits from mixing snapshots in one publication.
     private static void CheckInputs()
     {
         foreach (KeyValuePair<string, string> input in Inputs)

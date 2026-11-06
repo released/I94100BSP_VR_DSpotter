@@ -13,6 +13,9 @@
   "audio_address": "0x00070000",
   "audio_capacity_bytes": 65536,
   "prefix": "好的，",
+  "pronunciation_aliases": {
+    "調": "條"
+  },
   "reply_overrides": {
     "TEMP_SET": "好的，溫度已設定",
     "TIMER_OFF": "好的，定時已設定"
@@ -28,7 +31,7 @@
         1002,
         1003
       ],
-      "copy_source": "AudioRes/WavSrc/OK.wav"
+      "copy_source": "AudioRes/ReplyPhrases/WavSrc/wake_ok.wav"
     },
     {
       "index": 1,

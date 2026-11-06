@@ -1,5 +1,5 @@
 # Preserve bytes by default: DSMT exports and sealed audio inputs use hashes.
-* -text
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 
 # Documentation and scripts that have no byte-level seals.
 *.md text eol=lf

@@ -151,13 +151,13 @@
   "audio": {
     "format": "ACR1",
     "address": "0x00070000",
-    "rom_bytes": 59934,
-    "rom_sha256": "ac9b6ac4a71e835e621547df8e2829c2c29432e23897e3bec654857f39df5ac5",
+    "rom_bytes": 59974,
+    "rom_sha256": "543f857ba43566fb308e50bae6812aa6b3fc04b3a4d0cc79588fd4593979789b",
     "clips": 23,
     "sample_rate": 16000,
     "bits_per_sample": 1,
     "profile": "AudioRes/ReplyPhrases/ReplyProfile.json",
-    "profile_sha256": "7ea82dd37672d876502947c53ad06f94829ab9ca9473543e767ed2081cc2690f"
+    "profile_sha256": "cdf402819d70c4cde75881df2c608be44286c77bcf9b38c0f4d83a4b84bec844"
   },
   "programming": {
     "DNN_NuOne_UAC.bin": "0x00000000",
@@ -184,16 +184,16 @@
       "sha256": "d103cc98b39ff4e798f37e7cf8cf0d7e1f5c2fe0bd241dfb6ae6354d621147b5"
     },
     "DNN_NuOne_UAC.bin": {
-      "bytes": 74328,
-      "sha256": "c3fce686b943453387408d9542594579032f783b29199154bfcf7a996b108e16"
+      "bytes": 75132,
+      "sha256": "d73975f1064c9c4ce3238d3af9d94bbd41d9f22d42a2ddf273f1560643141493"
     },
     "AirconReplies.bin": {
-      "bytes": 59952,
-      "sha256": "1727ba8c089e8d31f06bf368471e8fde4e71e5f8c025e9c92a8fc5570aedc777"
+      "bytes": 59992,
+      "sha256": "7c7c2f98024d881b6421343a7327ddeff5352698bb87a60344ffc2f4bb9096e8"
     },
     "AirconDataFlash.bin": {
-      "bytes": 432688,
-      "sha256": "bdd05c93416b929b5088e6561cc254a5d353ae15d7e06cd96028dfe29a26b9c1"
+      "bytes": 432728,
+      "sha256": "77d62afdac2b12564953b2a8762f3b2f63e9f31207019fd3b9173274984c99fb"
     }
   },
   "verification_limits": [

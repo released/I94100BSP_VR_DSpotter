@@ -30,14 +30,14 @@ BuildTargetType = 0
 BodyName = W55VA75
 ManualDownload = 0
 AutoOpenFormFile = 1
-WorkingDirectory = ..\ReplyPhrases,D:\SourceCode\_Avery_I94100\I94100BSP_VR_DSpotter\AudioRes\ReplyPhrases
+WorkingDirectory = C:\NUVOTON\NSPPLAYLISTEDITOR\V3.01.000\NSP_SDS\SDS_NSP\AUDIOTOOL,C:\NUVOTON\NSPPLAYLISTEDITOR\V3.01.000\NSP_SDS\SDS_NSP\AUDIOTOOL
 
 [BuildOption]
 InstrumentSrcLineNo = 0
 InstrumentMaxIndexNo = -1
-InstrumentSrcFile = ,
+InstrumentSrcFile = .\,D:\SourceCode\_Avery_I94100\I94100BSP_VR_DSpotter\AudioRes\ReplyPhrases\
 UserCmdSrcLineNo = 0
-UserCmdSrcFile = ,
+UserCmdSrcFile = .\,D:\SourceCode\_Avery_I94100\I94100BSP_VR_DSpotter\AudioRes\ReplyPhrases\
 UserCmdMaxIndexNo = -1
 
 [PowerScriptInfo]
@@ -512,6 +512,7 @@ PTouchKeyThreshold6_3 = 0
 TouchKeyThreshold_Untouched14_7 = 0
 PTouchKeyThreshold1_6 = 0
 TouchKeyThreshold_NoiseFilter3_6 = 0
+TouchKeyWKSelSleepTime0 = 79
 TouchKeyThreshold8_23 = 0
 PTouchKeyThreshold14_2 = 0
 TouchKeyThreshold_Untouched12_6 = 0
@@ -673,7 +674,7 @@ PTouchKeyThreshold11_9 = 0
 TouchKeyThreshold_NoiseFilter3_9 = 0
 TouchKeyThreshold4_4 = 0
 PTouchKeyThreshold12_0 = 0
-CustomizedBootLoaderFile = ,
+CustomizedBootLoaderFile = .\,D:\SourceCode\_Avery_I94100\I94100BSP_VR_DSpotter\AudioRes\ReplyPhrases\
 TouchKeyThreshold_NoiseFilter4_4 = 0
 TouchKeyThreshold_Untouched4_10 = 0
 PTouchKeyThreshold10_0 = 0
@@ -1992,6 +1993,22 @@ Embedded118 = .\WavSrc\reply_timer_cancel.WAV,D:\SourceCode\_Avery_I94100\I94100
 Embedded14 = .\WavSrc\reply_mode_auto.WAV,D:\SourceCode\_Avery_I94100\I94100BSP_VR_DSpotter\AudioRes\ReplyPhrases\WavSrc\reply_mode_auto.WAV
 Embedded11 = .\WavSrc\reply_fan_auto.WAV,D:\SourceCode\_Avery_I94100\I94100BSP_VR_DSpotter\AudioRes\ReplyPhrases\WavSrc\reply_fan_auto.WAV
 
+[DefaultCodecSettings]
+NUS_BR = 2.000000e+000
+NUV_BR = 7.000000e-001
+NUV_VAD_CNG = 1
+WTBL_GEN = 0
+NUO_BR = 1.000000e+000
+NUL_BR = 1.500000e+000
+MD4_OPT = 0
+NUOS_BR = 1.000000e+000
+NU_EVENT = 1
+SIL_LEN = 9
+SIL_THR = 0
+EN_UIOW = 1
+ChipItemName = N572F072
+LOOP_PLAY = 1
+
 [Resource Info]
 ResFile13_UserData = 0
 ResFile23_NSCLevel = 0
@@ -2499,20 +2516,4 @@ ResFile20_UsedROMSize = 0
 ResFile6_ReservedSize = -1
 ResFile16_Relocate = 1
 ResFile13_SoundQuality = 1.0
-
-[DefaultCodecSettings]
-NUS_BR = 2.000000e+000
-NUV_BR = 7.000000e-001
-NUV_VAD_CNG = 1
-WTBL_GEN = 0
-NUO_BR = 1.000000e+000
-NUL_BR = 1.500000e+000
-MD4_OPT = 0
-NUOS_BR = 1.000000e+000
-NU_EVENT = 1
-SIL_LEN = 9
-SIL_THR = 0
-EN_UIOW = 1
-ChipItemName = N572F072
-LOOP_PLAY = 1
 

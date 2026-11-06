@@ -14,6 +14,11 @@ static uint32_t Read16(const uint8_t *data)
     return (uint32_t)data[0] | ((uint32_t)data[1] << 8);
 }
 
+/*
+ * The ACR1 wrapper contains version, ROM length and CRC32. Validate every
+ * audio chunk before enabling playback: NuOne, 16 kHz, 320-bit frames
+ * (1.0 bit/sample). The decoder later reads the validated ROM in Flash.
+ */
 int32_t AirconAudio_Load(const uint8_t *image, uint32_t available,
                         AIRCON_AUDIO *audio)
 {
@@ -69,6 +74,12 @@ int32_t AirconAudio_Load(const uint8_t *image, uint32_t available,
     return 0;
 }
 
+/*
+ * Wake uses clip 0. Controls queue clip 1 (the shared prefix) and a body.
+ * Temperature and timer values remain in UART while their replies share
+ * clips 21 and 22. Keep this mapping synchronized with ReplyProfile.json,
+ * the Audio Tool index header, and the packaging validation rules.
+ */
 int32_t AirconAudio_Reply(int32_t map_id, AIRCON_REPLY *reply)
 {
     uint32_t body;

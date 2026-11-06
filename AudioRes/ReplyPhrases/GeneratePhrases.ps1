@@ -99,13 +99,24 @@ try {
         if ([IO.Path]::GetFileName($phrase.file) -ne $phrase.file) { throw 'Invalid phrase filename.' }
         $path = Join-Path $OutputDirectory $phrase.file
         if ($phrase.copy_source) {
-            Copy-Item -LiteralPath (Join-Path $root $phrase.copy_source) -Destination $path
+            $copyPath = [IO.Path]::GetFullPath((Join-Path $root $phrase.copy_source))
+            if (-not (Test-Path -LiteralPath $copyPath -PathType Leaf)) { throw ('Missing audio copy source: '+$phrase.copy_source) }
+            if ($copyPath -ine [IO.Path]::GetFullPath($path)) {
+                Copy-Item -LiteralPath $copyPath -Destination $path
+            }
         }
         else {
             $stream = New-Object IO.MemoryStream
             try {
                 $synth.SetOutputToAudioStream($stream,$format)
-                $synth.Speak($phrase.text)
+                $spoken = [Security.SecurityElement]::Escape([string]$phrase.text)
+                foreach ($alias in $profile.pronunciation_aliases.PSObject.Properties) {
+                    $original = [Security.SecurityElement]::Escape($alias.Name)
+                    $replacement = [Security.SecurityElement]::Escape([string]$alias.Value)
+                    $spoken = $spoken.Replace($original, ('<sub alias="'+$replacement+'">'+$original+'</sub>'))
+                }
+                $ssml = '<speak version="1.0" xmlns="http://www.w3.org/2001/10/synthesis" xml:lang="zh-TW">'+$spoken+'</speak>'
+                $synth.SpeakSsml($ssml)
                 $pcm = $stream.ToArray()
                 $synth.SetOutputToNull()
             }
@@ -116,6 +127,7 @@ try {
         $entries.Add([pscustomobject][ordered]@{
             index=$phrase.index;file=$phrase.file;role=$phrase.role;command=$phrase.command
             map_ids=@($phrase.map_ids);spoken_text=$phrase.text
+            synthesis_ssml=$(if ($phrase.copy_source) { $null } else { $ssml })
             bytes=(Get-Item -LiteralPath $path).Length
             sha256=(Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant()
         })

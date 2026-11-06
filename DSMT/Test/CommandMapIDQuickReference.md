@@ -1,76 +1,57 @@
 # 國語／台語命令詞與 MapID 速查表
 
-同一列的國語及台語說法對應相同 MapID。UART 的 `map_id` 為十進位；`language` 表示接受結果的引擎。
+同列別名共用 MapID；nanoe 讀「奈諾伊」。逐句步驟見 [UserCommandTestGuide.txt](UserCommandTestGuide.txt)，完整台語拼音見 [TaiwanesePronunciation.md](TaiwanesePronunciation.md)。
 
-表中保留模型文字；`nanoe` 在兩語均讀「奈諾伊」。逐句步驟及台語音素見 [UserCommandTestGuide.txt](UserCommandTestGuide.txt)。
+| MapID | 分類 | 國語命令詞 | 台語命令詞 | 台語 DSMT 羅馬拼音 | UART command | 參數／區域 | 國語回覆 |
+|---|---|---|---|---|---|---|---|
+| 1001 | 喚醒 | 房間冷氣 | 房間冷氣 | 房間冷氣：`<zh-NAN>pang7.king7.ling1.khi3` | `WAKE` | zone=ROOM | 喚醒提示音 |
+| 1002 | 喚醒 | 客廳冷氣 | 客廳冷氣 | 客廳冷氣：`<zh-NAN>kheh8.thiann7.ling1.khi3` | `WAKE` | zone=LIVING | 喚醒提示音 |
+| 1003 | 喚醒 | 國際冷氣 |  |  | `WAKE` | zone=GLOBAL | 喚醒提示音 |
+| 1 | 電源 | 開機 / 開冷氣 / 開空調 | 開冷氣 / 打開冷氣 | 開冷氣：`<zh-NAN>khui7.ling1.khi3` ／ `<zh-NAN>khai7.ling1.khi3`<br>打開冷氣：`<zh-NAN>thau1.khui7.ling1.khi3` | `POWER_ON` | — | 好的，為您開機 |
+| 2 | 電源 | 關機 / 關冷氣 / 關空調 | 關冷氣 / 冷氣關起來 / 冷氣關掉 | 關冷氣：`<zh-NAN>kuainn7.ling1.khi3` ／ `<zh-NAN>kuan7.ling1.khi3`<br>冷氣關起來：`<zh-NAN>ling1.khi2.kuainn1.khi3.lai5`<br>冷氣關掉：`<zh-NAN>ling1.khi2.kuainn1.tiau3` | `POWER_OFF` | — | 好的，為您關機 |
+| 3 | 模式 | 舒適冷房 / 吹冷氣 | 吹冷氣 | 吹冷氣：`<zh-NAN>tshui7.ling1.khi3` ／ `<zh-NAN>tshue7.ling1.khi3` ／ `<zh-NAN>phuh8.ling1.khi3` ／ `<zh-NAN>tshe7.ling1.khi3` | `MODE_COOL` | — | 好的，切換冷氣模式 |
+| 4 | 模式 | 舒適暖房 / 開暖氣 / 吹暖氣 | 吹暖氣 | 吹暖氣：`<zh-NAN>tshui7.luan1.khi3` ／ `<zh-NAN>tshue7.luan1.khi3` ／ `<zh-NAN>phuh8.luan1.khi3` ／ `<zh-NAN>tshe7.luan1.khi3` ／ `<zh-NAN>tshui7.sio7.khi3` | `MODE_HEAT` | — | 好的，切換暖氣模式 |
+| 5 | 模式 | 開除濕 / 吹除濕 | 開除濕 | 開除濕：`<zh-NAN>khai7.ti7.sip4` ／ `<zh-NAN>khai7.tu7.sip4` | `MODE_DRY` | — | 好的，切換除濕模式 |
+| 6 | 模式 | 開自動 | 開自動 | 開自動：`<zh-NAN>khui7.tsu3.tong7` ／ `<zh-NAN>khai7.tsu3.tong7` | `MODE_AUTO` | — | 好的，切換自動模式 |
+| 7 | 溫度 | 溫度調高 / 溫度高一點 / 太冷了 | 溫度調高 / 溫度攑懸 | 溫度調高：`<zh-NAN>un7.too3.tiau7.kuan5`<br>溫度攑懸：`<zh-NAN>un7.too7.gia3.kuan5` | `TEMP_UP` | — | 好的，溫度已調高 |
+| 8 | 溫度 | 溫度調低 / 溫度低一點 / 太熱了 | 溫度調低 / 溫度降落 | 溫度調低：`<zh-NAN>un7.too3.tiau7.ke7`<br>溫度降落：`<zh-NAN>un7.too3.kang2.loh8` | `TEMP_DOWN` | — | 好的，溫度已調低 |
+| 116 | 溫度 | 設定十六度 | 設定十六度 | 設定十六度：`<zh-NAN>siat8.ting3.tsap4.lak4.to5` ／ `<zh-NAN>siat8.ting3.sip4.lak4.to5` ／ `<zh-NAN>siat8.ting3.tsap4.liok4.to5` ／ `<zh-NAN>siat8.ting3.sip4.liok4.to5` ／ `<zh-NAN>siat8.ting3.tsap4.lak4.too7` ／ `<zh-NAN>siat8.ting3.sip4.lak4.too7` ／ `<zh-NAN>siat8.ting3.tsap4.liok4.too7` ／ `<zh-NAN>siat8.ting3.sip4.liok4.too7` | `TEMP_SET` | value=16 unit=C | 好的，溫度已設定 |
+| 117 | 溫度 | 設定十七度 | 設定十七度 | 設定十七度：`<zh-NAN>siat8.ting3.tsap4.tshit8.to5` ／ `<zh-NAN>siat8.ting3.sip4.tshit8.to5` ／ `<zh-NAN>siat8.ting3.tsap4.tshit8.too7` ／ `<zh-NAN>siat8.ting3.sip4.tshit8.too7` | `TEMP_SET` | value=17 unit=C | 好的，溫度已設定 |
+| 118 | 溫度 | 設定十八度 | 設定十八度 | 設定十八度：`<zh-NAN>siat8.ting3.tsap4.pueh8.to5` ／ `<zh-NAN>siat8.ting3.sip4.pueh8.to5` ／ `<zh-NAN>siat8.ting3.tsap4.pat8.to5` ／ `<zh-NAN>siat8.ting3.sip4.pat8.to5` ／ `<zh-NAN>siat8.ting3.tsap4.peh8.to5` ／ `<zh-NAN>siat8.ting3.sip4.peh8.to5` | `TEMP_SET` | value=18 unit=C | 好的，溫度已設定 |
+| 119 | 溫度 | 設定十九度 | 設定十九度 | 設定十九度：`<zh-NAN>siat8.ting3.tsap4.kau1.to5` ／ `<zh-NAN>siat8.ting3.sip4.kau1.to5` ／ `<zh-NAN>siat8.ting3.tsap4.kiu1.to5` ／ `<zh-NAN>siat8.ting3.sip4.kiu1.to5` ／ `<zh-NAN>siat8.ting3.tsap4.kiau1.to5` ／ `<zh-NAN>siat8.ting3.sip4.kiau1.to5` | `TEMP_SET` | value=19 unit=C | 好的，溫度已設定 |
+| 120 | 溫度 | 設定二十度 | 設定二十度 | 設定二十度：`<zh-NAN>siat8.ting3.ji3.tsap4.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.to5` ／ `<zh-NAN>siat8.ting3.ji3.tsap4.too7` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.too7` ／ `<zh-NAN>siat8.ting3.ji3.sip4.too7` ／ `<zh-NAN>siat8.ting3.nng3.sip4.too7` | `TEMP_SET` | value=20 unit=C | 好的，溫度已設定 |
+| 121 | 溫度 | 設定二十一度 | 設定二十一度 | 設定二十一度：`<zh-NAN>siat8.ting3.ji3.tsap4.bat4` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.bat4` ／ `<zh-NAN>siat8.ting3.ji3.sip4.bat4` ／ `<zh-NAN>siat8.ting3.nng3.sip4.bat4` | `TEMP_SET` | value=21 unit=C | 好的，溫度已設定 |
+| 122 | 溫度 | 設定二十二度 | 設定二十二度 | 設定二十二度：`<zh-NAN>siat8.ting3.ji3.tsap4.ji3.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.ji3.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.ji3.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.ji3.to5` ／ `<zh-NAN>siat8.ting3.ji3.tsap4.nng3.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.nng3.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.nng3.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.nng3.to5` | `TEMP_SET` | value=22 unit=C | 好的，溫度已設定 |
+| 123 | 溫度 | 設定二十三度 | 設定二十三度 | 設定二十三度：`<zh-NAN>siat8.ting3.ji3.tsap4.sam7.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.sam7.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.sam7.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.sam7.to5` | `TEMP_SET` | value=23 unit=C | 好的，溫度已設定 |
+| 124 | 溫度 | 設定二十四度 | 設定二十四度 | 設定二十四度：`<zh-NAN>siat8.ting3.ji3.tsap4.su2.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.su2.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.su2.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.su2.to5` ／ `<zh-NAN>siat8.ting3.ji3.tsap4.si2.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.si2.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.si2.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.si2.to5` | `TEMP_SET` | value=24 unit=C | 好的，溫度已設定 |
+| 125 | 溫度 | 設定二十五度 | 設定二十五度 | 設定二十五度：`<zh-NAN>siat8.ting3.ji3.tsap4.goo3.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.goo3.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.goo3.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.goo3.to5` ／ `<zh-NAN>siat8.ting3.ji3.tsap4.ngoo1.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.ngoo1.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.ngoo1.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.ngoo1.to5` | `TEMP_SET` | value=25 unit=C | 好的，溫度已設定 |
+| 126 | 溫度 | 設定二十六度 | 設定二十六度 | 設定二十六度：`<zh-NAN>siat8.ting3.ji3.tsap4.lak4.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.lak4.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.lak4.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.lak4.to5` ／ `<zh-NAN>siat8.ting3.ji3.tsap4.liok4.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.liok4.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.liok4.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.liok4.to5` | `TEMP_SET` | value=26 unit=C | 好的，溫度已設定 |
+| 127 | 溫度 | 設定二十七度 | 設定二十七度 | 設定二十七度：`<zh-NAN>siat8.ting3.ji3.tsap4.tshit8.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.tshit8.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.tshit8.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.tshit8.to5` | `TEMP_SET` | value=27 unit=C | 好的，溫度已設定 |
+| 128 | 溫度 | 設定二十八度 | 設定二十八度 | 設定二十八度：`<zh-NAN>siat8.ting3.ji3.tsap4.pueh8.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.pueh8.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.pueh8.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.pueh8.to5` ／ `<zh-NAN>siat8.ting3.ji3.tsap4.pat8.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.pat8.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.pat8.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.pat8.to5` | `TEMP_SET` | value=28 unit=C | 好的，溫度已設定 |
+| 129 | 溫度 | 設定二十九度 | 設定二十九度 | 設定二十九度：`<zh-NAN>siat8.ting3.ji3.tsap4.kau1.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.kau1.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.kau1.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.kau1.to5` ／ `<zh-NAN>siat8.ting3.ji3.tsap4.kiu1.to5` ／ `<zh-NAN>siat8.ting3.nng3.tsap4.kiu1.to5` ／ `<zh-NAN>siat8.ting3.ji3.sip4.kiu1.to5` ／ `<zh-NAN>siat8.ting3.nng3.sip4.kiu1.to5` | `TEMP_SET` | value=29 unit=C | 好的，溫度已設定 |
+| 130 | 溫度 | 設定三十度 | 設定三十度 | 設定三十度：`<zh-NAN>siat8.ting3.sam7.tsap4.to5` ／ `<zh-NAN>siat8.ting3.sann7.tsap4.to5` ／ `<zh-NAN>siat8.ting3.sam7.sip4.to5` ／ `<zh-NAN>siat8.ting3.sann7.sip4.to5` ／ `<zh-NAN>siat8.ting3.sam7.tsap4.too7` | `TEMP_SET` | value=30 unit=C | 好的，溫度已設定 |
+| 9 | 風量 | 風量大一點 / 增大風量 / 風太小 | 風量大一點 | 風量大一點：`<zh-NAN>hong7.ling3.tai3.it8.tiam2` ／ `<zh-NAN>hong7.niu7.tai3.it8.tiam2` | `FAN_UP` | — | 好的，風量已調大 |
+| 10 | 風量 | 風量小一點 / 減小風量 / 風太大 | 風量細一點 | 風量細一點：`<zh-NAN>hong7.ling3.se2.tam3.poh8` ／ `<zh-NAN>hong7.niu7.se2.tam3.poh8` | `FAN_DOWN` | — | 好的，風量已調小 |
+| 11 | 風量 | 風量自動 | 風量自動 | 風量自動：`<zh-NAN>hong7.ling3.tsu3.tong7` ／ `<zh-NAN>hong7.niu7.tsu3.tong7` | `FAN_AUTO` | — | 好的，風量已設為自動 |
+| 12 | 風向 | 風向自動 / 上下擺動 | 風向自動 | 風向自動：`<zh-NAN>hong7.hiang2.tsu3.tong7` ／ `<zh-NAN>hong7.hiong2.tsu3.tong7` | `SWING_AUTO` | — | 好的，風向設定為自動 |
+| 13 | 風向 | 固定風向 / 停止擺動 | 固定風向 | 固定風向：`<zh-NAN>koo2.ting3.hong7.hiang3` ／ `<zh-NAN>koo2.ting3.hong7.hiong3` | `SWING_HOLD` | — | 好的，風向已固定 |
+| 14 | 健康 | 開 nanoe / 啟動 nanoe | 開 nanoe | 開 nanoe：`<zh-NAN>khui7.nai3.noo3.i1` | `NANOE_ON` | — | 好的，已開啟 奈諾伊 |
+| 15 | 健康 | 關 nanoe / 關閉 nanoe | 關 nanoe | 關 nanoe：`<zh-NAN>kuainn7.nai3.noo3.i1` | `NANOE_OFF` | — | 好的，已關閉 奈諾伊 |
+| 16 | 音量 | 聲音大一點 / 增大音量 | 聲音大一點 | 聲音大一點：`<zh-NAN>siann7.im7.tai3.it8.tiam2` | `VOICE_VOL_UP` | — | 好的，音量已調大 |
+| 17 | 音量 | 聲音小一點 / 減小音量 | 聲音細一點 | 聲音細一點：`<zh-NAN>siann7.im7.se2.tam3.poh8` ／ `<zh-NAN>siann7.im7.sue2.tam3.poh8` | `VOICE_VOL_DOWN` | — | 好的，音量已調小 |
+| 18 | 音量 | 關閉語音 / 靜音模式 | 關閉語音 | 關閉語音：`<zh-NAN>kuainn1.tiam3.gi1.im1` ／ `<zh-NAN>kuainn1.tiam3.gu1.im1` | `VOICE_MUTE` | — | 好的，已關閉語音 |
+| 201 | 定時 | 定時一小時關機 / 一小時後關機 | 一小時後關機 | 一小時後關機：`<zh-NAN>it8.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>tsit4.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>it8.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>tsit4.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>it8.sio1.si7.hau3.kuainn7.ki1` ／ `<zh-NAN>tsit4.sio1.si7.hau3.kuainn7.ki1` | `TIMER_OFF` | value=1 unit=h | 好的，定時已設定 |
+| 202 | 定時 | 定時兩小時關機 / 兩小時後關機 | 兩小時後關機 | 兩小時後關機：`<zh-NAN>niu1.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>nng3.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>ling1.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>liong1.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>niu1.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>nng3.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>ling1.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>liong1.sio1.si7.hoo3.kuainn7.ki1` | `TIMER_OFF` | value=2 unit=h | 好的，定時已設定 |
+| 203 | 定時 | 定時三小時關機 / 三小時後關機 | 三小時後關機 | 三小時後關機：`<zh-NAN>sam7.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>sann7.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>sam7.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>sann7.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>sam7.sio1.si7.hau3.kuainn7.ki1` | `TIMER_OFF` | value=3 unit=h | 好的，定時已設定 |
+| 204 | 定時 | 定時四小時關機 / 四小時後關機 | 四小時後關機 | 四小時後關機：`<zh-NAN>su2.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>si2.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>su2.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>si2.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>su2.sio1.si7.hau3.kuainn7.ki1` ／ `<zh-NAN>si2.sio1.si7.hau3.kuainn7.ki1` | `TIMER_OFF` | value=4 unit=h | 好的，定時已設定 |
+| 205 | 定時 | 定時五小時關機 / 五小時後關機 | 五小時後關機 | 五小時後關機：`<zh-NAN>goo3.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>ngoo1.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>goo3.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>ngoo1.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>goo3.sio1.si7.hau3.kuainn7.ki1` ／ `<zh-NAN>ngoo1.sio1.si7.hau3.kuainn7.ki1` | `TIMER_OFF` | value=5 unit=h | 好的，定時已設定 |
+| 206 | 定時 | 定時六小時關機 / 六小時後關機 | 六小時後關機 | 六小時後關機：`<zh-NAN>lak4.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>liok4.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>lak4.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>liok4.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>lak4.sio1.si7.hau3.kuainn7.ki1` ／ `<zh-NAN>liok4.sio1.si7.hau3.kuainn7.ki1` | `TIMER_OFF` | value=6 unit=h | 好的，定時已設定 |
+| 207 | 定時 | 定時七小時關機 / 七小時後關機 | 七小時後關機 | 七小時後關機：`<zh-NAN>tshit8.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>tshit8.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>tshit8.sio1.si7.hau3.kuainn7.ki1` | `TIMER_OFF` | value=7 unit=h | 好的，定時已設定 |
+| 208 | 定時 | 定時八小時關機 / 八小時後關機 | 八小時後關機 | 八小時後關機：`<zh-NAN>pueh8.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>pat8.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>peh8.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>pueh8.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>pat8.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>peh8.sio1.si7.hoo3.kuainn7.ki1` | `TIMER_OFF` | value=8 unit=h | 好的，定時已設定 |
+| 209 | 定時 | 定時九小時關機 / 九小時後關機 | 九小時後關機 | 九小時後關機：`<zh-NAN>kau1.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>kiu1.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>kiau1.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>kau1.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>kiu1.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>kiau1.sio1.si7.hoo3.kuainn7.ki1` | `TIMER_OFF` | value=9 unit=h | 好的，定時已設定 |
+| 210 | 定時 | 定時十小時關機 / 十小時後關機 | 十小時後關機 | 十小時後關機：`<zh-NAN>tsap4.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>sip4.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>tsap4.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>sip4.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>tsap4.sio1.si7.hau3.kuainn7.ki1` ／ `<zh-NAN>sip4.sio1.si7.hau3.kuainn7.ki1` | `TIMER_OFF` | value=10 unit=h | 好的，定時已設定 |
+| 211 | 定時 | 定時十一小時關機 / 十一小時後關機 | 十一小時後關機 | 十一小時後關機：`<zh-NAN>tsap4.it8.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>sip4.it8.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>tsap4.tsit4.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>sip4.tsit4.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>tsap4.it8.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>sip4.it8.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>tsap4.tsit4.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>sip4.tsit4.sio1.si7.hoo3.kuainn7.ki1` | `TIMER_OFF` | value=11 unit=h | 好的，定時已設定 |
+| 212 | 定時 | 定時十二小時關機 / 十二小時後關機 | 十二小時後關機 | 十二小時後關機：`<zh-NAN>tsap4.ji3.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>sip4.ji3.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>tsap4.nng3.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>sip4.nng3.sio1.si7.au3.kuainn7.ki1` ／ `<zh-NAN>tsap4.ji3.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>sip4.ji3.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>tsap4.nng3.sio1.si7.hoo3.kuainn7.ki1` ／ `<zh-NAN>sip4.nng3.sio1.si7.hoo3.kuainn7.ki1` | `TIMER_OFF` | value=12 unit=h | 好的，定時已設定 |
+| 19 | 定時 | 取消定時 | 取消定時 | 取消定時：`<zh-NAN>tshu1.siau7.u3.si7.u3.tsun7` | `TIMER_CANCEL` | — | 好的，定時已取消 |
 
-| MapID | 分類 | 國語命令詞 | 台語命令詞 | UART command | 參數／區域 | 國語回覆 |
-|---|---|---|---|---|---|---|
-| 1001 | 喚醒 | 房間冷氣 | 房間冷氣 | `WAKE` | zone=ROOM | 喚醒提示音 |
-| 1002 | 喚醒 | 客廳冷氣 | 客廳冷氣 | `WAKE` | zone=LIVING | 喚醒提示音 |
-| 1003 | 喚醒 | 國際冷氣 | — | `WAKE` | zone=GLOBAL | 喚醒提示音 |
-| 1 | 電源 | 開機 / 開冷氣 / 開空調 | 開冷氣 / 打開冷氣 | `POWER_ON` | - | 好的，為您開機 |
-| 2 | 電源 | 關機 / 關冷氣 / 關空調 | 關冷氣 / 冷氣關起來 / 冷氣關掉 | `POWER_OFF` | - | 好的，為您關機 |
-| 3 | 模式 | 舒適冷房 / 吹冷氣 | 吹冷氣 | `MODE_COOL` | - | 好的，切換冷氣模式 |
-| 4 | 模式 | 舒適暖房 / 開暖氣 / 吹暖氣 | 吹暖氣 | `MODE_HEAT` | - | 好的，切換暖氣模式 |
-| 5 | 模式 | 開除濕 / 吹除濕 | 開除濕 | `MODE_DRY` | - | 好的，切換除濕模式 |
-| 6 | 模式 | 開自動 | 開自動 | `MODE_AUTO` | - | 好的，切換自動模式 |
-| 7 | 溫度 | 溫度調高 / 溫度高一點 / 太冷了 | 溫度調高 / 溫度攑懸 | `TEMP_UP` | - | 好的，溫度已調高 |
-| 8 | 溫度 | 溫度調低 / 溫度低一點 / 太熱了 | 溫度調低 / 溫度降落 | `TEMP_DOWN` | - | 好的，溫度已調低 |
-| 116 | 溫度 | 設定十六度 | 設定十六度 | `TEMP_SET` | value=16 unit=C | 好的，溫度已設定 |
-| 117 | 溫度 | 設定十七度 | 設定十七度 | `TEMP_SET` | value=17 unit=C | 好的，溫度已設定 |
-| 118 | 溫度 | 設定十八度 | 設定十八度 | `TEMP_SET` | value=18 unit=C | 好的，溫度已設定 |
-| 119 | 溫度 | 設定十九度 | 設定十九度 | `TEMP_SET` | value=19 unit=C | 好的，溫度已設定 |
-| 120 | 溫度 | 設定二十度 | 設定二十度 | `TEMP_SET` | value=20 unit=C | 好的，溫度已設定 |
-| 121 | 溫度 | 設定二十一度 | 設定二十一度 | `TEMP_SET` | value=21 unit=C | 好的，溫度已設定 |
-| 122 | 溫度 | 設定二十二度 | 設定二十二度 | `TEMP_SET` | value=22 unit=C | 好的，溫度已設定 |
-| 123 | 溫度 | 設定二十三度 | 設定二十三度 | `TEMP_SET` | value=23 unit=C | 好的，溫度已設定 |
-| 124 | 溫度 | 設定二十四度 | 設定二十四度 | `TEMP_SET` | value=24 unit=C | 好的，溫度已設定 |
-| 125 | 溫度 | 設定二十五度 | 設定二十五度 | `TEMP_SET` | value=25 unit=C | 好的，溫度已設定 |
-| 126 | 溫度 | 設定二十六度 | 設定二十六度 | `TEMP_SET` | value=26 unit=C | 好的，溫度已設定 |
-| 127 | 溫度 | 設定二十七度 | 設定二十七度 | `TEMP_SET` | value=27 unit=C | 好的，溫度已設定 |
-| 128 | 溫度 | 設定二十八度 | 設定二十八度 | `TEMP_SET` | value=28 unit=C | 好的，溫度已設定 |
-| 129 | 溫度 | 設定二十九度 | 設定二十九度 | `TEMP_SET` | value=29 unit=C | 好的，溫度已設定 |
-| 130 | 溫度 | 設定三十度 | 設定三十度 | `TEMP_SET` | value=30 unit=C | 好的，溫度已設定 |
-| 9 | 風量 | 風量大一點 / 增大風量 / 風太小 | 風量大一點 | `FAN_UP` | - | 好的，風量已調大 |
-| 10 | 風量 | 風量小一點 / 減小風量 / 風太大 | 風量細一點 | `FAN_DOWN` | - | 好的，風量已調小 |
-| 11 | 風量 | 風量自動 | 風量自動 | `FAN_AUTO` | - | 好的，風量已設為自動 |
-| 12 | 風向 | 風向自動 / 上下擺動 | 風向自動 | `SWING_AUTO` | - | 好的，風向設定為自動 |
-| 13 | 風向 | 固定風向 / 停止擺動 | 固定風向 | `SWING_HOLD` | - | 好的，風向已固定 |
-| 14 | 健康 | 開 nanoe / 啟動 nanoe | 開 nanoe | `NANOE_ON` | - | 好的，已開啟 nanoe |
-| 15 | 健康 | 關 nanoe / 關閉 nanoe | 關 nanoe | `NANOE_OFF` | - | 好的，已關閉 nanoe |
-| 16 | 音量 | 聲音大一點 / 增大音量 | 聲音大一點 | `VOICE_VOL_UP` | - | 好的，音量已調大 |
-| 17 | 音量 | 聲音小一點 / 減小音量 | 聲音細一點 | `VOICE_VOL_DOWN` | - | 好的，音量已調小 |
-| 18 | 音量 | 關閉語音 / 靜音模式 | 關閉語音 | `VOICE_MUTE` | - | 好的，已關閉語音 |
-| 201 | 定時 | 定時一小時關機 / 一小時後關機 | 一小時後關機 | `TIMER_OFF` | value=1 unit=h | 好的，定時已設定 |
-| 202 | 定時 | 定時兩小時關機 / 兩小時後關機 | 兩小時後關機 | `TIMER_OFF` | value=2 unit=h | 好的，定時已設定 |
-| 203 | 定時 | 定時三小時關機 / 三小時後關機 | 三小時後關機 | `TIMER_OFF` | value=3 unit=h | 好的，定時已設定 |
-| 204 | 定時 | 定時四小時關機 / 四小時後關機 | 四小時後關機 | `TIMER_OFF` | value=4 unit=h | 好的，定時已設定 |
-| 205 | 定時 | 定時五小時關機 / 五小時後關機 | 五小時後關機 | `TIMER_OFF` | value=5 unit=h | 好的，定時已設定 |
-| 206 | 定時 | 定時六小時關機 / 六小時後關機 | 六小時後關機 | `TIMER_OFF` | value=6 unit=h | 好的，定時已設定 |
-| 207 | 定時 | 定時七小時關機 / 七小時後關機 | 七小時後關機 | `TIMER_OFF` | value=7 unit=h | 好的，定時已設定 |
-| 208 | 定時 | 定時八小時關機 / 八小時後關機 | 八小時後關機 | `TIMER_OFF` | value=8 unit=h | 好的，定時已設定 |
-| 209 | 定時 | 定時九小時關機 / 九小時後關機 | 九小時後關機 | `TIMER_OFF` | value=9 unit=h | 好的，定時已設定 |
-| 210 | 定時 | 定時十小時關機 / 十小時後關機 | 十小時後關機 | `TIMER_OFF` | value=10 unit=h | 好的，定時已設定 |
-| 211 | 定時 | 定時十一小時關機 / 十一小時後關機 | 十一小時後關機 | `TIMER_OFF` | value=11 unit=h | 好的，定時已設定 |
-| 212 | 定時 | 定時十二小時關機 / 十二小時後關機 | 十二小時後關機 | `TIMER_OFF` | value=12 unit=h | 好的，定時已設定 |
-| 19 | 定時 | 取消定時 | 取消定時 | `TIMER_CANCEL` | - | 好的，定時已取消 |
-
-## 辨識後的操作
-
-| 結果 | 目前階段 | 下一步 |
-|---|---|---|
-| 無結果、一般拒絕辨識，尚未逾時 | 控制 | 直接重說命令 |
-| 出現 `[AIRCON]`，但功能或數字錯誤 | 控制 | 等提示音播完後重說；該次記為誤辨 |
-| `[VR_ERROR] code=-1106` | 等待喚醒 | 重新說喚醒詞，等提示音，再說命令 |
-| `[VR_ERROR] code=-1105` | 等待喚醒 | 重新喚醒；若持續發生，檢查音訊處理與遺失 frame |
-| `[VR_TIMEOUT]` | 等待喚醒 | 重新說喚醒詞 |
-| `[VR_STOPPED]` | 停止辨識 | 保存錯誤紀錄、處理原因後重啟 |
-
-控制等待預設 60 秒；成功命令及提示音結束後重新計時。`-1106` 表示兩語引擎回傳不同 MapID，該次不輸出控制命令。
-
-## 語音回饋
-
-V005 喚醒播放第 0 筆提示音；控制命令播放「好的，」與功能主句，搭配一次 LED 短閃。兩語命令共用國語回覆。溫度 16～30 度回覆「好的，溫度已設定」，定時 1～12 小時回覆「好的，定時已設定」，實際數值由 UART 核對。
-
-音訊定義見 [ReplyProfile.json](../../AudioRes/ReplyPhrases/ReplyProfile.json)。燒錄使用 V005 的 `DNN_NuOne_UAC.bin` 與 `AirconDataFlash.bin`；流程見 [README](../../README.md)。
+控制等待預設 60 秒；無結果可重說，VR_TIMEOUT／-1105／-1106 後重新喚醒。辨識成功時核對 UART，再確認國語回覆及 PB0/D4 LED。

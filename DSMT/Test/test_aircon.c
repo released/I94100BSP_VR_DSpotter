@@ -25,6 +25,8 @@ static BYTE words[2][3][4] = {{{1}}, {{1}}};
 static INT required[2];
 static uint32_t fire_at[2];
 static INT map_ids[2];
+static INT confidence_scores[2];
+static INT sg_scores[2];
 static uint32_t frame_number;
 static uint32_t frame_limit;
 static uint32_t drops;
@@ -33,9 +35,11 @@ static uint32_t drop_in_sdk;
 static uint32_t init_fail;
 static uint32_t fatal_sdk;
 static uint32_t reject_once;
+static INT diagnostics_error;
 static uint32_t init_calls;
 static uint32_t release_calls;
 static uint32_t reset_calls;
+static uint32_t reset_fail_at;
 static uint32_t selected_counts[2];
 static BYTE *memory_addresses[2];
 static BYTE *preserve_addresses[2];
@@ -50,8 +54,10 @@ static void Setup(AIRCON_MODELS *models)
     memset(engines, 0, sizeof(engines));
     memset(lpbyMemPool, 0xA5, sizeof(lpbyMemPool));
     frame_number = drops = drop_at = drop_in_sdk = init_fail = fatal_sdk = reject_once = 0U;
+    diagnostics_error = 0;
     frame_limit = 30U;
     init_calls = release_calls = reset_calls = 0U;
+    reset_fail_at = 0U;
     mock_failure = 0;
     models->language_count = 2U;
     for (i = 0; i < 2U; ++i) {
@@ -59,6 +65,8 @@ static void Setup(AIRCON_MODELS *models)
         required[i] = 10001 + (INT)i;
         fire_at[i] = 0U;
         map_ids[i] = 128;
+        confidence_scores[i] = 250 + (INT)i;
+        sg_scores[i] = 40 + (INT)i;
         models->languages[i].language = i + 1U;
         models->languages[i].base = bases[i];
         models->languages[i].group_count = 3U;
@@ -110,6 +118,8 @@ INT DSpotter_Reset(HANDLE handle)
     if (handle == NULL)
         mock_failure = __LINE__;
     ++reset_calls;
+    if (reset_fail_at != 0U && reset_calls == reset_fail_at)
+        return DSPOTTER_ERR_LoadModelFailed;
     return DSPOTTER_SUCCESS;
 }
 
@@ -148,6 +158,34 @@ INT DSpotter_AddSample(HANDLE handle, SHORT *samples, INT count)
 INT DSpotter_GetResultMapID(HANDLE handle)
 {
     return map_ids[((MOCK_ENGINE *)handle)->index];
+}
+
+INT DSpotter_GetResult(HANDLE handle)
+{
+    return 100 + (INT)((MOCK_ENGINE *)handle)->index;
+}
+
+INT DSpotter_GetResultScore(HANDLE handle, INT *confidence, INT *sg_diff, INT *fil)
+{
+    INT index;
+
+    if (diagnostics_error)
+        return -9001;
+    index = (INT)((MOCK_ENGINE *)handle)->index;
+    *confidence = confidence_scores[index];
+    *sg_diff = sg_scores[index];
+    *fil = -2485;
+    return *confidence;
+}
+
+INT DSpotter_GetResultEPD(HANDLE handle, INT *duration, INT *end_silence, INT *latency)
+{
+    if (diagnostics_error)
+        return -9002;
+    *duration = 40 + (INT)((MOCK_ENGINE *)handle)->index;
+    *end_silence = 8;
+    *latency = 2;
+    return 0;
 }
 
 int32_t VR_TakeFrame(int16_t samples[], uint32_t count)
@@ -292,11 +330,27 @@ static int TestRecognition(void)
     CHECK(memory_addresses[1] - memory_addresses[0] == 10004);
     CHECK(preserve_addresses[0] != preserve_addresses[1]);
     CHECK(release_calls == 2U && mock_failure == 0);
+#if AIRCON_RESULT_DIAGNOSTICS
+    CHECK(result.candidates[0].map_id == 128 && result.candidates[1].map_id == 128);
+    CHECK(result.candidates[0].word_index == 100 && result.candidates[1].word_index == 101);
+    CHECK(result.candidates[0].matched_frame == 2U && result.candidates[1].matched_frame == 4U);
+    CHECK(result.candidates[0].confidence == 250 && result.candidates[1].confidence == 251);
+    CHECK(result.candidates[0].sg_diff == 40 && result.candidates[1].sg_diff == 41);
+    CHECK(result.candidates[0].fil == -2485 && result.candidates[1].fil == -2485);
+    CHECK(result.candidates[0].score_return == 250 && result.candidates[1].score_return == 251);
+    CHECK(result.candidates[0].word_duration == 40 && result.candidates[1].word_duration == 41);
+    CHECK(result.candidates[0].end_silence == 8 && result.candidates[1].network_latency == 2);
+    CHECK(result.candidates[0].epd_return == 0 && result.candidates[1].epd_return == 0);
+#endif
 
     Setup(&models); fire_at[1] = 2U; map_ids[1] = 1002;
     status = AirconVR_Recognize(&models, AIRCON_STAGE_WAKE, 0U, &result);
     CHECK(status == 1002 && result.language_mask == 2U);
     CHECK(selected_counts[0] == 1U && selected_counts[1] == 1U && mock_failure == 0);
+#if AIRCON_RESULT_DIAGNOSTICS
+    CHECK(result.candidates[0].matched_frame == 0U && result.candidates[0].confidence == 0);
+    CHECK(result.candidates[1].map_id == 1002 && result.candidates[1].word_index == 101);
+#endif
 
     Setup(&models); fire_at[0] = 2U;
     status = AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 3U, &result);
@@ -306,10 +360,28 @@ static int TestRecognition(void)
     Setup(&models); fire_at[0] = 2U; fire_at[1] = 3U; map_ids[1] = 212;
     CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 10U, &result) == AIRCON_ERR_CONFLICT);
     CHECK(result.map_id == 0 && release_calls == 2U);
+#if AIRCON_RESULT_DIAGNOSTICS
+    CHECK(result.candidates[0].map_id == 128 && result.candidates[1].map_id == 212);
+#endif
 
     Setup(&models);
     CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 5U, &result) == 0);
     CHECK(result.frames == 5U && release_calls == 2U && mock_failure == 0);
+#if AIRCON_RESULT_DIAGNOSTICS
+    CHECK(result.candidates[0].matched_frame == 0U && result.candidates[1].matched_frame == 0U);
+    CHECK(result.candidates[1].map_id == 0 && result.candidates[1].word_duration == 0);
+
+    Setup(&models); diagnostics_error = 1; fire_at[0] = 1U; fire_at[1] = 1U;
+#if AIRCON_CONTROL_SCORE_FILTER
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 5U, &result) == 0);
+    CHECK(result.filtered_count == 2U && result.language_mask == 0U);
+#else
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 5U, &result) == 128);
+#endif
+    CHECK(result.candidates[0].score_return == -9001 && result.candidates[1].epd_return == -9002);
+    CHECK(result.candidates[0].confidence == 0 && result.candidates[1].word_duration == 0);
+    CHECK(release_calls == 2U && mock_failure == 0);
+#endif
 
     Setup(&models);
     configured_frames = AIRCON_CONTROL_TIMEOUT_FRAMES;
@@ -358,6 +430,119 @@ static int TestRecognition(void)
     Setup(&models); models.languages[0].groups[1] = NULL;
     CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 5U, &result) == AIRCON_ERR_PACK);
     CHECK(AirconVR_Recognize(&models, 9U, 5U, &result) == AIRCON_ERR_BUNDLE);
+    return 0;
+}
+
+static int TestScorePolicy(void)
+{
+#if AIRCON_CONTROL_SCORE_FILTER || AIRCON_CONFLICT_SCORE_ARBITRATION
+    AIRCON_MODELS models;
+    AIRCON_RECOGNITION result;
+    int32_t status;
+
+#if AIRCON_CONTROL_SCORE_FILTER
+    /* Mandarin cancellation versus the low-score Taiwanese warm-mode candidate. */
+    Setup(&models); fire_at[0] = fire_at[1] = 2U;
+    map_ids[0] = 19; map_ids[1] = 4;
+    confidence_scores[0] = 46; sg_scores[0] = 48;
+    confidence_scores[1] = 0; sg_scores[1] = 10;
+    status = AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 15U, &result);
+    CHECK(status == 19 && result.language_mask == 1U);
+    CHECK(result.filtered_count == 1U && result.candidates[1].filtered == 1U);
+    CHECK(reset_calls == 3U && release_calls == 2U && mock_failure == 0);
+
+    /* A weak early result must not end the window before a later valid result. */
+    Setup(&models); fire_at[1] = 2U; fire_at[0] = 7U;
+    map_ids[0] = 19; map_ids[1] = 4;
+    confidence_scores[0] = 38; sg_scores[0] = 56;
+    confidence_scores[1] = 0; sg_scores[1] = 10;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 15U, &result) == 19);
+    CHECK(result.frames == 10U && result.language_mask == 1U && result.filtered_count == 1U);
+
+    /* Apply the same rule when Taiwanese has the later, correct result. */
+    Setup(&models); fire_at[0] = 2U; fire_at[1] = 7U;
+    map_ids[0] = 4; map_ids[1] = 19;
+    confidence_scores[0] = 0; sg_scores[0] = 10;
+    confidence_scores[1] = 38; sg_scores[1] = 56;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 15U, &result) == 19);
+    CHECK(result.frames == 10U && result.language_mask == 2U && result.filtered_count == 1U);
+
+    Setup(&models); fire_at[1] = 2U; map_ids[1] = 4;
+    confidence_scores[1] = 7; sg_scores[1] = 24;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 10U, &result) == 4);
+    CHECK(result.language_mask == 2U && result.filtered_count == 0U);
+
+    Setup(&models); fire_at[0] = 1U; confidence_scores[0] = 4; sg_scores[0] = 30;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 5U, &result) == 0);
+    CHECK(result.frames == 5U && result.map_id == 0 && result.filtered_count == 1U);
+    Setup(&models); fire_at[0] = 1U; confidence_scores[0] = 20; sg_scores[0] = 14;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 5U, &result) == 0);
+    CHECK(result.language_mask == 0U && result.filtered_count == 1U);
+    Setup(&models); fire_at[0] = 1U; confidence_scores[0] = 5; sg_scores[0] = 15;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 5U, &result) == 128);
+    CHECK(result.filtered_count == 0U);
+
+    Setup(&models); fire_at[1] = 1U; map_ids[1] = 1002;
+    confidence_scores[1] = -1; sg_scores[1] = 27;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_WAKE, 10U, &result) == 1002);
+    CHECK(result.language_mask == 2U && result.filtered_count == 0U);
+
+    Setup(&models); fire_at[0] = 1U; confidence_scores[0] = 0; sg_scores[0] = 10;
+    reset_fail_at = 3U;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 5U, &result) == DSPOTTER_ERR_LoadModelFailed);
+    CHECK(result.map_id == 0 && release_calls == 2U);
+#endif
+
+#if AIRCON_CONFLICT_SCORE_ARBITRATION
+    /* Mandarin warm mode versus a different Taiwanese power command. */
+    Setup(&models); fire_at[0] = 2U; fire_at[1] = 4U;
+    map_ids[0] = 4; map_ids[1] = 1;
+    confidence_scores[0] = 48; sg_scores[0] = 59;
+    confidence_scores[1] = 23; sg_scores[1] = 45;
+    status = AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 10U, &result);
+    CHECK(status == 4 && result.language_mask == 1U && result.score_resolved == 1U);
+    CHECK(result.candidates[0].map_id == 4 && result.candidates[1].map_id == 1);
+
+    Setup(&models); fire_at[0] = 2U; fire_at[1] = 4U;
+    map_ids[0] = 1; map_ids[1] = 4;
+    confidence_scores[0] = 23; sg_scores[0] = 45;
+    confidence_scores[1] = 48; sg_scores[1] = 59;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 10U, &result) == 4);
+    CHECK(result.language_mask == 2U && result.score_resolved == 1U);
+
+    Setup(&models); fire_at[0] = fire_at[1] = 2U;
+    map_ids[0] = 4; map_ids[1] = 1;
+    confidence_scores[0] = 25; sg_scores[0] = 35;
+    confidence_scores[1] = 5; sg_scores[1] = 25;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 10U, &result) == 4);
+    CHECK(result.language_mask == 1U && result.score_resolved == 1U);
+
+    Setup(&models); fire_at[0] = fire_at[1] = 2U;
+    map_ids[0] = 4; map_ids[1] = 1;
+    confidence_scores[0] = 42; sg_scores[0] = 60;
+    confidence_scores[1] = 23; sg_scores[1] = 45;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 10U, &result) == AIRCON_ERR_CONFLICT);
+    CHECK(result.map_id == 0 && result.score_resolved == 0U);
+    Setup(&models); fire_at[0] = fire_at[1] = 2U;
+    map_ids[0] = 4; map_ids[1] = 1;
+    confidence_scores[0] = 48; sg_scores[0] = 54;
+    confidence_scores[1] = 23; sg_scores[1] = 45;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 10U, &result) == AIRCON_ERR_CONFLICT);
+    CHECK(result.map_id == 0 && release_calls == 2U);
+
+    /* Same-MapID agreement and wake conflicts retain their existing meaning. */
+    Setup(&models); fire_at[0] = fire_at[1] = 2U; map_ids[0] = map_ids[1] = 3;
+    confidence_scores[0] = 19; sg_scores[0] = 23;
+    confidence_scores[1] = 28; sg_scores[1] = 43;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_CONTROL, 10U, &result) == 3);
+    CHECK(result.language_mask == 3U && result.score_resolved == 0U);
+    Setup(&models); fire_at[0] = fire_at[1] = 2U; map_ids[0] = 1001; map_ids[1] = 1002;
+    confidence_scores[0] = 48; sg_scores[0] = 59;
+    confidence_scores[1] = 23; sg_scores[1] = 45;
+    CHECK(AirconVR_Recognize(&models, AIRCON_STAGE_WAKE, 10U, &result) == AIRCON_ERR_CONFLICT);
+    CHECK(result.map_id == 0 && result.score_resolved == 0U);
+#endif
+#endif
     return 0;
 }
 
@@ -435,6 +620,7 @@ int main(int argc, char *argv[])
     result = TestModels();
     if (!result) result = TestCommands();
     if (!result) result = TestRecognition();
+    if (!result) result = TestScorePolicy();
     if (!result) result = TestFeedback();
     if (!result && argc == 2) result = TestRealBundle(argv[1]);
     if (result) {

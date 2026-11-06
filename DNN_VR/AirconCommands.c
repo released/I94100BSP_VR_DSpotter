@@ -7,6 +7,7 @@ typedef struct {
     const char *command;
 } FIXED_COMMAND;
 
+/* Entry n represents MapID n+1. DSMT row numbers are not application IDs. */
 static const FIXED_COMMAND fixed_commands[] = {
     {"Power", "POWER_ON"}, {"Power", "POWER_OFF"},
     {"Mode", "MODE_COOL"}, {"Mode", "MODE_HEAT"},
@@ -19,6 +20,12 @@ static const FIXED_COMMAND fixed_commands[] = {
     {"Volume", "VOICE_MUTE"}, {"Timer", "TIMER_CANCEL"}
 };
 
+/*
+ * Translate either language's MapID into one language-independent action.
+ * Temperature IDs encode 100 + degrees C; timer IDs encode 200 + hours.
+ * This function describes an action; the application supplies its hardware IO.
+ * Unknown IDs return zero and must not reach a product control interface.
+ */
 int32_t AirconCommands_Decode(int32_t map_id, AIRCON_COMMAND *command)
 {
     if (command == NULL)
@@ -55,6 +62,7 @@ int32_t AirconCommands_Decode(int32_t map_id, AIRCON_COMMAND *command)
     return 0;
 }
 
+/* The last accepted wake phrase selects the destination for later controls. */
 const char *AirconCommands_Zone(int32_t wake_id)
 {
     switch (wake_id) {
@@ -65,6 +73,7 @@ const char *AirconCommands_Zone(int32_t wake_id)
     }
 }
 
+/* Bits identify engines supporting the accepted MapID; both may agree. */
 const char *AirconCommands_Languages(uint32_t mask)
 {
     switch (mask) {

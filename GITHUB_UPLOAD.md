@@ -1,107 +1,107 @@
 # GitHub 上傳操作
 
-倉庫名稱：`I94100BSP_VR_DSpotter`。可見性：**Public**。
+專案倉庫：[released/I94100BSP_VR_DSpotter](https://github.com/released/I94100BSP_VR_DSpotter)，可見性為 Public。
 
-本文件使用 Windows PowerShell。將 `<GitHub帳號>` 替換為個人帳號或組織名稱。
+## 1. 上傳目前修改
 
-## 1. 建立 GitHub 倉庫
+完成模型／音訊產生及相關測試後，雙擊專案根目錄 **[github_push.bat](github_push.bat)**。
 
-1. 登入 GitHub，選擇 **New repository**。
-2. 選擇 Owner，Repository name 輸入 `I94100BSP_VR_DSpotter`。
-3. 選擇 **Public**。
-4. 保持空白倉庫：README、`.gitignore`、License 均不勾選；這些檔案由本機專案管理。
-5. 按 **Create repository**，複製 HTTPS 網址：
+批次檔依序：
 
-   ```text
-   https://github.com/<GitHub帳號>/I94100BSP_VR_DSpotter.git
-   ```
+1. 核對目前分支為 `main`，且 `origin` 只有本專案的 HTTPS 推送網址。
+2. 執行 `git add -A`，加入新增、修改及刪除項目，套用 `.gitignore`。
+3. 有新變更時，以 `Update bilingual voice project` 作為提交訊息；沒有新變更時略過提交。
+4. 執行 `git push -u origin main`，也會推送先前已提交但尚未上傳的內容。
+5. 顯示成功或錯誤結果，按任意鍵關閉。
 
-專案內包含既有 SDK、辨識模型及音訊資源；各元件的來源與授權狀態見 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。公開發布的範圍依取得的原廠授權辦理。
+執行時需要登入，依 Git Credential Manager 提示完成 GitHub 驗證。任何一步失敗會停止；推送失敗時，本機提交仍保留，修正後可再次執行同一批次檔。進行中的 merge、cherry-pick、revert，以及已強制納入的忽略檔案需先完成處理。
 
-## 2. 檢查本機內容
-
-開啟專案根目錄的 PowerShell：
+從 PowerShell 執行且完成後不暫停：
 
 ```powershell
-Set-Location "<專案根目錄>"
-if (-not (Test-Path -LiteralPath .git)) { git init -b main }
+.\github_push.bat --no-pause
+```
+
+個別指定提交訊息時，可使用等效命令：
+
+```powershell
+Set-Location "D:\SourceCode\_Avery_I94100\I94100BSP_VR_DSpotter"
 git status --short
-git add --dry-run .
+git add -A
+git --no-pager diff --cached --stat
+git commit -m "Describe the change"
+git push -u origin main
 ```
 
-`.gitignore` 的主要規則：
+`git add -A` 會納入新增、修改及刪除項目，並依 `.gitignore` 排除暫存。`git commit` 保存到本機；`git push` 才上傳至 GitHub。
 
-| 類別 | 處理方式 |
-|---|---|
-| 韌體原始碼、Keil 工程、必要 `.lib` | 納入 |
-| `DSMT/Combine/Working/` 原生工程、模型、群組匯出 | 納入 |
-| `DSMT/Input/` 來源 Excel、需求清單、MapID | 納入 |
-| `DSMT/AirconBundleBuilder.exe` 與工具原始碼 | 納入，支援無 Python 的一鍵封裝 |
-| `AudioRes/ReplyPhrases/` 音訊來源、設定、原生工程與封裝所需產物 | 納入 |
-| `CMDSet/ReleaseV005/` 燒錄檔、指紋及燒錄說明 | 納入 |
-| README、逐句測試表、主機測試原始碼 | 納入 |
-| `_Archive/`、舊版 `ReleaseV001`～`ReleaseV004` | 留在本機，上傳時排除 |
-| Keil `obj/`、`lst/`、視窗與本機除錯設定、根目錄 `.icp` | 留在本機，上傳時排除 |
-| 測試執行紀錄、暫存、Audio Tool 快取及開發紀錄 | 留在本機，上傳時排除 |
+每條命令獨立一行，上一條完成後再執行下一條。若分頁畫面底部出現 `(END)`，按 `q` 離開，再輸入 Git 命令。
 
-`.gitattributes` 預設保留檔案位元內容；文件與一般腳本另行指定換行格式。DSMT 匯出及音訊來源清單使用 SHA-256，下載及簽出時須保留這些檔案的原始換行與編碼。
+目前分支為 `main`，`origin` 已設定為：
 
-## 3. 設定提交者
+```text
+https://github.com/released/I94100BSP_VR_DSpotter.git
+```
 
-檢查目前設定：
+核對命令：
 
 ```powershell
-git var GIT_AUTHOR_IDENT
+git branch --show-current
+git remote -v
 ```
 
-若尚未設定，使用下列命令。電子郵件可填入 GitHub 帳號設定頁所提供的 `noreply` 地址：
+## 2. 專案納入範圍
+
+| 內容 | 用途 |
+|---|---|
+| `Src/`、`DNN_VR/`、`Play/`、`SH_Audio/`、`Lib/` | 韌體、BSP 與必要函式庫 |
+| `Prj/KEIL/` | Keil 工程及記憶體配置 |
+| `DSMT/VoiceCommands.ini`、`DSMT/Import/` | 辨識規格及 DSMT 匯入資料 |
+| `DSMT/Combine/Working/` | 國語／台語原生工程、必要模型及匯出詞條 |
+| `DSMT/Input/` | 功能清單、模型狀態及原始需求 Excel |
+| `DSMT/` 工具原始碼與 `AirconBundleBuilder.exe` | 無需 Python 的一鍵產生工具與開發參考 |
+| `AudioRes/ReplyPhrases/` | 回覆 WAV、設定、Audio Tool 工程與必要編碼產物 |
+| `CMDSet/ReleaseV005/` | 最新 APROM、DataFlash、容量報告及檔案指紋 |
+| `DSMT/Test/` 程式與三份使用者測試文件 | 可重現的自動驗證與逐句板測 |
+| README 及操作教學 | INI、DSMT、Audio Tool、燒錄及測試說明 |
+
+`.gitignore` 排除歷史備份、舊版發布、Keil `obj/lst`、本機除錯設定、測試輸出與 Audio Tool 快取。工具執行後重新產生的暫存不會納入正常提交。
+
+`.gitattributes` 保留 DSMT 匯出、音訊來源與二進位產物的原始位元內容，供 SHA-256 核對。
+
+推送包含 `main` 尚未上傳的提交及其歷史。`.gitignore` 處理未追蹤檔案；既有歷史中的檔案仍屬於提交歷史。批次檔沿用現有歷史，遠端有不同提交時由 Git 拒絕推送，整合後再重跑。
+
+第三方元件說明見 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+
+## 3. 日後更新
+
+依 INI／DSMT 或 Audio Tool 教學完成修改，雙擊 `BuildLatestModel.cmd`，核對發布檔與相關測試，再雙擊 **`github_push.bat`**。
+
+手動上傳的等效命令：
+
+```powershell
+git add -A
+git --no-pager diff --cached --stat
+git commit -m "Describe the change"
+git push
+```
+
+Git 顯示 `nothing to commit` 表示沒有待提交變更。若推送被拒絕，先取得遠端狀態並檢查兩端提交：
+
+```powershell
+git fetch origin
+git --no-pager log --oneline --all --graph -20
+```
+
+## 4. 首次設定 Git 身分
+
+如 `git commit` 提示尚未設定身分，在本專案設定一次：
 
 ```powershell
 git config user.name "<Git 顯示名稱>"
 git config user.email "<GitHub noreply 電子郵件>"
 ```
 
-上述設定僅套用此專案。
+推送時依 Git Credential Manager 提示登入 GitHub。
 
-## 4. 建立第一次提交
-
-```powershell
-git add .
-git diff --cached --stat
-git diff --cached --name-only
-git commit -m "Initial import: I94124 bilingual air-conditioner voice control"
-```
-
-提交內容包含 V005 發布檔。實機燒錄入口為 `CMDSet/ReleaseV005/ProgrammingLayout.txt`，APROM 使用 `DNN_NuOne_UAC.bin`，DataFlash 使用 `AirconDataFlash.bin`。
-
-## 5. 設定遠端並上傳
-
-首次設定遠端：
-
-```powershell
-git remote add origin "https://github.com/<GitHub帳號>/I94100BSP_VR_DSpotter.git"
-git remote -v
-git push -u origin main
-```
-
-依 Git 的登入提示完成 GitHub 驗證。推送完成後，在 GitHub 開啟 README，確認 `CMDSet/ReleaseV005/`、`DSMT/Combine/Working/`、來源 Excel 與一鍵封裝執行檔已列出。
-
-若 `origin` 已存在，先用 `git remote -v` 核對；需要變更網址時使用 `git remote set-url origin "<正確網址>"`。遠端已有提交而推送被拒絕時，先以 `git fetch origin`、`git log --oneline --all --graph` 核對兩端歷史，再整合提交。
-
-## 6. 後續更新
-
-1. 依 README 完成 DSMT／韌體修改、封裝與相關測試。
-2. 更新操作文件及 `CMDSet/ReleaseV005/` 的整套產物。
-3. 提交並推送：
-
-   ```powershell
-   git status --short
-   git add .
-   git diff --cached --stat
-   git commit -m "Describe the model, firmware or documentation change"
-   git push
-   ```
-
-新增發布版本時，更新 `.gitignore` 的版本目錄規則、封裝工具的目標版本及文件入口。使用 GitHub Releases 發布下載包時，附上 APROM、DataFlash、`ModelManifest.json` 與 `ProgrammingLayout.txt`。
-
-GitHub 操作參考：[Adding locally hosted code to GitHub](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)。
+官方操作說明：[Adding locally hosted code to GitHub](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github)。

@@ -101,7 +101,12 @@ def main():
     (project / "Prj/KEIL/obj").mkdir(parents=True)
     shutil.copyfile(ROOT / "BuildLatestModel.cmd", project / "BuildLatestModel.cmd")
     shutil.copyfile(ROOT / "DSMT/AirconBundleBuilder.exe", project / "DSMT/AirconBundleBuilder.exe")
+    for name in ("BuildProject.ps1", "VoiceMaintenance.ps1", "VoiceIni.ps1", "VoiceCommands.ini", "ReplyAudioBuild.ps1", "SyncNativeInputs.ps1", "UpdateVoiceDocs.ps1", "WriteBuildReport.ps1"):
+        shutil.copyfile(ROOT / "DSMT" / name, project / "DSMT" / name)
+    (project / "DNN_VR").mkdir()
+    shutil.copyfile(ROOT / "DNN_VR/AirconVR.h", project / "DNN_VR/AirconVR.h")
     shutil.copyfile(ROOT / "DSMT/Input/CommandManifest.json", project / "DSMT/Input/CommandManifest.json")
+    shutil.copyfile(ROOT / "DSMT/Input/IniModelState.json", project / "DSMT/Input/IniModelState.json")
     shutil.copytree(ROOT / "AudioRes/ReplyPhrases", project / "AudioRes/ReplyPhrases")
     for folder, filename in (("ChineseTWN", "PanasonicAirConZHTW.dsmt"), ("Taiwanese", "Taiwanese.dsmt")):
         source = ROOT / "DSMT/Combine/Working" / folder
@@ -162,7 +167,7 @@ def main():
         before = snapshot(release)
         archives = set((project / "_Archive").glob("*.zip"))
         output = success(wrapper=True)
-        require("no release files changed" in output and snapshot(release) == before, "No-change build was not stable")
+        require("SUCCESS:" in output and snapshot(release) == before, "No-change build was not stable")
         require(set((project / "_Archive").glob("*.zip")) == archives, "No-change build created another backup")
 
     test("Repeated identical input is stable and creates no redundant backup", repeat)

@@ -17,6 +17,7 @@
 #define AIRCON_ERR_CONFLICT (-1106)
 #define AIRCON_ERR_MAP_ID (-1107)
 
+/* Model pointers refer to memory-mapped Flash and do not own allocations. */
 typedef struct {
     uint32_t language;
     const uint8_t *base;
@@ -30,6 +31,7 @@ typedef struct {
 } AIRCON_MODELS;
 
 uint32_t AirconModels_Crc32(const uint8_t *data, uint32_t size);
+/* available is the partition size, not the size of the entire MCU Flash. */
 int32_t AirconModels_Load(const uint8_t *data, uint32_t available,
                          AIRCON_MODELS *models);
 

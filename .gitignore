@@ -4,8 +4,11 @@ __pycache__/
 *.py[cod]
 /.vs/
 /.idea/
+/CODEX_HANDOFF.md
+/MANUAL_CLEANUP.md
 Thumbs.db
 .DS_Store
+~$*
 
 # Keil build products and workstation-specific debugger settings.
 /Prj/KEIL/obj/
@@ -26,12 +29,21 @@ Thumbs.db
 /DSMT/Test/Build/
 /DSMT/Test/BundleBuilderFixture_*/
 /DSMT/Test/GitUploadFixture_*/
+/DSMT/Test/VoiceMaintenanceFixture_*/
+/DSMT/Test/ProjectBuildFixture_*/
+/DSMT/Test/IniFixture_*/
+/DSMT/Test/Reg_*/
 /DSMT/Test/*.log
 /DSMT/Test/*.json
 
 # Development records and duplicate DSMT download archives.
 /DSMT/SDKProvenance.json
+/DSMT/Input/*.Core.txt
+/DSMT/Input/*.PendingNanoe.txt
+/DSMT/Input/*/All.Core.txt
 /DSMT/Combine/Working/*/*.zip
+/DSMT/Combine/Working/*/LexTree.pack.bin
+/DSMT/Combine/Working/*/CYTrimap.mod
 /DSMT/Combine/Working/*/ProjectStatus.json
 /DSMT/Combine/Working/*/PronunciationReview.json
 /DSMT/Combine/Working/*/NanoePronunciation.json
@@ -48,3 +60,4 @@ Thumbs.db
 
 # Interrupted package operations.
 .bundle-build.lock
+.voice-maintenance.lock

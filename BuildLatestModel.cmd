@@ -1,10 +1,4 @@
 @echo off
 setlocal
-if not exist "%~dp0DSMT\AirconBundleBuilder.exe" (
-    echo ERROR: DSMT\AirconBundleBuilder.exe is missing.
-    echo Restore the supplied executable together with this project.
-    pause
-    exit /b 2
-)
-"%~dp0DSMT\AirconBundleBuilder.exe" --pause %*
+"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "%~dp0DSMT\BuildProject.ps1" %*
 exit /b %errorlevel%

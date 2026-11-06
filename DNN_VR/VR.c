@@ -31,6 +31,11 @@ extern uint32_t u32RecordAddr;//SW
 //extern void Record2DF(void);//SW
 
 /** add code start **/
+/*
+ * Take a stable 480-sample PCM snapshot from the interrupt producer.
+ * Restore the previous interrupt mask so callers also work in masked code.
+ * Return 1 when copied, 0 when no frame is ready, or -1 for invalid buffers.
+ */
 int32_t VR_TakeFrame(int16_t samples[], uint32_t count)
 {
 	uint32_t interrupt_mask;
@@ -49,6 +54,7 @@ int32_t VR_TakeFrame(int16_t samples[], uint32_t count)
 	return ready;
 }
 
+/* Discard PCM recorded during playback or between recognition stages. */
 void VR_FlushFrames(void)
 {
 	uint32_t interrupt_mask;
@@ -59,6 +65,7 @@ void VR_FlushFrames(void)
 	__set_PRIMASK(interrupt_mask);
 }
 
+/* A rising counter means the foreground recognizer missed a producer frame. */
 uint32_t VR_GetFrameOverruns(void)
 {
 	return Cyberon_VR.droppedFrames;

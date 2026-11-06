@@ -6,8 +6,8 @@
     "clips":  23,
     "rom":  "AudioRes/ReplyPhrases/Output/AirconReplies_AudioInfoMerge.ROM",
     "sources":  {
-                    "AudioRes/ReplyPhrases/ReplyProfile.json":  "7ea82dd37672d876502947c53ad06f94829ab9ca9473543e767ed2081cc2690f",
-                    "AudioRes/ReplyPhrases/WavSrc/PhraseSourceManifest.json":  "382506f07fc584084a938982ebce884cba241224ac0ac182200d3cd0f5c0e72b",
+                    "AudioRes/ReplyPhrases/ReplyProfile.json":  "cdf402819d70c4cde75881df2c608be44286c77bcf9b38c0f4d83a4b84bec844",
+                    "AudioRes/ReplyPhrases/WavSrc/PhraseSourceManifest.json":  "f18bb701b0f29162c1607eac3f45217598672abe58ec440fbd2178ed8656ffe6",
                     "AudioRes/ReplyPhrases/WavSrc/AirconReplies.uid":  "cfbe1d0c8a449225ce5507fe0a877ad6ac6f44cf07b888ee7580d50c8309f4b8",
                     "AudioRes/ReplyPhrases/WavSrc/wake_ok.wav":  "3466c26e524f2460c191920a1b7c8fddd0a6cad53b906a4a33c8365aa5476e84",
                     "AudioRes/ReplyPhrases/WavSrc/reply_prefix.wav":  "2457ac941bd4803c85b6df4eaa418a345e80cb4ee0c4aafa543d30850e20295a",
@@ -17,8 +17,8 @@
                     "AudioRes/ReplyPhrases/WavSrc/reply_mode_heat.wav":  "073d40161564c60958d934997965950dede05c3d1193f0ef72fc93b5cda6fe98",
                     "AudioRes/ReplyPhrases/WavSrc/reply_mode_dry.wav":  "1dd9b791ad5ef9bf6abeab880444bba38396b619fedac3ec5f552427343a5d75",
                     "AudioRes/ReplyPhrases/WavSrc/reply_mode_auto.wav":  "64ef0828852507881426b633762a86dd1c38f9a6cd054a1916634cb3cbd881af",
-                    "AudioRes/ReplyPhrases/WavSrc/reply_temp_up.wav":  "a57a4543969ff0467a11206552df5f8d60f8b54627756ec24dd17053aa64379c",
-                    "AudioRes/ReplyPhrases/WavSrc/reply_temp_down.wav":  "aacba7f78cd5f455aab102a302b21480bd9002eed44cfe810a88af54510df000",
+                    "AudioRes/ReplyPhrases/WavSrc/reply_temp_up.wav":  "7d62186dbc8e0f2ceb0fa842e93f7c4e556bfccf836881dcf1f25162b311881a",
+                    "AudioRes/ReplyPhrases/WavSrc/reply_temp_down.wav":  "7b70b75ce1d568042c25883c638be3a788636eb552e95a173579c29b2494809f",
                     "AudioRes/ReplyPhrases/WavSrc/reply_fan_up.wav":  "c41f432e9349d11a58df0c3be3fee5d83a85c623d44de8213ff302b489bc7fd5",
                     "AudioRes/ReplyPhrases/WavSrc/reply_fan_down.wav":  "1751601c90cb7583122217b99fdb73bf9bc658dd081c30844805ac09528a36a6",
                     "AudioRes/ReplyPhrases/WavSrc/reply_fan_auto.wav":  "833737e82aa37abeb805b8d74257f4afcf995fda070f211089a5cf7e1aebad51",
@@ -32,7 +32,7 @@
                     "AudioRes/ReplyPhrases/WavSrc/reply_timer_cancel.wav":  "24fee29e4e4bb6e52fdccf856878e5284a959b651a66dfa0df8c5800d71282cb",
                     "AudioRes/ReplyPhrases/WavSrc/reply_temp_set.wav":  "4111bcdbc4443f25e93bf0cdd7e0cf8dba870503ce3d12569db29b587cc2e81e",
                     "AudioRes/ReplyPhrases/WavSrc/reply_timer_off.wav":  "67bdea67d49db0237131830b78e27a1ec75fea9158bc7f415d1c9577de7fb6ac",
-                    "AudioRes/ReplyPhrases/Output/AirconReplies_AudioInfo.h":  "1a0549c136b7a70c18e4a2e4091cfe1f415336d92c28299a8976958e04c048e4",
-                    "AudioRes/ReplyPhrases/Output/AirconReplies_AudioInfoMerge.ROM":  "ac9b6ac4a71e835e621547df8e2829c2c29432e23897e3bec654857f39df5ac5"
+                    "AudioRes/ReplyPhrases/Output/AirconReplies_AudioInfo.h":  "895679a70c43d7323b36aa2a552482b44101001d340756321c253b0b76e0360d",
+                    "AudioRes/ReplyPhrases/Output/AirconReplies_AudioInfoMerge.ROM":  "543f857ba43566fb308e50bae6812aa6b3fc04b3a4d0cc79588fd4593979789b"
                 }
 }

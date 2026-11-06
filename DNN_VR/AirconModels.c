@@ -2,12 +2,14 @@
 #include <string.h>
 #include "AirconModels.h"
 
+/* Flash image fields are little-endian; byte reads avoid unaligned accesses. */
 static uint32_t Read32(const uint8_t *data)
 {
     return (uint32_t)data[0] | ((uint32_t)data[1] << 8)
         | ((uint32_t)data[2] << 16) | ((uint32_t)data[3] << 24);
 }
 
+/* Match the reflected CRC-32 stored by the Windows bundle builder. */
 uint32_t AirconModels_Crc32(const uint8_t *data, uint32_t size)
 {
     uint32_t crc;
@@ -27,6 +29,11 @@ uint32_t AirconModels_Crc32(const uint8_t *data, uint32_t size)
     return crc ^ 0xFFFFFFFFUL;
 }
 
+/*
+ * A native pack contains a chunk count, chunk lengths, then chunk bytes.
+ * Chunk zero is CYBase; following chunks retain the DSMT group order.
+ * Return Flash pointers rather than copying acoustic models into SRAM.
+ */
 static int32_t LoadPack(const uint8_t *data, uint32_t size,
                         AIRCON_LANGUAGE_MODELS *language)
 {
@@ -59,6 +66,12 @@ static int32_t LoadPack(const uint8_t *data, uint32_t size,
     return 0;
 }
 
+/*
+ * Validate the ACB1 header and each language directory entry before use.
+ * Each entry is {language, offset, length, CRC32}; offsets must describe
+ * consecutive native packs within the model partition. Group zero in each
+ * resulting language is the wake group used by AirconVR_Recognize().
+ */
 int32_t AirconModels_Load(const uint8_t *data, uint32_t available,
                          AIRCON_MODELS *models)
 {
