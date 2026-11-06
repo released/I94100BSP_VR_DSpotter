@@ -1,0 +1,138 @@
+﻿language	category	group	text	MapID	command	value	source_cell
+Chinese(TWN)	喚醒	Group_1_Wake	房間冷氣	1001	WAKE	ROOM	B2
+Chinese(TWN)	喚醒	Group_1_Wake	客廳冷氣	1002	WAKE	LIVING	B2
+Chinese(TWN)	喚醒	Group_1_Wake	國際冷氣	1003	WAKE	GLOBAL	B2
+Chinese(TWN)	電源	Group_2_Power	開機	1	POWER_ON		B3
+Chinese(TWN)	電源	Group_2_Power	開冷氣	1	POWER_ON		B3
+Chinese(TWN)	電源	Group_2_Power	開空調	1	POWER_ON		B3
+Chinese(TWN)	電源	Group_2_Power	關機	2	POWER_OFF		B4
+Chinese(TWN)	電源	Group_2_Power	關冷氣	2	POWER_OFF		B4
+Chinese(TWN)	電源	Group_2_Power	關空調	2	POWER_OFF		B4
+Chinese(TWN)	模式	Group_3_Mode	舒適冷房	3	MODE_COOL		B5
+Chinese(TWN)	模式	Group_3_Mode	吹冷氣	3	MODE_COOL		B5
+Chinese(TWN)	模式	Group_3_Mode	舒適暖房	4	MODE_HEAT		B6
+Chinese(TWN)	模式	Group_3_Mode	開暖氣	4	MODE_HEAT		B6
+Chinese(TWN)	模式	Group_3_Mode	吹暖氣	4	MODE_HEAT		B6
+Chinese(TWN)	模式	Group_3_Mode	開除濕	5	MODE_DRY		B7
+Chinese(TWN)	模式	Group_3_Mode	吹除濕	5	MODE_DRY		B7
+Chinese(TWN)	模式	Group_3_Mode	開自動	6	MODE_AUTO		B8
+Chinese(TWN)	溫度	Group_4_Temperature	溫度調高	7	TEMP_UP		B9
+Chinese(TWN)	溫度	Group_4_Temperature	溫度高一點	7	TEMP_UP		B9
+Chinese(TWN)	溫度	Group_4_Temperature	太冷了	7	TEMP_UP		B9
+Chinese(TWN)	溫度	Group_4_Temperature	溫度調低	8	TEMP_DOWN		B10
+Chinese(TWN)	溫度	Group_4_Temperature	溫度低一點	8	TEMP_DOWN		B10
+Chinese(TWN)	溫度	Group_4_Temperature	太熱了	8	TEMP_DOWN		B10
+Chinese(TWN)	風量	Group_5_Fan	風量大一點	9	FAN_UP		B12
+Chinese(TWN)	風量	Group_5_Fan	增大風量	9	FAN_UP		B12
+Chinese(TWN)	風量	Group_5_Fan	風太小	9	FAN_UP		B12
+Chinese(TWN)	風量	Group_5_Fan	風量小一點	10	FAN_DOWN		B13
+Chinese(TWN)	風量	Group_5_Fan	減小風量	10	FAN_DOWN		B13
+Chinese(TWN)	風量	Group_5_Fan	風太大	10	FAN_DOWN		B13
+Chinese(TWN)	風量	Group_5_Fan	風量自動	11	FAN_AUTO		B14
+Chinese(TWN)	風向	Group_6_Swing	風向自動	12	SWING_AUTO		B15
+Chinese(TWN)	風向	Group_6_Swing	上下擺動	12	SWING_AUTO		B15
+Chinese(TWN)	風向	Group_6_Swing	固定風向	13	SWING_HOLD		B16
+Chinese(TWN)	風向	Group_6_Swing	停止擺動	13	SWING_HOLD		B16
+Chinese(TWN)	健康	Group_7_Health	開 nanoe	14	NANOE_ON		B17
+Chinese(TWN)	健康	Group_7_Health	啟動 nanoe	14	NANOE_ON		B17
+Chinese(TWN)	健康	Group_7_Health	關 nanoe	15	NANOE_OFF		B18
+Chinese(TWN)	健康	Group_7_Health	關閉 nanoe	15	NANOE_OFF		B18
+Chinese(TWN)	音量	Group_8_Volume	聲音大一點	16	VOICE_VOL_UP		B19
+Chinese(TWN)	音量	Group_8_Volume	增大音量	16	VOICE_VOL_UP		B19
+Chinese(TWN)	音量	Group_8_Volume	聲音小一點	17	VOICE_VOL_DOWN		B20
+Chinese(TWN)	音量	Group_8_Volume	減小音量	17	VOICE_VOL_DOWN		B20
+Chinese(TWN)	音量	Group_8_Volume	關閉語音	18	VOICE_MUTE		B21
+Chinese(TWN)	音量	Group_8_Volume	靜音模式	18	VOICE_MUTE		B21
+Chinese(TWN)	定時	Group_9_Timer	取消定時	19	TIMER_CANCEL		B23
+Chinese(TWN)	溫度	Group_4_Temperature	設定十六度	116	TEMP_SET	16	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定十七度	117	TEMP_SET	17	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定十八度	118	TEMP_SET	18	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定十九度	119	TEMP_SET	19	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十度	120	TEMP_SET	20	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十一度	121	TEMP_SET	21	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十二度	122	TEMP_SET	22	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十三度	123	TEMP_SET	23	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十四度	124	TEMP_SET	24	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十五度	125	TEMP_SET	25	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十六度	126	TEMP_SET	26	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十七度	127	TEMP_SET	27	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十八度	128	TEMP_SET	28	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定二十九度	129	TEMP_SET	29	B11
+Chinese(TWN)	溫度	Group_4_Temperature	設定三十度	130	TEMP_SET	30	B11
+Chinese(TWN)	定時	Group_9_Timer	定時一小時關機	201	TIMER_OFF	1	B22
+Chinese(TWN)	定時	Group_9_Timer	一小時後關機	201	TIMER_OFF	1	B22
+Chinese(TWN)	定時	Group_9_Timer	定時兩小時關機	202	TIMER_OFF	2	B22
+Chinese(TWN)	定時	Group_9_Timer	兩小時後關機	202	TIMER_OFF	2	B22
+Chinese(TWN)	定時	Group_9_Timer	定時三小時關機	203	TIMER_OFF	3	B22
+Chinese(TWN)	定時	Group_9_Timer	三小時後關機	203	TIMER_OFF	3	B22
+Chinese(TWN)	定時	Group_9_Timer	定時四小時關機	204	TIMER_OFF	4	B22
+Chinese(TWN)	定時	Group_9_Timer	四小時後關機	204	TIMER_OFF	4	B22
+Chinese(TWN)	定時	Group_9_Timer	定時五小時關機	205	TIMER_OFF	5	B22
+Chinese(TWN)	定時	Group_9_Timer	五小時後關機	205	TIMER_OFF	5	B22
+Chinese(TWN)	定時	Group_9_Timer	定時六小時關機	206	TIMER_OFF	6	B22
+Chinese(TWN)	定時	Group_9_Timer	六小時後關機	206	TIMER_OFF	6	B22
+Chinese(TWN)	定時	Group_9_Timer	定時七小時關機	207	TIMER_OFF	7	B22
+Chinese(TWN)	定時	Group_9_Timer	七小時後關機	207	TIMER_OFF	7	B22
+Chinese(TWN)	定時	Group_9_Timer	定時八小時關機	208	TIMER_OFF	8	B22
+Chinese(TWN)	定時	Group_9_Timer	八小時後關機	208	TIMER_OFF	8	B22
+Chinese(TWN)	定時	Group_9_Timer	定時九小時關機	209	TIMER_OFF	9	B22
+Chinese(TWN)	定時	Group_9_Timer	九小時後關機	209	TIMER_OFF	9	B22
+Chinese(TWN)	定時	Group_9_Timer	定時十小時關機	210	TIMER_OFF	10	B22
+Chinese(TWN)	定時	Group_9_Timer	十小時後關機	210	TIMER_OFF	10	B22
+Chinese(TWN)	定時	Group_9_Timer	定時十一小時關機	211	TIMER_OFF	11	B22
+Chinese(TWN)	定時	Group_9_Timer	十一小時後關機	211	TIMER_OFF	11	B22
+Chinese(TWN)	定時	Group_9_Timer	定時十二小時關機	212	TIMER_OFF	12	B22
+Chinese(TWN)	定時	Group_9_Timer	十二小時後關機	212	TIMER_OFF	12	B22
+Taiwanese	喚醒	Group_1_Wake	房間冷氣	1001	WAKE	ROOM	C2
+Taiwanese	喚醒	Group_1_Wake	客廳冷氣	1002	WAKE	LIVING	C2
+Taiwanese	電源	Group_2_Power	開冷氣	1	POWER_ON		C3
+Taiwanese	電源	Group_2_Power	打開冷氣	1	POWER_ON		C3
+Taiwanese	電源	Group_2_Power	關冷氣	2	POWER_OFF		C4
+Taiwanese	電源	Group_2_Power	冷氣關起來	2	POWER_OFF		C4
+Taiwanese	電源	Group_2_Power	冷氣關掉	2	POWER_OFF		C4
+Taiwanese	模式	Group_3_Mode	吹冷氣	3	MODE_COOL		C5
+Taiwanese	模式	Group_3_Mode	吹暖氣	4	MODE_HEAT		C6
+Taiwanese	模式	Group_3_Mode	開除濕	5	MODE_DRY		C7
+Taiwanese	模式	Group_3_Mode	開自動	6	MODE_AUTO		C8
+Taiwanese	溫度	Group_4_Temperature	溫度調高	7	TEMP_UP		C9
+Taiwanese	溫度	Group_4_Temperature	溫度攑懸	7	TEMP_UP		C9
+Taiwanese	溫度	Group_4_Temperature	溫度調低	8	TEMP_DOWN		C10
+Taiwanese	溫度	Group_4_Temperature	溫度降落	8	TEMP_DOWN		C10
+Taiwanese	風量	Group_5_Fan	風量大一點	9	FAN_UP		C12
+Taiwanese	風量	Group_5_Fan	風量細一點	10	FAN_DOWN		C13
+Taiwanese	風量	Group_5_Fan	風量自動	11	FAN_AUTO		C14
+Taiwanese	風向	Group_6_Swing	風向自動	12	SWING_AUTO		C15
+Taiwanese	風向	Group_6_Swing	固定風向	13	SWING_HOLD		C16
+Taiwanese	健康	Group_7_Health	開 nanoe	14	NANOE_ON		C17
+Taiwanese	健康	Group_7_Health	關 nanoe	15	NANOE_OFF		C18
+Taiwanese	音量	Group_8_Volume	聲音大一點	16	VOICE_VOL_UP		C19
+Taiwanese	音量	Group_8_Volume	聲音細一點	17	VOICE_VOL_DOWN		C20
+Taiwanese	音量	Group_8_Volume	關閉語音	18	VOICE_MUTE		C21
+Taiwanese	定時	Group_9_Timer	取消定時	19	TIMER_CANCEL		C23
+Taiwanese	溫度	Group_4_Temperature	設定十六度	116	TEMP_SET	16	C11
+Taiwanese	溫度	Group_4_Temperature	設定十七度	117	TEMP_SET	17	C11
+Taiwanese	溫度	Group_4_Temperature	設定十八度	118	TEMP_SET	18	C11
+Taiwanese	溫度	Group_4_Temperature	設定十九度	119	TEMP_SET	19	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十度	120	TEMP_SET	20	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十一度	121	TEMP_SET	21	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十二度	122	TEMP_SET	22	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十三度	123	TEMP_SET	23	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十四度	124	TEMP_SET	24	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十五度	125	TEMP_SET	25	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十六度	126	TEMP_SET	26	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十七度	127	TEMP_SET	27	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十八度	128	TEMP_SET	28	C11
+Taiwanese	溫度	Group_4_Temperature	設定二十九度	129	TEMP_SET	29	C11
+Taiwanese	溫度	Group_4_Temperature	設定三十度	130	TEMP_SET	30	C11
+Taiwanese	定時	Group_9_Timer	一小時後關機	201	TIMER_OFF	1	C22
+Taiwanese	定時	Group_9_Timer	兩小時後關機	202	TIMER_OFF	2	C22
+Taiwanese	定時	Group_9_Timer	三小時後關機	203	TIMER_OFF	3	C22
+Taiwanese	定時	Group_9_Timer	四小時後關機	204	TIMER_OFF	4	C22
+Taiwanese	定時	Group_9_Timer	五小時後關機	205	TIMER_OFF	5	C22
+Taiwanese	定時	Group_9_Timer	六小時後關機	206	TIMER_OFF	6	C22
+Taiwanese	定時	Group_9_Timer	七小時後關機	207	TIMER_OFF	7	C22
+Taiwanese	定時	Group_9_Timer	八小時後關機	208	TIMER_OFF	8	C22
+Taiwanese	定時	Group_9_Timer	九小時後關機	209	TIMER_OFF	9	C22
+Taiwanese	定時	Group_9_Timer	十小時後關機	210	TIMER_OFF	10	C22
+Taiwanese	定時	Group_9_Timer	十一小時後關機	211	TIMER_OFF	11	C22
+Taiwanese	定時	Group_9_Timer	十二小時後關機	212	TIMER_OFF	12	C22

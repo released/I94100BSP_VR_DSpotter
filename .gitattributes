@@ -1,0 +1,22 @@
+# Preserve bytes by default: DSMT exports and sealed audio inputs use hashes.
+* -text
+
+# Documentation and scripts that have no byte-level seals.
+*.md text eol=lf
+*.py text eol=lf
+*.cs text eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Native assets must not undergo text conversion or textual merging.
+*.bin binary
+*.lib binary
+*.a binary
+*.exe binary
+*.mod binary
+*.ROM binary
+*.rom binary
+*.wav binary
+*.WAV binary
+*.xlsx binary
+*.zip binary

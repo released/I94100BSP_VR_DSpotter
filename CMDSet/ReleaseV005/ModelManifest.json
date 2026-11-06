@@ -1,0 +1,205 @@
+{
+  "format": "ACB1",
+  "format_version": 1,
+  "languages": [
+    {
+      "language": "Chinese(TWN)",
+      "project": "DSMT\\Combine\\Working\\ChineseTWN\\PanasonicAirConZHTW.dsmt",
+      "project_sha256": "52e9a931d114cb61b850de15c701893871a60caebb29f94bb81c1965b801c161",
+      "base_release": "202305021800",
+      "groups": [
+        {
+          "group": "Group_1_Wake",
+          "entries": 3,
+          "unique_texts": 3
+        },
+        {
+          "group": "Group_2_Power",
+          "entries": 6,
+          "unique_texts": 6
+        },
+        {
+          "group": "Group_3_Mode",
+          "entries": 8,
+          "unique_texts": 8
+        },
+        {
+          "group": "Group_4_Temperature",
+          "entries": 21,
+          "unique_texts": 21
+        },
+        {
+          "group": "Group_5_Fan",
+          "entries": 7,
+          "unique_texts": 7
+        },
+        {
+          "group": "Group_6_Swing",
+          "entries": 4,
+          "unique_texts": 4
+        },
+        {
+          "group": "Group_7_Health",
+          "entries": 4,
+          "unique_texts": 4
+        },
+        {
+          "group": "Group_8_Volume",
+          "entries": 6,
+          "unique_texts": 6
+        },
+        {
+          "group": "Group_9_Timer",
+          "entries": 25,
+          "unique_texts": 25
+        }
+      ],
+      "unique_texts": 84,
+      "missing_records": [
+        
+      ],
+      "native_pack_bytes": 164768,
+      "native_pack_sha256": "4cb89c5dc78ff0cad35d221fbe097d9578aea8d4fe11ff14121c7a7375d4a1d5",
+      "model_sha256": {
+        "CYBase.mod": "b408026086400ad181914fa34f2d1e87ddb83e44959b75c3ea707cb0878f1d28",
+        "Group_1_Wake.mod": "f8a0644a2e4017329d6abbf06217d240fc37f344887b6a6c2f0c6f9f7d1cb76e",
+        "Group_2_Power.mod": "3f5b0bbaa77bca84073159f11fa6fb2b47f07491c7b170eadf523313bdf4af1f",
+        "Group_3_Mode.mod": "f2f54febed0b3f75d139f8b59910942fe30cfa4cbbb52bd738dc20d08a0a436f",
+        "Group_4_Temperature.mod": "be083687b5c444a6920bcf27d5136f69a654825c1fa1154055ba95ec42335a4a",
+        "Group_5_Fan.mod": "4adcac7b29614e3ab272b5d5644303484cceb45bbfe9ce462b2cd8cc8f0e14db",
+        "Group_6_Swing.mod": "41863c34b6c11427b31dd6f175494a1b66ad5f46b22c6fd0ebd72f43c556339a",
+        "Group_7_Health.mod": "b719a01cec3aebbc43087c82e0ed10ebb66c5a1f05a36b5d4af670b01a609bdd",
+        "Group_8_Volume.mod": "729ee3be0e6422cc3f73b209a9dc28a63843607d022d8cd0b4f2a88b72cf1b42",
+        "Group_9_Timer.mod": "6fe568827e5a996a6fc78cb084d28e3267a863912f69950a3ed04fae4e9f73e9"
+      },
+      "human_pronunciation_review_complete": false
+    },
+    {
+      "language": "Taiwanese",
+      "project": "DSMT\\Combine\\Working\\Taiwanese\\Taiwanese.dsmt",
+      "project_sha256": "8f82da8dc1736609a2b7ce81caa657dd819d11ea05d13a4ad1fd353aacbb529c",
+      "base_release": "202306261200",
+      "groups": [
+        {
+          "group": "Group_1_Wake",
+          "entries": 2,
+          "unique_texts": 2
+        },
+        {
+          "group": "Group_2_Power",
+          "entries": 7,
+          "unique_texts": 5
+        },
+        {
+          "group": "Group_3_Mode",
+          "entries": 13,
+          "unique_texts": 4
+        },
+        {
+          "group": "Group_4_Temperature",
+          "entries": 101,
+          "unique_texts": 19
+        },
+        {
+          "group": "Group_5_Fan",
+          "entries": 6,
+          "unique_texts": 3
+        },
+        {
+          "group": "Group_6_Swing",
+          "entries": 4,
+          "unique_texts": 2
+        },
+        {
+          "group": "Group_7_Health",
+          "entries": 2,
+          "unique_texts": 2
+        },
+        {
+          "group": "Group_8_Volume",
+          "entries": 5,
+          "unique_texts": 3
+        },
+        {
+          "group": "Group_9_Timer",
+          "entries": 75,
+          "unique_texts": 13
+        }
+      ],
+      "unique_texts": 53,
+      "missing_records": [
+        
+      ],
+      "native_pack_bytes": 171292,
+      "native_pack_sha256": "16fd9d1705c4ad09d2a12a66edcc0204390c21e7803cfb382e83746f75014852",
+      "model_sha256": {
+        "CYBase.mod": "051da3cd4e532b95b8f305de08bc343967d7155ed2c985e95fe33ebbb52e19f9",
+        "Group_1_Wake.mod": "956093674f044e2ba5c7aeb2543c7ff60d0f5da49b0458624781f4a065874784",
+        "Group_2_Power.mod": "3d0895bde99b5a2b2b0a40a61656d992b9a8a5bb9890f69546982f9dd9056df4",
+        "Group_3_Mode.mod": "ca141ae794a894ac5b72c145a0b8c56ad2b4494940fb2940d61dce179e8275ea",
+        "Group_4_Temperature.mod": "304d4b9741156ad99e3f2a8f427ffa926f68f2b991e0d4295923a833fe5b4d94",
+        "Group_5_Fan.mod": "fca0c843ee3935ef68ce7d319ca2634206f8be51b1fa52e7f7b40f6a9150744e",
+        "Group_6_Swing.mod": "66629bbacc4b40ad8ae3f643b013ac951c59d3fcc1403f382b89e5f331d75ee2",
+        "Group_7_Health.mod": "3f487717ab7151e501285d703f13244bc5866281a3ccf27b41a8f7508666ec78",
+        "Group_8_Volume.mod": "08209d387b0612bb1938123d66650f0dcba01e2590402a689eb0daac04d44959",
+        "Group_9_Timer.mod": "832871616367e1b1b22e754dbce20b0bdb6825530d91bcd9063f4f603bdcf74e"
+      },
+      "human_pronunciation_review_complete": false
+    }
+  ],
+  "release": "V005",
+  "audio": {
+    "format": "ACR1",
+    "address": "0x00070000",
+    "rom_bytes": 59934,
+    "rom_sha256": "ac9b6ac4a71e835e621547df8e2829c2c29432e23897e3bec654857f39df5ac5",
+    "clips": 23,
+    "sample_rate": 16000,
+    "bits_per_sample": 1,
+    "profile": "AudioRes/ReplyPhrases/ReplyProfile.json",
+    "profile_sha256": "7ea82dd37672d876502947c53ad06f94829ab9ca9473543e767ed2081cc2690f"
+  },
+  "programming": {
+    "DNN_NuOne_UAC.bin": "0x00000000",
+    "AirconDataFlash.bin": "0x00015000"
+  },
+  "component_addresses": {
+    "AirconModels.bundle.bin": "0x00015000",
+    "AirconReplies.bin": "0x00070000"
+  },
+  "model_capacity_end_exclusive": "0x00070000",
+  "model_end_exclusive": "0x000670EC",
+  "flash_end_exclusive": "0x00080000",
+  "files": {
+    "ChineseTWN.pack.bin": {
+      "bytes": 164768,
+      "sha256": "4cb89c5dc78ff0cad35d221fbe097d9578aea8d4fe11ff14121c7a7375d4a1d5"
+    },
+    "Taiwanese.pack.bin": {
+      "bytes": 171292,
+      "sha256": "16fd9d1705c4ad09d2a12a66edcc0204390c21e7803cfb382e83746f75014852"
+    },
+    "AirconModels.bundle.bin": {
+      "bytes": 336108,
+      "sha256": "d103cc98b39ff4e798f37e7cf8cf0d7e1f5c2fe0bd241dfb6ae6354d621147b5"
+    },
+    "DNN_NuOne_UAC.bin": {
+      "bytes": 74328,
+      "sha256": "c3fce686b943453387408d9542594579032f783b29199154bfcf7a996b108e16"
+    },
+    "AirconReplies.bin": {
+      "bytes": 59952,
+      "sha256": "1727ba8c089e8d31f06bf368471e8fde4e71e5f8c025e9c92a8fc5570aedc777"
+    },
+    "AirconDataFlash.bin": {
+      "bytes": 432688,
+      "sha256": "bdd05c93416b929b5088e6561cc254a5d353ae15d7e06cd96028dfe29a26b9c1"
+    }
+  },
+  "verification_limits": [
+    "Acoustic accuracy and real-time processing not board-tested",
+    "Actual dual-engine RAM is checked and printed at runtime",
+    "0 command text variants remain pending valid native pronunciations; nanoe reading confirmed by user",
+    "Existing binary ICP project was not rewritten"
+  ]
+}

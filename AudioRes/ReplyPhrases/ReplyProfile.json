@@ -1,0 +1,276 @@
+{
+  "schema_version": 1,
+  "release": "V005",
+  "sample_rate": 16000,
+  "bits_per_sample": 16,
+  "channels": 1,
+  "voice": "Microsoft Hanhan Desktop",
+  "rate": 0,
+  "nuone_bits_per_sample": 1,
+  "trim_threshold_dbfs": -55,
+  "edge_padding_ms": 30,
+  "prefix_gap_ms": 120,
+  "audio_address": "0x00070000",
+  "audio_capacity_bytes": 65536,
+  "prefix": "好的，",
+  "reply_overrides": {
+    "TEMP_SET": "好的，溫度已設定",
+    "TIMER_OFF": "好的，定時已設定"
+  },
+  "phrases": [
+    {
+      "index": 0,
+      "file": "wake_ok.wav",
+      "role": "wake",
+      "text": null,
+      "map_ids": [
+        1001,
+        1002,
+        1003
+      ],
+      "copy_source": "AudioRes/WavSrc/OK.wav"
+    },
+    {
+      "index": 1,
+      "file": "reply_prefix.wav",
+      "role": "prefix",
+      "text": "好的，",
+      "map_ids": []
+    },
+    {
+      "index": 2,
+      "file": "reply_power_on.wav",
+      "role": "body",
+      "command": "POWER_ON",
+      "text": "為您開機",
+      "map_ids": [
+        1
+      ]
+    },
+    {
+      "index": 3,
+      "file": "reply_power_off.wav",
+      "role": "body",
+      "command": "POWER_OFF",
+      "text": "為您關機",
+      "map_ids": [
+        2
+      ]
+    },
+    {
+      "index": 4,
+      "file": "reply_mode_cool.wav",
+      "role": "body",
+      "command": "MODE_COOL",
+      "text": "切換冷氣模式",
+      "map_ids": [
+        3
+      ]
+    },
+    {
+      "index": 5,
+      "file": "reply_mode_heat.wav",
+      "role": "body",
+      "command": "MODE_HEAT",
+      "text": "切換暖氣模式",
+      "map_ids": [
+        4
+      ]
+    },
+    {
+      "index": 6,
+      "file": "reply_mode_dry.wav",
+      "role": "body",
+      "command": "MODE_DRY",
+      "text": "切換除濕模式",
+      "map_ids": [
+        5
+      ]
+    },
+    {
+      "index": 7,
+      "file": "reply_mode_auto.wav",
+      "role": "body",
+      "command": "MODE_AUTO",
+      "text": "切換自動模式",
+      "map_ids": [
+        6
+      ]
+    },
+    {
+      "index": 8,
+      "file": "reply_temp_up.wav",
+      "role": "body",
+      "command": "TEMP_UP",
+      "text": "溫度已調高",
+      "map_ids": [
+        7
+      ]
+    },
+    {
+      "index": 9,
+      "file": "reply_temp_down.wav",
+      "role": "body",
+      "command": "TEMP_DOWN",
+      "text": "溫度已調低",
+      "map_ids": [
+        8
+      ]
+    },
+    {
+      "index": 10,
+      "file": "reply_fan_up.wav",
+      "role": "body",
+      "command": "FAN_UP",
+      "text": "風量已調大",
+      "map_ids": [
+        9
+      ]
+    },
+    {
+      "index": 11,
+      "file": "reply_fan_down.wav",
+      "role": "body",
+      "command": "FAN_DOWN",
+      "text": "風量已調小",
+      "map_ids": [
+        10
+      ]
+    },
+    {
+      "index": 12,
+      "file": "reply_fan_auto.wav",
+      "role": "body",
+      "command": "FAN_AUTO",
+      "text": "風量已設為自動",
+      "map_ids": [
+        11
+      ]
+    },
+    {
+      "index": 13,
+      "file": "reply_swing_auto.wav",
+      "role": "body",
+      "command": "SWING_AUTO",
+      "text": "風向設定為自動",
+      "map_ids": [
+        12
+      ]
+    },
+    {
+      "index": 14,
+      "file": "reply_swing_hold.wav",
+      "role": "body",
+      "command": "SWING_HOLD",
+      "text": "風向已固定",
+      "map_ids": [
+        13
+      ]
+    },
+    {
+      "index": 15,
+      "file": "reply_nanoe_on.wav",
+      "role": "body",
+      "command": "NANOE_ON",
+      "text": "已開啟 奈諾伊",
+      "map_ids": [
+        14
+      ]
+    },
+    {
+      "index": 16,
+      "file": "reply_nanoe_off.wav",
+      "role": "body",
+      "command": "NANOE_OFF",
+      "text": "已關閉 奈諾伊",
+      "map_ids": [
+        15
+      ]
+    },
+    {
+      "index": 17,
+      "file": "reply_voice_vol_up.wav",
+      "role": "body",
+      "command": "VOICE_VOL_UP",
+      "text": "音量已調大",
+      "map_ids": [
+        16
+      ]
+    },
+    {
+      "index": 18,
+      "file": "reply_voice_vol_down.wav",
+      "role": "body",
+      "command": "VOICE_VOL_DOWN",
+      "text": "音量已調小",
+      "map_ids": [
+        17
+      ]
+    },
+    {
+      "index": 19,
+      "file": "reply_voice_mute.wav",
+      "role": "body",
+      "command": "VOICE_MUTE",
+      "text": "已關閉語音",
+      "map_ids": [
+        18
+      ]
+    },
+    {
+      "index": 20,
+      "file": "reply_timer_cancel.wav",
+      "role": "body",
+      "command": "TIMER_CANCEL",
+      "text": "定時已取消",
+      "map_ids": [
+        19
+      ]
+    },
+    {
+      "index": 21,
+      "file": "reply_temp_set.wav",
+      "role": "body",
+      "command": "TEMP_SET",
+      "text": "溫度已設定",
+      "map_ids": [
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ]
+    },
+    {
+      "index": 22,
+      "file": "reply_timer_off.wav",
+      "role": "body",
+      "command": "TIMER_OFF",
+      "text": "定時已設定",
+      "map_ids": [
+        201,
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212
+      ]
+    }
+  ]
+}

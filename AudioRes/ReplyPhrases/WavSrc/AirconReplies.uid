@@ -1,0 +1,24 @@
+[Audio]
+defaud wake_ok <ext=0, format=NUO, bitrate=1.0>
+defaud reply_prefix <ext=0, format=NUO, bitrate=1.0>
+defaud reply_power_on <ext=0, format=NUO, bitrate=1.0>
+defaud reply_power_off <ext=0, format=NUO, bitrate=1.0>
+defaud reply_mode_cool <ext=0, format=NUO, bitrate=1.0>
+defaud reply_mode_heat <ext=0, format=NUO, bitrate=1.0>
+defaud reply_mode_dry <ext=0, format=NUO, bitrate=1.0>
+defaud reply_mode_auto <ext=0, format=NUO, bitrate=1.0>
+defaud reply_temp_up <ext=0, format=NUO, bitrate=1.0>
+defaud reply_temp_down <ext=0, format=NUO, bitrate=1.0>
+defaud reply_fan_up <ext=0, format=NUO, bitrate=1.0>
+defaud reply_fan_down <ext=0, format=NUO, bitrate=1.0>
+defaud reply_fan_auto <ext=0, format=NUO, bitrate=1.0>
+defaud reply_swing_auto <ext=0, format=NUO, bitrate=1.0>
+defaud reply_swing_hold <ext=0, format=NUO, bitrate=1.0>
+defaud reply_nanoe_on <ext=0, format=NUO, bitrate=1.0>
+defaud reply_nanoe_off <ext=0, format=NUO, bitrate=1.0>
+defaud reply_voice_vol_up <ext=0, format=NUO, bitrate=1.0>
+defaud reply_voice_vol_down <ext=0, format=NUO, bitrate=1.0>
+defaud reply_voice_mute <ext=0, format=NUO, bitrate=1.0>
+defaud reply_timer_cancel <ext=0, format=NUO, bitrate=1.0>
+defaud reply_temp_set <ext=0, format=NUO, bitrate=1.0>
+defaud reply_timer_off <ext=0, format=NUO, bitrate=1.0>

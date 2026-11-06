@@ -1,0 +1,32 @@
+I94124 Panasonic 冷氣 V005 燒錄入口
+
+一般 ICP 操作選擇兩個檔案：
+  APROM      0x00000000  DNN_NuOne_UAC.bin
+  DataFlash  0x00015000  AirconDataFlash.bin
+
+AirconDataFlash.bin 包含：
+  0x00015000  AirconModels.bundle.bin  國語＋台語辨識模型
+  0x00070000  AirconReplies.bin        內部 NuOne 回覆音訊
+中間保留區域以 0xFF 補齊。
+
+1. ICP 選 I94124，核對板卡 Config，DataFlash 起點為 0x15000。
+2. 首次使用 V005，更新上述 APROM 與 DataFlash；模型或回覆調整且韌體相容時，可只更新 DataFlash。
+3. 依 ModelManifest.json 核對大小與 SHA-256，執行燒錄及 Verify。
+4. 原 .icp 內含範例資料；載入板卡設定後重新指定目前發布檔。
+5. 回覆音訊位於內部 Flash，外接音訊 Flash 可保留原內容。
+6. UART0 115200 8N1，PB8 TX／PB9 RX，重啟後核對：
+   [APP] release=V005 feedback=full_reply_led led=PB0 audio=internal
+   [AUDIO_READY] address=0x00070000 rom_bytes=59934 clips=23 bps=1.0
+   [VR_CONFIG] control_timeout_s=60 control_timeout_frames=2000
+   [VR_READY] languages=2 pool=102400 uart=115200
+7. 國語「房間冷氣」→等提示音→「開機」：map_id=1，回覆「好的，為您開機」，LED 短閃一次。
+8. 台語「房間冷氣」→等提示音→「設定二十八度」：map_id=128 value=28 unit=C，回覆「好的，溫度已設定」。
+9. 說「兩小時後關機」：map_id=202 value=2 unit=h，回覆「好的，定時已設定」。
+10. 等整句回覆播完後再說下一句。-1105／-1106 或 VR_TIMEOUT 後先重新喚醒。
+
+完整逐句測試：DSMT/Test/UserCommandTestGuide.txt。
+兩語命令／MapID／回覆：DSMT/Test/CommandMapIDQuickReference.md。
+語音模型修改儲存後，雙擊根目錄 BuildLatestModel.cmd 更新發布檔，不需 Python。
+回覆讀稿、WAV、NuOne 編碼及來源核對步驟見根目錄 README.md。
+
+冷氣控制目前輸出 UART；GPIO、冷氣通訊、實際定時與音量／靜音狀態由應用層串接。

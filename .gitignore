@@ -1,0 +1,50 @@
+# Local archives, Python caches and editor state.
+/_Archive/
+__pycache__/
+*.py[cod]
+/.vs/
+/.idea/
+Thumbs.db
+.DS_Store
+
+# Keil build products and workstation-specific debugger settings.
+/Prj/KEIL/obj/
+/Prj/KEIL/lst/
+*.uvgui*
+*.uvopt
+*.uvoptx
+/Prj/KEIL/Nu_Link_Driver.ini
+/*.icp
+
+# The current published firmware and model set is ReleaseV005.
+/CMDSet/ReleaseV001/
+/CMDSet/ReleaseV002/
+/CMDSet/ReleaseV003/
+/CMDSet/ReleaseV004/
+
+# Local test results and disposable fixtures; keep test sources and user guides.
+/DSMT/Test/Build/
+/DSMT/Test/BundleBuilderFixture_*/
+/DSMT/Test/GitUploadFixture_*/
+/DSMT/Test/*.log
+/DSMT/Test/*.json
+
+# Development records and duplicate DSMT download archives.
+/DSMT/SDKProvenance.json
+/DSMT/Combine/Working/*/*.zip
+/DSMT/Combine/Working/*/ProjectStatus.json
+/DSMT/Combine/Working/*/PronunciationReview.json
+/DSMT/Combine/Working/*/NanoePronunciation.json
+/DSMT/Combine/Working/*/TemperaturePronunciation.json
+/DSMT/Combine/Working/*/Remaining.*.txt
+
+# Audio Tool caches and reports; retain the sealed ROM and index header.
+*.uiow
+/AudioRes/ReplyPhrases/BuildInfo.bin
+/AudioRes/ReplyPhrases/Output/*
+!/AudioRes/ReplyPhrases/Output/AirconReplies_AudioInfoMerge.ROM
+!/AudioRes/ReplyPhrases/Output/AirconReplies_AudioInfoOnly.ROM
+!/AudioRes/ReplyPhrases/Output/AirconReplies_AudioInfo.h
+
+# Interrupted package operations.
+.bundle-build.lock
