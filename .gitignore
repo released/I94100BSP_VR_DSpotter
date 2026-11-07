@@ -6,6 +6,18 @@ __pycache__/
 /.idea/
 /CODEX_HANDOFF.md
 /MANUAL_CLEANUP.md
+/PUBLIC_REVIEW.md
+/GITHUB_UPLOAD.md
+/github_push.bat
+/DSMT/Test/test_github_push.py
+
+# Local requirement references and retired Excel-based maintenance tools.
+/DSMT/Input/*.xlsx
+/DSMT/UpdateVoiceInputs.ps1
+/DSMT/build_command_inputs.py
+/DSMT/build_user_docs.py
+/DSMT/regroup_native_project.py
+/DSMT/Test/test_voice_maintenance.py
 Thumbs.db
 .DS_Store
 ~$*

@@ -1,8 +1,6 @@
 {
   "schema_version": 3,
-  "source_workbook": "DSMT/Input/Panasonic_AirCon_Full_VoiceCommands.xlsx",
   "source_worksheet": "完整語音指令與回覆",
-  "source_sha256": "389bc74dcf2825b807f7d07db1fcf5153b5b315bea388a3c95c9da4b209b166c",
   "requested_settings": {
     "sample_rate": 16000,
     "feature_dimension": 23,
@@ -32,7 +30,7 @@
       "value": "ROOM",
       "unit": null,
       "source_cell": "B2",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 2,
       "source_text": "房間冷氣 / 客廳冷氣 / 國際冷氣",
       "reply_source_cell": "D2",
@@ -41,7 +39,8 @@
       "ini_section": "ChineseTWN.Group_1_Wake",
       "ini_numbers": [
         0
-      ]
+      ],
+      "source_origin": "INI"
     },
     {
       "language": "Chinese(TWN)",
@@ -54,7 +53,7 @@
       "value": "LIVING",
       "unit": null,
       "source_cell": "B2",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 2,
       "source_text": "房間冷氣 / 客廳冷氣 / 國際冷氣",
       "reply_source_cell": "D2",
@@ -63,7 +62,8 @@
       "ini_section": "ChineseTWN.Group_1_Wake",
       "ini_numbers": [
         1
-      ]
+      ],
+      "source_origin": "INI"
     },
     {
       "language": "Chinese(TWN)",
@@ -76,7 +76,7 @@
       "value": "GLOBAL",
       "unit": null,
       "source_cell": "B2",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 2,
       "source_text": "房間冷氣 / 客廳冷氣 / 國際冷氣",
       "reply_source_cell": "D2",
@@ -85,7 +85,8 @@
       "ini_section": "ChineseTWN.Group_1_Wake",
       "ini_numbers": [
         2
-      ]
+      ],
+      "source_origin": "INI"
     },
     {
       "language": "Chinese(TWN)",
@@ -98,7 +99,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B3",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 3,
       "source_text": "開機 / 開冷氣 / 開空調",
       "reply_source_cell": "D3",
@@ -108,6 +109,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -121,7 +123,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B3",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 3,
       "source_text": "開機 / 開冷氣 / 開空調",
       "reply_source_cell": "D3",
@@ -131,6 +133,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -144,7 +147,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B3",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 3,
       "source_text": "開機 / 開冷氣 / 開空調",
       "reply_source_cell": "D3",
@@ -154,6 +157,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -167,7 +171,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B4",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 4,
       "source_text": "關機 / 關冷氣 / 關空調",
       "reply_source_cell": "D4",
@@ -177,6 +181,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -190,7 +195,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B4",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 4,
       "source_text": "關機 / 關冷氣 / 關空調",
       "reply_source_cell": "D4",
@@ -200,6 +205,7 @@
       "ini_numbers": [
         4
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -213,7 +219,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B4",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 4,
       "source_text": "關機 / 關冷氣 / 關空調",
       "reply_source_cell": "D4",
@@ -223,6 +229,7 @@
       "ini_numbers": [
         5
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -236,7 +243,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B5",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 5,
       "source_text": "舒適冷房 / 吹冷氣",
       "reply_source_cell": "D5",
@@ -246,6 +253,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -259,7 +267,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B5",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 5,
       "source_text": "舒適冷房 / 吹冷氣",
       "reply_source_cell": "D5",
@@ -269,6 +277,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -282,7 +291,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B6",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 6,
       "source_text": "舒適暖房 / 開暖氣 / 吹暖氣",
       "reply_source_cell": "D6",
@@ -292,6 +301,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -305,7 +315,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B6",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 6,
       "source_text": "舒適暖房 / 開暖氣 / 吹暖氣",
       "reply_source_cell": "D6",
@@ -315,6 +325,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -328,7 +339,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B6",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 6,
       "source_text": "舒適暖房 / 開暖氣 / 吹暖氣",
       "reply_source_cell": "D6",
@@ -338,6 +349,7 @@
       "ini_numbers": [
         4
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -351,7 +363,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B7",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 7,
       "source_text": "開除濕 / 吹除濕",
       "reply_source_cell": "D7",
@@ -361,6 +373,7 @@
       "ini_numbers": [
         5
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -374,7 +387,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B7",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 7,
       "source_text": "開除濕 / 吹除濕",
       "reply_source_cell": "D7",
@@ -384,6 +397,7 @@
       "ini_numbers": [
         6
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -397,7 +411,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B8",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 8,
       "source_text": "開自動",
       "reply_source_cell": "D8",
@@ -407,6 +421,7 @@
       "ini_numbers": [
         7
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -420,7 +435,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B9",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 9,
       "source_text": "溫度調高 / 溫度高一點 / 太冷了",
       "reply_source_cell": "D9",
@@ -430,6 +445,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -443,7 +459,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B9",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 9,
       "source_text": "溫度調高 / 溫度高一點 / 太冷了",
       "reply_source_cell": "D9",
@@ -453,6 +469,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -466,7 +483,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B9",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 9,
       "source_text": "溫度調高 / 溫度高一點 / 太冷了",
       "reply_source_cell": "D9",
@@ -476,6 +493,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -489,7 +507,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B10",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 10,
       "source_text": "溫度調低 / 溫度低一點 / 太熱了",
       "reply_source_cell": "D10",
@@ -499,6 +517,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -512,7 +531,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B10",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 10,
       "source_text": "溫度調低 / 溫度低一點 / 太熱了",
       "reply_source_cell": "D10",
@@ -522,6 +541,7 @@
       "ini_numbers": [
         4
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -535,7 +555,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B10",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 10,
       "source_text": "溫度調低 / 溫度低一點 / 太熱了",
       "reply_source_cell": "D10",
@@ -545,6 +565,7 @@
       "ini_numbers": [
         5
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -558,7 +579,7 @@
       "value": 16,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -568,6 +589,7 @@
       "ini_numbers": [
         6
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -581,7 +603,7 @@
       "value": 17,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -591,6 +613,7 @@
       "ini_numbers": [
         7
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -604,7 +627,7 @@
       "value": 18,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -614,6 +637,7 @@
       "ini_numbers": [
         8
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -627,7 +651,7 @@
       "value": 19,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -637,6 +661,7 @@
       "ini_numbers": [
         9
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -650,7 +675,7 @@
       "value": 20,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -660,6 +685,7 @@
       "ini_numbers": [
         10
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -673,7 +699,7 @@
       "value": 21,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -683,6 +709,7 @@
       "ini_numbers": [
         11
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -696,7 +723,7 @@
       "value": 22,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -706,6 +733,7 @@
       "ini_numbers": [
         12
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -719,7 +747,7 @@
       "value": 23,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -729,6 +757,7 @@
       "ini_numbers": [
         13
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -742,7 +771,7 @@
       "value": 24,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -752,6 +781,7 @@
       "ini_numbers": [
         14
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -765,7 +795,7 @@
       "value": 25,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -775,6 +805,7 @@
       "ini_numbers": [
         15
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -788,7 +819,7 @@
       "value": 26,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -798,6 +829,7 @@
       "ini_numbers": [
         16
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -811,7 +843,7 @@
       "value": 27,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -821,6 +853,7 @@
       "ini_numbers": [
         17
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -834,7 +867,7 @@
       "value": 28,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -844,6 +877,7 @@
       "ini_numbers": [
         18
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -857,7 +891,7 @@
       "value": 29,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -867,6 +901,7 @@
       "ini_numbers": [
         19
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -880,7 +915,7 @@
       "value": 30,
       "unit": "C",
       "source_cell": "B11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度 (可換其他數字)",
       "reply_source_cell": "D11",
@@ -890,6 +925,7 @@
       "ini_numbers": [
         20
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -903,7 +939,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B12",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 12,
       "source_text": "風量大一點 / 增大風量 / 風太小",
       "reply_source_cell": "D12",
@@ -913,6 +949,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -926,7 +963,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B12",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 12,
       "source_text": "風量大一點 / 增大風量 / 風太小",
       "reply_source_cell": "D12",
@@ -936,6 +973,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -949,7 +987,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B12",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 12,
       "source_text": "風量大一點 / 增大風量 / 風太小",
       "reply_source_cell": "D12",
@@ -959,6 +997,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -972,7 +1011,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B13",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 13,
       "source_text": "風量小一點 / 減小風量 / 風太大",
       "reply_source_cell": "D13",
@@ -982,6 +1021,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -995,7 +1035,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B13",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 13,
       "source_text": "風量小一點 / 減小風量 / 風太大",
       "reply_source_cell": "D13",
@@ -1005,6 +1045,7 @@
       "ini_numbers": [
         4
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1018,7 +1059,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B13",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 13,
       "source_text": "風量小一點 / 減小風量 / 風太大",
       "reply_source_cell": "D13",
@@ -1028,6 +1069,7 @@
       "ini_numbers": [
         5
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1041,7 +1083,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B14",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 14,
       "source_text": "風量自動",
       "reply_source_cell": "D14",
@@ -1051,6 +1093,7 @@
       "ini_numbers": [
         6
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1064,7 +1107,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B15",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 15,
       "source_text": "風向自動 / 上下擺動",
       "reply_source_cell": "D15",
@@ -1074,6 +1117,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1087,7 +1131,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B15",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 15,
       "source_text": "風向自動 / 上下擺動",
       "reply_source_cell": "D15",
@@ -1097,6 +1141,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1110,7 +1155,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B16",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 16,
       "source_text": "固定風向 / 停止擺動",
       "reply_source_cell": "D16",
@@ -1120,6 +1165,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1133,7 +1179,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B16",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 16,
       "source_text": "固定風向 / 停止擺動",
       "reply_source_cell": "D16",
@@ -1143,6 +1189,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1156,7 +1203,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B17",
-      "pronunciation_status": "nanoe_reading_confirmed_requires_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 17,
       "source_text": "開 nanoe / 啟動 nanoe",
       "reply_source_cell": "D17",
@@ -1166,6 +1213,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json",
       "spoken_text": "開奈諾伊"
     },
@@ -1180,7 +1228,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B17",
-      "pronunciation_status": "nanoe_reading_confirmed_requires_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 17,
       "source_text": "開 nanoe / 啟動 nanoe",
       "reply_source_cell": "D17",
@@ -1190,6 +1238,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json",
       "spoken_text": "啟動奈諾伊"
     },
@@ -1204,7 +1253,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B18",
-      "pronunciation_status": "nanoe_reading_confirmed_requires_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 18,
       "source_text": "關 nanoe / 關閉 nanoe",
       "reply_source_cell": "D18",
@@ -1214,6 +1263,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json",
       "spoken_text": "關奈諾伊"
     },
@@ -1228,7 +1278,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B18",
-      "pronunciation_status": "nanoe_reading_confirmed_requires_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 18,
       "source_text": "關 nanoe / 關閉 nanoe",
       "reply_source_cell": "D18",
@@ -1238,6 +1288,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json",
       "spoken_text": "關閉奈諾伊"
     },
@@ -1252,7 +1303,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B19",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 19,
       "source_text": "聲音大一點 / 增大音量",
       "reply_source_cell": "D19",
@@ -1262,6 +1313,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1275,7 +1327,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B19",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 19,
       "source_text": "聲音大一點 / 增大音量",
       "reply_source_cell": "D19",
@@ -1285,6 +1337,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1298,7 +1351,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B20",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 20,
       "source_text": "聲音小一點 / 減小音量",
       "reply_source_cell": "D20",
@@ -1308,6 +1361,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1321,7 +1375,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B20",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 20,
       "source_text": "聲音小一點 / 減小音量",
       "reply_source_cell": "D20",
@@ -1331,6 +1385,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1344,7 +1399,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B21",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 21,
       "source_text": "關閉語音 / 靜音模式",
       "reply_source_cell": "D21",
@@ -1354,6 +1409,7 @@
       "ini_numbers": [
         4
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1367,7 +1423,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B21",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 21,
       "source_text": "關閉語音 / 靜音模式",
       "reply_source_cell": "D21",
@@ -1377,6 +1433,7 @@
       "ini_numbers": [
         5
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1390,7 +1447,7 @@
       "value": null,
       "unit": null,
       "source_cell": "B23",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 23,
       "source_text": "取消定時",
       "reply_source_cell": "D23",
@@ -1400,6 +1457,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1413,7 +1471,7 @@
       "value": 1,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1423,6 +1481,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1436,7 +1495,7 @@
       "value": 1,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1446,6 +1505,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1459,7 +1519,7 @@
       "value": 2,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1469,6 +1529,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1482,7 +1543,7 @@
       "value": 2,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1492,6 +1553,7 @@
       "ini_numbers": [
         4
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1505,7 +1567,7 @@
       "value": 3,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1515,6 +1577,7 @@
       "ini_numbers": [
         5
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1528,7 +1591,7 @@
       "value": 3,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1538,6 +1601,7 @@
       "ini_numbers": [
         6
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1551,7 +1615,7 @@
       "value": 4,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1561,6 +1625,7 @@
       "ini_numbers": [
         7
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1574,7 +1639,7 @@
       "value": 4,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1584,6 +1649,7 @@
       "ini_numbers": [
         8
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1597,7 +1663,7 @@
       "value": 5,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1607,6 +1673,7 @@
       "ini_numbers": [
         9
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1620,7 +1687,7 @@
       "value": 5,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1630,6 +1697,7 @@
       "ini_numbers": [
         10
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1643,7 +1711,7 @@
       "value": 6,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1653,6 +1721,7 @@
       "ini_numbers": [
         11
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1666,7 +1735,7 @@
       "value": 6,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1676,6 +1745,7 @@
       "ini_numbers": [
         12
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1689,7 +1759,7 @@
       "value": 7,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1699,6 +1769,7 @@
       "ini_numbers": [
         13
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1712,7 +1783,7 @@
       "value": 7,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1722,6 +1793,7 @@
       "ini_numbers": [
         14
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1735,7 +1807,7 @@
       "value": 8,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1745,6 +1817,7 @@
       "ini_numbers": [
         15
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1758,7 +1831,7 @@
       "value": 8,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1768,6 +1841,7 @@
       "ini_numbers": [
         16
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1781,7 +1855,7 @@
       "value": 9,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1791,6 +1865,7 @@
       "ini_numbers": [
         17
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1804,7 +1879,7 @@
       "value": 9,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1814,6 +1889,7 @@
       "ini_numbers": [
         18
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1827,7 +1903,7 @@
       "value": 10,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1837,6 +1913,7 @@
       "ini_numbers": [
         19
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1850,7 +1927,7 @@
       "value": 10,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1860,6 +1937,7 @@
       "ini_numbers": [
         20
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1873,7 +1951,7 @@
       "value": 11,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1883,6 +1961,7 @@
       "ini_numbers": [
         21
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1896,7 +1975,7 @@
       "value": 11,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1906,6 +1985,7 @@
       "ini_numbers": [
         22
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1919,7 +1999,7 @@
       "value": 12,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1929,6 +2009,7 @@
       "ini_numbers": [
         23
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1942,7 +2023,7 @@
       "value": 12,
       "unit": "h",
       "source_cell": "B22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "定時一小時關機 / 一小時後關機",
       "reply_source_cell": "D22",
@@ -1952,6 +2033,7 @@
       "ini_numbers": [
         24
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -1965,7 +2047,7 @@
       "value": "ROOM",
       "unit": null,
       "source_cell": "C2",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 2,
       "source_text": "房間冷氣 / 客廳冷氣",
       "reply_source_cell": "D2",
@@ -1974,7 +2056,8 @@
       "ini_section": "Taiwanese.Group_1_Wake",
       "ini_numbers": [
         0
-      ]
+      ],
+      "source_origin": "INI"
     },
     {
       "language": "Taiwanese",
@@ -1987,7 +2070,7 @@
       "value": "LIVING",
       "unit": null,
       "source_cell": "C2",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 2,
       "source_text": "房間冷氣 / 客廳冷氣",
       "reply_source_cell": "D2",
@@ -1996,7 +2079,8 @@
       "ini_section": "Taiwanese.Group_1_Wake",
       "ini_numbers": [
         1
-      ]
+      ],
+      "source_origin": "INI"
     },
     {
       "language": "Taiwanese",
@@ -2009,7 +2093,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C3",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 3,
       "source_text": "開冷氣 / 打開冷氣",
       "reply_source_cell": "D3",
@@ -2020,6 +2104,7 @@
         0,
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2033,7 +2118,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C3",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 3,
       "source_text": "開冷氣 / 打開冷氣",
       "reply_source_cell": "D3",
@@ -2043,6 +2128,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2056,7 +2142,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C4",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 4,
       "source_text": "關冷氣 / 冷氣關起來 / 冷氣關掉",
       "reply_source_cell": "D4",
@@ -2067,6 +2153,7 @@
         3,
         4
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2080,7 +2167,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C4",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 4,
       "source_text": "關冷氣 / 冷氣關起來 / 冷氣關掉",
       "reply_source_cell": "D4",
@@ -2090,6 +2177,7 @@
       "ini_numbers": [
         5
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2103,7 +2191,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C4",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 4,
       "source_text": "關冷氣 / 冷氣關起來 / 冷氣關掉",
       "reply_source_cell": "D4",
@@ -2113,6 +2201,7 @@
       "ini_numbers": [
         6
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2126,7 +2215,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C5",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 5,
       "source_text": "吹冷氣",
       "reply_source_cell": "D5",
@@ -2139,6 +2228,7 @@
         2,
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2152,7 +2242,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C6",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 6,
       "source_text": "吹暖氣",
       "reply_source_cell": "D6",
@@ -2166,6 +2256,7 @@
         7,
         8
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2179,7 +2270,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C7",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 7,
       "source_text": "開除濕",
       "reply_source_cell": "D7",
@@ -2190,6 +2281,7 @@
         9,
         10
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2203,7 +2295,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C8",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 8,
       "source_text": "開自動",
       "reply_source_cell": "D8",
@@ -2214,6 +2306,7 @@
         11,
         12
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2227,7 +2320,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C9",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 9,
       "source_text": "溫度調高 / 溫度攑懸",
       "reply_source_cell": "D9",
@@ -2237,6 +2330,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2250,7 +2344,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C9",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 9,
       "source_text": "溫度調高 / 溫度攑懸",
       "reply_source_cell": "D9",
@@ -2260,6 +2354,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2273,7 +2368,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C10",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 10,
       "source_text": "溫度調低 / 溫度降落",
       "reply_source_cell": "D10",
@@ -2283,6 +2378,7 @@
       "ini_numbers": [
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2296,7 +2392,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C10",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 10,
       "source_text": "溫度調低 / 溫度降落",
       "reply_source_cell": "D10",
@@ -2306,6 +2402,7 @@
       "ini_numbers": [
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2319,7 +2416,7 @@
       "value": 16,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2336,6 +2433,7 @@
         10,
         11
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2349,7 +2447,7 @@
       "value": 17,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2362,6 +2460,7 @@
         14,
         15
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2375,7 +2474,7 @@
       "value": 18,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2390,6 +2489,7 @@
         20,
         21
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2403,7 +2503,7 @@
       "value": 19,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2418,6 +2518,7 @@
         26,
         27
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2431,7 +2532,7 @@
       "value": 20,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2448,6 +2549,7 @@
         34,
         35
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2461,7 +2563,7 @@
       "value": 21,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2474,6 +2576,7 @@
         38,
         39
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2487,7 +2590,7 @@
       "value": 22,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2504,6 +2607,7 @@
         46,
         47
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2517,7 +2621,7 @@
       "value": 23,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2530,6 +2634,7 @@
         50,
         51
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2543,7 +2648,7 @@
       "value": 24,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2560,6 +2665,7 @@
         58,
         59
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2573,7 +2679,7 @@
       "value": 25,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2590,6 +2696,7 @@
         66,
         67
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2603,7 +2710,7 @@
       "value": 26,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2620,6 +2727,7 @@
         74,
         75
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2633,7 +2741,7 @@
       "value": 27,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2646,6 +2754,7 @@
         78,
         79
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2659,7 +2768,7 @@
       "value": 28,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2676,6 +2785,7 @@
         86,
         87
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2689,7 +2799,7 @@
       "value": 29,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2706,6 +2816,7 @@
         94,
         95
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2719,7 +2830,7 @@
       "value": 30,
       "unit": "C",
       "source_cell": "C11",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 11,
       "source_text": "設定26度",
       "reply_source_cell": "D11",
@@ -2733,6 +2844,7 @@
         99,
         100
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2746,7 +2858,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C12",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 12,
       "source_text": "風量大一點",
       "reply_source_cell": "D12",
@@ -2757,6 +2869,7 @@
         0,
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2770,7 +2883,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C13",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 13,
       "source_text": "風量細一點",
       "reply_source_cell": "D13",
@@ -2781,6 +2894,7 @@
         2,
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2794,7 +2908,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C14",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 14,
       "source_text": "風量自動",
       "reply_source_cell": "D14",
@@ -2805,6 +2919,7 @@
         4,
         5
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2818,7 +2933,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C15",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 15,
       "source_text": "風向自動",
       "reply_source_cell": "D15",
@@ -2829,6 +2944,7 @@
         0,
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2842,7 +2958,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C16",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 16,
       "source_text": "固定風向",
       "reply_source_cell": "D16",
@@ -2853,6 +2969,7 @@
         2,
         3
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2866,7 +2983,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C17",
-      "pronunciation_status": "nanoe_reading_confirmed_requires_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 17,
       "source_text": "開 nanoe",
       "reply_source_cell": "D17",
@@ -2876,6 +2993,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json",
       "spoken_text": "開奈諾伊"
     },
@@ -2890,7 +3008,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C18",
-      "pronunciation_status": "nanoe_reading_confirmed_requires_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 18,
       "source_text": "關 nanoe",
       "reply_source_cell": "D18",
@@ -2900,6 +3018,7 @@
       "ini_numbers": [
         1
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json",
       "spoken_text": "關奈諾伊"
     },
@@ -2914,7 +3033,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C19",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 19,
       "source_text": "聲音大一點",
       "reply_source_cell": "D19",
@@ -2924,6 +3043,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2937,7 +3057,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C20",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 20,
       "source_text": "聲音細一點",
       "reply_source_cell": "D20",
@@ -2948,6 +3068,7 @@
         1,
         2
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2961,7 +3082,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C21",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 21,
       "source_text": "關閉語音",
       "reply_source_cell": "D21",
@@ -2972,6 +3093,7 @@
         3,
         4
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -2985,7 +3107,7 @@
       "value": null,
       "unit": null,
       "source_cell": "C23",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 23,
       "source_text": "取消定時",
       "reply_source_cell": "D23",
@@ -2995,6 +3117,7 @@
       "ini_numbers": [
         0
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3008,7 +3131,7 @@
       "value": 1,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3023,6 +3146,7 @@
         5,
         6
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3036,7 +3160,7 @@
       "value": 2,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3053,6 +3177,7 @@
         13,
         14
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3066,7 +3191,7 @@
       "value": 3,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3080,6 +3205,7 @@
         18,
         19
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3093,7 +3219,7 @@
       "value": 4,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3108,6 +3234,7 @@
         24,
         25
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3121,7 +3248,7 @@
       "value": 5,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3136,6 +3263,7 @@
         30,
         31
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3149,7 +3277,7 @@
       "value": 6,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3164,6 +3292,7 @@
         36,
         37
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3177,7 +3306,7 @@
       "value": 7,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3189,6 +3318,7 @@
         39,
         40
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3202,7 +3332,7 @@
       "value": 8,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3217,6 +3347,7 @@
         45,
         46
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3230,7 +3361,7 @@
       "value": 9,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3245,6 +3376,7 @@
         51,
         52
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3258,7 +3390,7 @@
       "value": 10,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3273,6 +3405,7 @@
         57,
         58
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3286,7 +3419,7 @@
       "value": 11,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3303,6 +3436,7 @@
         65,
         66
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     },
     {
@@ -3316,7 +3450,7 @@
       "value": 12,
       "unit": "h",
       "source_cell": "C22",
-      "pronunciation_status": "not_yet_verified_in_dsmt",
+      "pronunciation_status": "native_dsmt",
       "source_row": 22,
       "source_text": "一小時後關機",
       "reply_source_cell": "D22",
@@ -3333,13 +3467,14 @@
         73,
         74
       ],
+      "source_origin": "INI",
       "reply_override_source": "AudioRes/ReplyPhrases/ReplyProfile.json"
     }
   ],
   "native_projects": {
     "Chinese(TWN)": {
-      "path": "DSMT/Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt",
-      "sha256": "52e9a931d114cb61b850de15c701893871a60caebb29f94bb81c1965b801c161"
+      "path": "DSMT/Combine/Working/ChineseTWN/AirconZHTW.dsmt",
+      "sha256": "a4b11721998925cbde0c106d87a25cbf296bdd8929fb84e988b95611575dccd3"
     },
     "Taiwanese": {
       "path": "DSMT/Combine/Working/Taiwanese/Taiwanese.dsmt",
@@ -3347,5 +3482,5 @@
     }
   },
   "recognition_source": "DSMT/VoiceCommands.ini",
-  "voice_ini_sha256": "29fbffb6ed4da7eb99b6ba7ed688aab855f227bef386f2a9853798073dc21a02"
+  "voice_ini_sha256": "bbe5a1e6f4ab0fe2791f05d26d4c2a4aadf57d210da222c349f51fe30d699d0a"
 }

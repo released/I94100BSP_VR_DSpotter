@@ -150,7 +150,7 @@ function Get-VoicePronunciations([string]$Root, $Records) {
     $lookup = @{}
     foreach ($record in $Records) { $lookup[$record.language + '|' + $record.group + '|' + $record.text] = $record }
     $result = @{}
-    foreach ($spec in @(@('Chinese(TWN)','ChineseTWN','PanasonicAirConZHTW.dsmt'), @('Taiwanese','Taiwanese','Taiwanese.dsmt'))) {
+    foreach ($spec in @(@('Chinese(TWN)','ChineseTWN','AirconZHTW.dsmt'), @('Taiwanese','Taiwanese','Taiwanese.dsmt'))) {
         $project = Read-VoiceJson (Join-Path $Root ('DSMT/Combine/Working/' + $spec[1] + '/' + $spec[2]))
         if ($project.language -ne $spec[0]) { throw 'Native project language mismatch.' }
         foreach ($group in $project.groups) {
@@ -189,8 +189,8 @@ function Get-VoiceInputOutputs($Manifest) {
         }
     }
     $reference = New-Object 'System.Collections.Generic.List[string]'
-    $reference.Add("language`tcategory`tgroup`ttext`tMapID`tcommand`tvalue`tsource_cell")
-    foreach ($r in $records) { $reference.Add((@($r.language,$r.category,$r.group,$r.text,$r.map_id,$r.command,$r.value,$r.source_cell) -join "`t")) }
+    $reference.Add("language`tcategory`tgroup`ttext`tMapID`tcommand`tvalue`tini_section`tini_no")
+    foreach ($r in $records) { $reference.Add((@($r.language,$r.category,$r.group,$r.text,$r.map_id,$r.command,$r.value,$r.ini_section,($r.ini_numbers -join ',')) -join "`t")) }
     $outputs['DSMT/Input/MapID_Reference.txt'] = Get-VoiceUtf8 (($reference -join "`r`n") + "`r`n") $true
     $outputs
 }

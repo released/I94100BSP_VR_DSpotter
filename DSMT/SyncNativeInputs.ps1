@@ -8,6 +8,8 @@ templates supply category/command/value/unit; aliases inherit their MapID action
 $root = [IO.Path]::GetFullPath((Split-Path -Parent $PSScriptRoot))
 $voiceIni = Read-VoiceIni $root
 $manifest = Read-VoiceJson (Join-Path $PSScriptRoot 'Input/CommandManifest.json')
+$manifest.PSObject.Properties.Remove('source_workbook')
+$manifest.PSObject.Properties.Remove('source_sha256')
 $templates = @($manifest.records)
 $profilePath = Join-Path $root 'AudioRes/ReplyPhrases/ReplyProfile.json'
 $profile = Read-VoiceJson $profilePath
@@ -22,7 +24,7 @@ foreach ($phrase in $profile.phrases) {
 }
 $records = New-Object 'System.Collections.Generic.List[object]'
 $projects = [ordered]@{}
-foreach ($spec in @(@('Chinese(TWN)','ChineseTWN','PanasonicAirConZHTW.dsmt'), @('Taiwanese','Taiwanese','Taiwanese.dsmt'))) {
+foreach ($spec in @(@('Chinese(TWN)','ChineseTWN','AirconZHTW.dsmt'), @('Taiwanese','Taiwanese','Taiwanese.dsmt'))) {
     $relative = 'DSMT/Combine/Working/' + $spec[1] + '/' + $spec[2]
     $projectPath = Join-Path $root $relative
     $project = Read-VoiceJson $projectPath
@@ -61,6 +63,8 @@ foreach ($spec in @(@('Chinese(TWN)','ChineseTWN','PanasonicAirConZHTW.dsmt'), @
                 $iniRows = @($iniGroup.Rows | Where-Object Command -ceq $word.command)
                 $record | Add-Member -Force NoteProperty ini_section $iniGroup.Section
                 $record | Add-Member -Force NoteProperty ini_numbers @($iniRows.No)
+                $record | Add-Member -Force NoteProperty source_origin 'INI'
+                $record.pronunciation_status = 'native_dsmt'
                 if ($isNew) {
                     $column = 'B'; if ($spec[0] -eq 'Taiwanese') { $column = 'C' }
                     $record.source_cell = $column + $record.source_row

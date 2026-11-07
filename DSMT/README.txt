@@ -1,11 +1,11 @@
-﻿Panasonic 冷氣國台語專案 V005 文件入口
+I94124 國語／台語語音控制範例文件入口
 
 完整操作手冊：專案根目錄 README.md。
 燒錄入口：CMDSet/ReleaseV005/ProgrammingLayout.txt。
 一般 ICP 燒錄：APROM 選 DNN_NuOne_UAC.bin，DataFlash 選 AirconDataFlash.bin。
 DataFlash 整合檔包含雙語模型與內部 NuOne 回覆音訊。
 
-國語工程：Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt。
+國語工程：Combine/Working/ChineseTWN/AirconZHTW.dsmt。
 台語工程：Combine/Working/Taiwanese/Taiwanese.dsmt。
 DSMT 修改完整儲存後，雙擊根目錄 BuildLatestModel.cmd 更新發布檔，不需 Python。
 辨識規格維護於 VoiceCommands.ini；一鍵工具產生 Import/ 匯入檔，交由 DSMT 取得發音並儲存模型。

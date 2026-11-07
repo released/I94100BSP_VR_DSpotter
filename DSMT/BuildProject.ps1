@@ -23,7 +23,7 @@ function Capture-BuildStep([scriptblock]$Action) {
     & $Action 2>&1 | ForEach-Object { [void]$log.AppendLine([string]$_) }
 }
 try {
-    Write-Host 'Panasonic 冷氣語音專案：一鍵產生燒錄檔'
+    Write-Host 'I94124 雙語語音控制範例：一鍵產生燒錄檔'
     Write-Host '[1/4] 核對 DSMT 與回覆音訊'
     $spec = Read-VoiceIni $root
     Assert-VoiceIniActions $root $spec

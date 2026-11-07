@@ -4,8 +4,8 @@
   "languages": [
     {
       "language": "Chinese(TWN)",
-      "project": "DSMT\\Combine\\Working\\ChineseTWN\\PanasonicAirConZHTW.dsmt",
-      "project_sha256": "52e9a931d114cb61b850de15c701893871a60caebb29f94bb81c1965b801c161",
+      "project": "DSMT\\Combine\\Working\\ChineseTWN\\AirconZHTW.dsmt",
+      "project_sha256": "a4b11721998925cbde0c106d87a25cbf296bdd8929fb84e988b95611575dccd3",
       "base_release": "202305021800",
       "groups": [
         {
@@ -197,9 +197,9 @@
     }
   },
   "verification_limits": [
-    "Acoustic accuracy and real-time processing not board-tested",
-    "Actual dual-engine RAM is checked and printed at runtime",
-    "0 command text variants remain pending valid native pronunciations; nanoe reading confirmed by user",
-    "Existing binary ICP project was not rewritten"
+    "Acoustic accuracy and real-time CPU load require board validation",
+    "Dual-engine RAM requirements are checked at runtime",
+    "0 command variants lack valid native pronunciations",
+    "ICP configuration must match the selected board and Flash layout"
   ]
 }

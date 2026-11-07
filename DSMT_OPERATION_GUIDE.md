@@ -22,13 +22,13 @@ INI 轉換採 DSMT 官方的 UTF-16LE 群組／批次新增格式。匯入並儲
 |---|---|
 | `DSMT/VoiceCommands.ini` | 修改辨識詞條、語系、群組、參數、MapID 與指定發音 |
 | `DSMT/Import/` | 一鍵工具產生的 DSMT 匯入資料 |
-| `DSMT/Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt` | 國語工程，在 DSMT 開啟與儲存 |
+| `DSMT/Combine/Working/ChineseTWN/AirconZHTW.dsmt` | 國語工程，在 DSMT 開啟與儲存 |
 | `DSMT/Combine/Working/Taiwanese/Taiwanese.dsmt` | 台語工程，在 DSMT 開啟與儲存 |
 | `DSMT/Input/CommandManifest.json` | 工具同步的功能與詞條清單 |
 | `DSMT/Input/IniModelState.json` | 工具同步的模型狀態 |
 | `CMDSet/ReleaseV005/AirconDataFlash.bin` | 雙語模型與回覆音訊整合燒錄檔 |
 
-原始 Excel 保留作需求參考，後續詞條變更只需維護 INI。現有 INI 包含國語 84 筆、台語 215 筆發音候選；不同候選可共用同一命令文字及 MapID。
+詞條規格由 INI 維護。隨附範例包含國語 84 筆、台語 215 筆發音候選；不同候選可共用同一命令文字及 MapID。
 
 ## 2. INI 格式
 
@@ -40,7 +40,7 @@ Version=1
 
 [Project.ChineseTWN]
 Language=Chinese(TWN)
-NativeProject=DSMT/Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt
+NativeProject=DSMT/Combine/Working/ChineseTWN/AirconZHTW.dsmt
 
 [ChineseTWN.Group_2_Power]
 ; No=Command|Reward|SGReward|ExtEnd|MapID|FastSpeech|Phoneme
@@ -99,7 +99,7 @@ No 是排序用途，UART 的 `map_id` 是功能用途。留白發音經 DSMT �
 
 2. 儲存 INI，雙擊根目錄 **`BuildLatestModel.cmd`**。
 3. 工具顯示待套用 `ChineseTWN/Group_2_Power`，並更新 `DSMT/Import/README.md` 與匯入檔。視窗可保持開啟。
-4. 在 DSMT 登入，使用「檔案 → 載入專案」開啟國語工程：`DSMT/Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt`。
+4. 在 DSMT 登入，使用「檔案 → 載入專案」開啟國語工程：`DSMT/Combine/Working/ChineseTWN/AirconZHTW.dsmt`。
 5. 選取 **Group_2_Power**。在指令列表選第一列，再按住 Shift 選最後一列，按「刪除」，清空此組詞條。群組及 Global 設定沿用原工程。
 6. 按「批次新增」，選擇 **`DSMT/Import/ChineseTWN/Group_2_Power.BatchAdd.txt`**。此檔包含該群組原有及新增的完整詞條。
 7. 等待 DSMT 完成發音處理。檢查新增詞條文字、MapID=1、Reward、SGReward、ExtEnd、FastSpeech。

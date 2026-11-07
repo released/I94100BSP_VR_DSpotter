@@ -1,9 +1,9 @@
-Panasonic 冷氣國台語 DSMT 正式工程
+I94124 雙語 DSMT 範例工程
 
 辨識規格：DSMT/VoiceCommands.ini。
 完整操作：專案根目錄 DSMT_OPERATION_GUIDE.md。
 
-國語：Working/ChineseTWN/PanasonicAirConZHTW.dsmt。
+國語：Working/ChineseTWN/AirconZHTW.dsmt。
 台語：Working/Taiwanese/Taiwanese.dsmt。
 匯入資料：DSMT/Import/，由 BuildLatestModel.cmd 依 INI 產生。
 

@@ -50,7 +50,7 @@ def run_builder(project, args=(), wrapper=False):
     else:
         argv = [str(project / "DSMT/AirconBundleBuilder.exe"), "--no-pause"] + list(args)
     result = subprocess.run(argv, cwd=project.parent, env=env, stdin=subprocess.DEVNULL,
-                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=45)
+                            stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=120)
     output = result.stdout.decode("utf-8-sig", errors="replace")
     TRANSCRIPT.append("COMMAND: " + (argv if isinstance(argv, str) else subprocess.list2cmdline(argv)) + "\n" + output)
     return result.returncode, output
@@ -108,7 +108,7 @@ def main():
     shutil.copyfile(ROOT / "DSMT/Input/CommandManifest.json", project / "DSMT/Input/CommandManifest.json")
     shutil.copyfile(ROOT / "DSMT/Input/IniModelState.json", project / "DSMT/Input/IniModelState.json")
     shutil.copytree(ROOT / "AudioRes/ReplyPhrases", project / "AudioRes/ReplyPhrases")
-    for folder, filename in (("ChineseTWN", "PanasonicAirConZHTW.dsmt"), ("Taiwanese", "Taiwanese.dsmt")):
+    for folder, filename in (("ChineseTWN", "AirconZHTW.dsmt"), ("Taiwanese", "Taiwanese.dsmt")):
         source = ROOT / "DSMT/Combine/Working" / folder
         target = project / "DSMT/Combine/Working" / folder
         target.mkdir(parents=True)

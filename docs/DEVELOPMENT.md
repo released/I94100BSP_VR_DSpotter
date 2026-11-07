@@ -91,9 +91,8 @@
 | `DSMT/Test/run_host_tests.cmd` | 解碼、PCM、雙語候選處理、記憶體、音訊及播放流程；需 Visual Studio C 工具 |
 | `DSMT/Test/test_project_build.py` | 單一入口、來源變動、編碼核對、發布及清理 |
 | `DSMT/Test/test_bundle_builder.py` | 原生封裝與 Python 參考一致性、容量、鎖定及錯誤處理 |
-| `DSMT/Test/test_voice_maintenance.py` | Windows 需求／文件產生器與來源保留 |
+| `DSMT/Test/test_voice_docs.py` | 無 Excel 來源的文件產生、逐句覆蓋、備份及鎖定 |
 | `DSMT/Test/test_voice_ini.ps1` | INI 欄位、299 候選往返、匯出檔一致性與模型狀態比對 |
-| `DSMT/Test/test_github_push.py` | 本機 Git 倉庫驗證一鍵提交／推送、忽略規則、錯誤停止及重試；不連線 GitHub |
 
 主機測試不取代實機辨識率、回覆讀音、麥克風／喇叭及即時處理驗證。執行紀錄與測試暫存放在 `DSMT/Test/`，由 Git 排除。
 
@@ -103,4 +102,4 @@ ExtEnd 的 INI 欄位與 DSMT 顯示值使用秒；原生 `extra_endsil_frame` �
 
 `Input/IniModelState.json` 保存每組有效發音、MapID、Reward、SGReward、ExtEnd、FastSpeech 與 Global 設定的摘要及模型指紋。摘要變更而模型指紋未變時，一鍵工具要求 DSMT 重新產生模型。顯示文字改名不納入模型摘要，因原生模型依音素與 MapID 辨識；INI 與群組文字仍需一致。此核對不取代 DSMT 的合法發音處理及板測。
 
-`UpdateVoiceInputs.ps1` 與 Python Excel 匯入程式保留供工程移植參考，一般使用者以 INI 維護。新專案的群組及路徑變更需同步 `SyncNativeInputs.ps1`、`Get-VoicePronunciations`、封裝器、功能模板及韌體。
+新範例的群組及路徑變更需同步 `SyncNativeInputs.ps1`、`Get-VoicePronunciations`、封裝器、功能模板及韌體。辨識規格以 INI 維護。

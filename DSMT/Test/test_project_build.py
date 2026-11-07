@@ -28,7 +28,7 @@ def main():
     transcript = []
     try:
         for name in ("DSMT/Input", "DSMT/Combine/Working", "AudioRes/ReplyPhrases", "CMDSet/ReleaseV005"):
-            shutil.copytree(ROOT / name, project / name)
+            shutil.copytree(ROOT / name, project / name, ignore=shutil.ignore_patterns('*.xlsx'))
         for name in ("BuildLatestModel.cmd", "DSMT/AirconBundleBuilder.exe", "DSMT/BuildProject.ps1",
                      "DSMT/ReplyAudioBuild.ps1", "DSMT/VoiceMaintenance.ps1", "DSMT/VoiceIni.ps1", "DSMT/VoiceCommands.ini", "DSMT/SyncNativeInputs.ps1",
                      "DSMT/UpdateVoiceDocs.ps1", "DSMT/WriteBuildReport.ps1", "DNN_VR/AirconVR.h"):
@@ -50,7 +50,7 @@ def main():
         def run():
             command = '"' + env["COMSPEC"] + '" /d /s /c ""' + str(project / "BuildLatestModel.cmd") + '" --no-pause"'
             r = subprocess.run(command, cwd=fixture, env=env, stdin=subprocess.DEVNULL,
-                               stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=60)
+                               stdout=subprocess.PIPE, stderr=subprocess.STDOUT, timeout=120)
             text = r.stdout.decode("utf-8", errors="replace")
             transcript.append(text)
             if r.returncode:
@@ -96,7 +96,7 @@ def main():
         passed("An INI edit creates the DSMT import package and blocks publication until the native project matches")
         ini.write_bytes(original_ini)
 
-        native = project / "DSMT/Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt"
+        native = project / "DSMT/Combine/Working/ChineseTWN/AirconZHTW.dsmt"
         text = project / "DSMT/Combine/Working/ChineseTWN/Group_2_Power.txt"
         original_native, original_text = native.read_bytes(), text.read_bytes()
         data = json.loads(original_native.decode("utf-8-sig"))

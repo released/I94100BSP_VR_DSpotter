@@ -3,7 +3,7 @@
 /* Copyright(c) Nuvoton Technology Corp. All rights reserved.                                              */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-Panasonic 冷氣國台語應用程式 V005
+I94124 國語／台語語音控制範例
 
 完整操作：README.md。
 辨識詞條：DSMT/VoiceCommands.ini；操作見 DSMT_OPERATION_GUIDE.md。
@@ -17,4 +17,3 @@ DataFlash 0x00015000：CMDSet/ReleaseV005/AirconDataFlash.bin。
 逐句測試：DSMT/Test/UserCommandTestGuide.txt。
 命令與 MapID：DSMT/Test/CommandMapIDQuickReference.md。
 台語發音：DSMT/Test/TaiwanesePronunciation.md。
-GitHub 上傳：GITHUB_UPLOAD.md。

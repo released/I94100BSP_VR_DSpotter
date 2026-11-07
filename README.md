@@ -1,6 +1,10 @@
-# Panasonic 冷氣國語／台語語音控制
+# I94124 國語／台語語音控制範例
 
-使用 I94124、NAU88C22 與 Cyberon DSpotter，同時辨識國語及台語。命令辨識成功後，播放國語回覆、讓 PB0／D4 LED 短閃，並透過 UART 輸出功能及參數。冷氣實際控制介面由應用層串接。
+本範例使用 I94124、NAU88C22 與 Cyberon DSpotter，示範國語及台語同時辨識、MapID 解碼、語音回覆及 LED 提示。
+
+- 命令辨識成功後播放國語回覆，並讓 PB0／D4 LED 短閃。
+- UART 輸出功能、區域及溫度／定時參數。
+- 冷氣控制協定或 GPIO 可在應用層接入。
 
 ## 快速開始
 
@@ -9,13 +13,12 @@
 | 修改辨識詞、說法或發音 | [VoiceCommands.ini](DSMT/VoiceCommands.ini) → [DSMT 操作教學](DSMT_OPERATION_GUIDE.md) |
 | 修改冷氣回覆 | [Audio Tool 操作教學](AUDIO_TOOL_GUIDE.md) |
 | 產生最新燒錄檔 | 雙擊 **[BuildLatestModel.cmd](BuildLatestModel.cmd)** |
-| 上傳至 GitHub | 雙擊 **[github_push.bat](github_push.bat)**；操作見 [上傳教學](GITHUB_UPLOAD.md) |
 | 查容量與燒錄檔指紋 | [BuildReport.md](CMDSet/ReleaseV005/BuildReport.md) |
 | 查命令、MapID 與回覆 | [CommandMapIDQuickReference.md](DSMT/Test/CommandMapIDQuickReference.md) |
 | 查台語讀法 | [TaiwanesePronunciation.md](DSMT/Test/TaiwanesePronunciation.md) |
 | 完整逐句測試 | [UserCommandTestGuide.txt](DSMT/Test/UserCommandTestGuide.txt) |
 
-語音產物使用 `BuildLatestModel.cmd`，不需安裝 Python；工具會自動同步詞條、核對音訊、封裝模型及更新測試文件。GitHub 上傳使用 `github_push.bat`，需安裝 Git for Windows。
+語音產物使用 `BuildLatestModel.cmd`，不需安裝 Python。工具自動同步 INI 詞條、核對音訊、封裝模型及更新測試文件。
 
 閱讀順序：[修改辨識語音](#修改辨識語音) → [修改回覆語音](#修改回覆語音) → [一鍵產生的結果](#一鍵產生的結果) → [燒錄](#燒錄) → [測試](#測試)。程式結構見 [程式如何執行](#程式如何執行)。
 
@@ -42,7 +45,7 @@ flowchart TD
 | 指定溫度 | 16～30 度，每度一項 |
 | 定時關機 | 1～12 小時，每小時一項，另有取消定時 |
 | 控制等待 | 預設 60 秒，成功命令與完整回覆結束後重新計時 |
-| nanoe 讀法 | 國語、台語均讀「奈諾伊」 |
+| 健康功能 | 開關範例詞條；完整命令及讀法見測試文件 |
 | 回覆 | 兩語共用國語回覆；16 kHz、NuOne 1.0 bits/sample，位於內部 Flash |
 | 指定溫度回覆 | 「好的，溫度已設定」，數值由 UART 核對 |
 | 定時設定回覆 | 「好的，定時已設定」，小時數由 UART 核對 |
@@ -77,7 +80,7 @@ flowchart TD
    ```
 
 3. 儲存後雙擊 `BuildLatestModel.cmd`。工具列出待更新群組，產生 `DSMT/Import/ChineseTWN/Group_2_Power.BatchAdd.txt`。
-4. 在 DSMT 登入，開啟 `DSMT/Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt`，選 `Group_2_Power`。
+4. 在 DSMT 登入，開啟 `DSMT/Combine/Working/ChineseTWN/AirconZHTW.dsmt`，選 `Group_2_Power`。
 5. 在指令列表選第一列，再按住 Shift 選最後一列，按「刪除」清空該組詞條。保留原群組與 Global 設定。
 6. 按「批次新增」，讀取第 3 步的 `.BatchAdd.txt`。此檔包含該組全部詞條，會一併加入原有說法與新說法。
 7. 等 DSMT 取得發音；檢查 MapID、按「播音」試聽。需要調整發音時，修改音素並按「更新」。
@@ -113,7 +116,11 @@ flowchart TD
 3. 在 DSMT 開啟 Working 中的對應工程，依 [教學](DSMT_OPERATION_GUIDE.md) 批次匯入該組，取得發音、試聽並儲存模型。
 4. 回到一鍵工具按 Enter，或再次雙擊同一入口。工具核對後將新詞發音寫回 INI，產生最新 `AirconDataFlash.bin` 與測試表。
 
-同功能沿用 MapID，例如「開機／開冷氣／開啟冷氣」皆為 `1`。INI 已保留國語 84 筆、台語 215 筆發音候選。原始 [Excel](DSMT/Input/Panasonic_AirCon_Full_VoiceCommands.xlsx) 作需求參考，後續不需同步維護。新增全新功能或 MapID 時，先由韌體維護者完成功能定義。
+同功能沿用 MapID，例如「開機／開冷氣／開啟冷氣」皆為 `1`。
+
+- 辨識規格由 `VoiceCommands.ini` 維護，無需 Excel 編輯器。
+- 隨附範例包含國語 84 筆、台語 215 筆發音候選。
+- 新增全新功能或 MapID 時，同步完成韌體功能定義。
 
 ## 修改回覆語音
 
@@ -157,7 +164,11 @@ flowchart TD
 | 刪除辨識別名 | 刪除 INI 對應候選，保留供同功能其他說法使用的回覆 |
 | 增加獨立音訊片段、刪除整個回覆種類 | 依下節同步韌體播放索引、Profile、UID 及封裝設定，再 F7 與建置 |
 
-目前固定為 23 個片段、49 個功能 MapID。每個受支援功能都有回覆對應；直接移除 WAV／UID 會留下未完成的播放配置。完整音檔對照及新增／刪除流程見 [Audio Tool 教學](AUDIO_TOOL_GUIDE.md)。
+回覆配置包含 23 個片段、49 個功能 MapID。
+
+- 每個受支援功能都有回覆對應。
+- 增減片段時同步修改 WAV、UID、播放索引及封裝配置。
+- 完整對照與操作見 [Audio Tool 教學](AUDIO_TOOL_GUIDE.md)。
 
 ## 新增或移除功能
 
@@ -308,5 +319,4 @@ PB0／D4 為低電位點亮：等待喚醒的基準為熄滅，控制階段基�
 - [DSMT 操作教學](DSMT_OPERATION_GUIDE.md)
 - [Audio Tool 操作教學](AUDIO_TOOL_GUIDE.md)
 - [工程維護](docs/DEVELOPMENT.md)：Keil 建置、新功能擴充與進階排錯
-- [GitHub 上傳](GITHUB_UPLOAD.md)
 - [第三方元件與授權](THIRD_PARTY_NOTICES.md)

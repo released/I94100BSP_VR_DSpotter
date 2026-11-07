@@ -121,7 +121,7 @@ internal static class AirconBundleBuilder
     {
         string manifestPath = Path.Combine(o.Root, "DSMT", "Input", "CommandManifest.json");
         object[] records = ArrayValue(ReadJson(manifestPath)["records"]);
-        NativeModel chinese = LoadNative(o.Root, "Chinese(TWN)", "ChineseTWN", "PanasonicAirConZHTW.dsmt", records);
+        NativeModel chinese = LoadNative(o.Root, "Chinese(TWN)", "ChineseTWN", "AirconZHTW.dsmt", records);
         NativeModel taiwanese = LoadNative(o.Root, "Taiwanese", "Taiwanese", "Taiwanese.dsmt", records);
         byte[] bundle = Bundle(chinese.Pack, taiwanese.Pack);
         if (bundle.Length > AudioAddress - ModelAddress) throw new InvalidDataException("Dual-language models overlap the internal audio region.");
@@ -171,10 +171,10 @@ internal static class AirconBundleBuilder
             "model_capacity_end_exclusive", Hex(AudioAddress),
             "model_end_exclusive", Hex(ModelAddress + (uint)bundle.Length), "flash_end_exclusive", "0x00080000",
             "files", fileInfo, "verification_limits", new object[] {
-                "Acoustic accuracy and real-time processing not board-tested",
-                "Actual dual-engine RAM is checked and printed at runtime",
-                missing.ToString(CultureInfo.InvariantCulture) + " command text variants remain pending valid native pronunciations; nanoe reading confirmed by user",
-                "Existing binary ICP project was not rewritten" });
+                "Acoustic accuracy and real-time CPU load require board validation",
+                "Dual-engine RAM requirements are checked at runtime",
+                missing.ToString(CultureInfo.InvariantCulture) + " command variants lack valid native pronunciations",
+                "ICP configuration must match the selected board and Flash layout" });
         Publish(o, payloads, Utf8.GetBytes(Pretty(Json.Serialize(manifest)) + "\n"));
         Say("SUCCESS: AirconModels.bundle.bin = " + bundle.Length + " bytes; model end " + Hex(ModelAddress + (uint)bundle.Length));
         Say("SHA-256: " + Sha(bundle));

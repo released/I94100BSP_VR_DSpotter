@@ -45,7 +45,7 @@ $commands = @($cases | Where-Object { $_.Record.stage -eq 'control' })
 $guide = New-Object 'System.Collections.Generic.List[string]'
 $quick = New-Object 'System.Collections.Generic.List[string]'
 $roman = New-Object 'System.Collections.Generic.List[string]'
-$guide.Add('Panasonic 冷氣國台語逐句測試表 V005')
+$guide.Add('I94124 國語／台語語音控制範例逐句測試表')
 $guide.Add('控制等待 ' + $seconds + ' 秒；每項測三次。P=正確 M=未辨識 W=誤辨 E=系統錯誤 N=未測。')
 $guide.Add('測試者：________ 日期：________ 板卡／距離／環境：________________')
 $guide.Add('燒錄 CMDSet/ReleaseV005/DNN_NuOne_UAC.bin 至 0x0，AirconDataFlash.bin 至 0x15000，Verify 後重啟。')
@@ -90,10 +90,10 @@ foreach ($case in $cases) {
     $wake = @($records | Where-Object { $_.language -eq $r.language -and $_.map_id -eq 1001 })[0]
     $command = $r
     if ($r.stage -eq 'wake') { $wake = $r; $command = @($records | Where-Object { $_.language -eq $r.language -and $_.map_id -eq 1 })[0] }
-    $sourceRef = 'Excel ' + $r.source_cell
+    $sourceRef = '群組 ' + $r.group
     if ($r.ini_section) { $sourceRef = 'INI [' + $r.ini_section + '] No=' + ($r.ini_numbers -join ',') }
     $guide.Add('[' + $case.Id + '] ' + $label + '／' + $r.category + '／' + $sourceRef + '／MapID=' + $r.map_id)
-    $sourceLabel = 'Excel 原文：'
+    $sourceLabel = '命令規格：'
     $displaySource = $r.source_text
     if ($r.source_origin -eq 'DSMT') { $sourceLabel = 'DSMT 詞條：' }
     if ($r.ini_section) { $sourceLabel = '辨識規格：'; $displaySource = $r.text }

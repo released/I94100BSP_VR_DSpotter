@@ -55,4 +55,26 @@ foreach ($property in $manifest.files.PSObject.Properties) { $lines.Add('| `' + 
 $outputs = [ordered]@{}
 $outputs['CMDSet/ReleaseV005/BuildReport.json'] = Get-VoiceUtf8 (ConvertTo-VoiceJson $record)
 $outputs['CMDSet/ReleaseV005/BuildReport.md'] = Get-VoiceUtf8 (($lines -join "`n") + "`n")
+$layout = @(
+    'I94124 雙語語音控制範例燒錄指南',
+    '',
+    '1. ICP 選擇 I94124，依板卡核對 Config；DataFlash 起點設定為 0x15000。',
+    '2. APROM 0x00000000：DNN_NuOne_UAC.bin。',
+    '3. DataFlash 0x00015000：AirconDataFlash.bin。',
+    '   模型位於 0x00015000，NuOne 回覆音訊位於 0x00070000，中間以 0xFF 填補。',
+    '4. 首次燒錄或 APP 有變更時更新兩區；韌體相容且只修改模型／音訊時可只更新 DataFlash。',
+    '5. 依 ModelManifest.json 核對大小與 SHA-256，完成燒錄、Verify 及重啟。',
+    '6. UART0：PB8 TX、PB9 RX，115200 8N1；核對以下資訊：',
+    '   [APP] release=V005 feedback=full_reply_led led=PB0 audio=internal',
+    ('   [AUDIO_READY] address=0x00070000 rom_bytes='+$manifest.audio.rom_bytes+' clips='+$manifest.audio.clips+' bps=1.0'),
+    '   [VR_READY] languages=2 pool=102400 uart=115200',
+    '7. 說「房間冷氣」，等喚醒提示音結束，再說「開機」。',
+    '   核對 map_id=1、國語回覆「好的，為您開機」及 LED 短閃。',
+    '8. 依 UserCommandTestGuide.txt、CommandMapIDQuickReference.md 及 TaiwanesePronunciation.md 完成兩語測試。',
+    '   文件位於專案 DSMT/Test/；完整操作見根目錄 README.md。',
+    '',
+    'INI／DSMT 或 Audio Tool 更新後，使用 BuildLatestModel.cmd 重新產生整合檔。',
+    '範例以 UART 輸出控制結果；冷氣通訊、GPIO、定時及音量狀態由應用層接入。'
+)
+$outputs['CMDSet/ReleaseV005/ProgrammingLayout.txt'] = Get-VoiceUtf8 (($layout -join "`r`n")+"`r`n")
 Write-VoiceOutputs $root $outputs

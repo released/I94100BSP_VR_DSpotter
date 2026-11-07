@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parent.parent
 MODEL_ADDRESS = 0x15000
 FLASH_END = 0x80000
 MAGIC = 0x31424341
-LANGUAGES = ((1, "Chinese(TWN)", "ChineseTWN", "PanasonicAirConZHTW.dsmt"),
+LANGUAGES = ((1, "Chinese(TWN)", "ChineseTWN", "AirconZHTW.dsmt"),
              (2, "Taiwanese", "Taiwanese", "Taiwanese.dsmt"))
 
 
@@ -144,11 +144,11 @@ def main():
               "flash_end_exclusive": "0x00080000",
               "files": {name: {"bytes": len(data), "sha256": sha(data)}
                         for name, data in payloads.items()},
-              "verification_limits": ["Acoustic accuracy and real-time processing not board-tested",
-                                      "Actual dual-engine RAM is checked and printed at runtime",
-                                      "%d command text variants remain pending valid native pronunciations; nanoe reading confirmed by user"
+              "verification_limits": ["Acoustic accuracy and real-time CPU load require board validation",
+                                      "Dual-engine RAM requirements are checked at runtime",
+                                      "%d command variants lack valid native pronunciations"
                                       % sum(len(info["missing_records"]) for info in summary),
-                                      "Existing binary ICP project was not rewritten"]}
+                                      "ICP configuration must match the selected board and Flash layout"]}
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     old_manifest = output / "ModelManifest.json"

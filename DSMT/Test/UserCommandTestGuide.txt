@@ -1,4 +1,4 @@
-﻿Panasonic 冷氣國台語逐句測試表 V005
+﻿I94124 國語／台語語音控制範例逐句測試表
 控制等待 60 秒；每項測三次。P=正確 M=未辨識 W=誤辨 E=系統錯誤 N=未測。
 測試者：________ 日期：________ 板卡／距離／環境：________________
 燒錄 CMDSet/ReleaseV005/DNN_NuOne_UAC.bin 至 0x0，AirconDataFlash.bin 至 0x15000，Verify 後重啟。

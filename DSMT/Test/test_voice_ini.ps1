@@ -58,7 +58,7 @@ try {
     Test-BadIni ($original.Replace('開機|0|0|0|1|N|','開機|0|0|0|3|N|')) '應放在' 'A valid MapID in the wrong category is rejected' $true
     Test-BadIni ($original.Replace('[ChineseTWN.Group_2_Power]','[ChineseTWN.Group_2_Powe]')) '名稱及排列' 'Unknown or missing group names are rejected'
     Test-BadIni ($original.Replace('Language=Taiwanese','Language=Chinese(TWN)')) '語系不符' 'A language mismatch is rejected'
-    Test-BadIni ($original.Replace('NativeProject=DSMT/Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt','NativeProject=../foreign.dsmt')) '相對路徑' 'Native project paths outside the workspace are rejected'
+    Test-BadIni ($original.Replace('NativeProject=DSMT/Combine/Working/ChineseTWN/AirconZHTW.dsmt','NativeProject=../foreign.dsmt')) '相對路徑' 'Native project paths outside the workspace are rejected'
     Set-TestIni ($original.Replace('開機|0|0|0|1|N|','開機|-2|3|0.12|1|Y|'))
     $changed=Read-VoiceIni $fixture; $row=$changed.Projects[0].Groups[1].Rows[0]
     $imports=Get-VoiceIniImportOutputs $fixture $changed (Get-VoiceIniStatus $changed)
@@ -77,7 +77,7 @@ try {
     $resolved=Read-VoiceIni $fixture; $state=Get-VoiceIniStatus $resolved
     Assert-IniTest ($state.Current -and -not $state.HasBlank -and $resolved.Projects[1].Groups[1].Rows.Count -eq 7) 'Resolved candidates and actual phonemes are written back into the canonical INI'
     Set-TestIni $original
-    $nativePath=Join-Path $fixture 'DSMT/Combine/Working/ChineseTWN/PanasonicAirConZHTW.dsmt'
+    $nativePath=Join-Path $fixture 'DSMT/Combine/Working/ChineseTWN/AirconZHTW.dsmt'
     $native=Read-VoiceJson $nativePath
     $native.groups[1].Group_2_Power[0].reward=1
     [IO.File]::WriteAllBytes($nativePath,(Get-VoiceUtf8 (ConvertTo-VoiceJson $native)))
